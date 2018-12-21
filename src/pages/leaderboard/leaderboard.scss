@@ -1,0 +1,14 @@
+.lm-label {
+  margin: 0px;
+  margin-right: 10px;
+}
+
+/*  #Style Appearance animation (Zoom In)
+================================================*/
+
+  .zoom-in {
+    -webkit-animation: zoomIn 500ms;
+    -moz-animation: zoomIn 500ms;
+    -o-animation: zoomIn 500ms;
+    animation: zoomIn 500ms;
+  }

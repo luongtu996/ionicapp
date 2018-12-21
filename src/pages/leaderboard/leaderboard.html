@@ -1,0 +1,36 @@
+<!--Fist Screen-->
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon class="icon-menu" name="menu"></ion-icon>
+        </button>
+        <!---Title-->
+        <ion-title>Leaderboard</ion-title>
+    </ion-navbar>
+</ion-header>
+<!--Theme Appearance animation (Zoom In)-->
+<ion-content>
+    <ion-grid no-padding >
+        <ion-row>
+            <ion-col col-12>
+                <ion-list no-margin>
+                    <ion-item no-lines [ngClass]="{ 'zoom-in': true }"  *ngFor="let item of animateItems; let i = index;"  >
+                        <ion-avatar item-start>
+                            <ngx-avatar name="{{ item.user }}"></ngx-avatar>
+                        </ion-avatar>
+                        <h2 item-title >{{item.user}}</h2>
+                        <h2 item-subtitle >Invites Sent {{ item.invites }}</h2>
+                        <h2 item-subtitle >Review {{ item.reviews }}</h2>
+                        <h2 item-subtitle >Success Rate {{ item.success_rate }}</h2>
+                    </ion-item>
+                </ion-list>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+<!-- Fab Button -->
+<ion-fab #fab bottom right>
+    <button button-ion-fab ion-fab>
+        <ion-icon name="calendar"></ion-icon>
+    </button>
+</ion-fab>
