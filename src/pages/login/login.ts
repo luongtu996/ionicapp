@@ -49,7 +49,7 @@ export class Login implements OnInit, OnDestroy{
     }
 
     ngOnInit(){
-        this.loginForm.controls.domain.setValue(localStorage.getItem('domain'));
+        // this.loginForm.controls.domain.setValue(localStorage.getItem('domain'));
         this.menu.enable(false);
     }
 
@@ -69,10 +69,10 @@ export class Login implements OnInit, OnDestroy{
                 // if(this.loadingService.loading)
                 //     this.loadingService.hide();
 
-                localStorage.setItem('access_token', response.access_token);
-                localStorage.setItem('refresh_token', response.refresh_token);
-                localStorage.setItem('domain', formValue.domain);
-                localStorage.setItem('expires_date', this.calculateTokenExpiresDateTime(response.expires_in).toString());
+                // localStorage.setItem('access_token', response.access_token);
+                // localStorage.setItem('refresh_token', response.refresh_token);
+                // localStorage.setItem('domain', formValue.domain);
+                // localStorage.setItem('expires_date', this.calculateTokenExpiresDateTime(response.expires_in).toString());
 
                 if(this.loadingService.loading.index > -1)
                     this.loadingService.hide();

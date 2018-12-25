@@ -29,11 +29,14 @@ export class HttpService {
     }
 
     addAuthHeader(): HttpHeaders {
-        if (localStorage.getItem('access_token')) {
-            return new HttpHeaders().set('Authorization', `Bearer ${ localStorage.getItem('access_token') }`);
-        } else {
-            return new HttpHeaders();
-        }
+        // if (localStorage.getItem('access_token')) {
+        //     return new HttpHeaders().set('Authorization', `Bearer ${ localStorage.getItem('access_token') }`);
+        // } else {
+        //     return new HttpHeaders();
+        // }
+
+        return new HttpHeaders().set('Authorization', `Bearer MzYxYWZiZmZiMTFhNWZmZDM3MTUxMzU5OTIyNzkyMzBmYjM3M2MxZmYyNmM0NGU1OGJmNDM2MTM2MzgwODQ3Mw`);
+
     }
 
     addAuthParams(options: any): HttpParams {
@@ -44,6 +47,7 @@ export class HttpService {
     }
 
     getUrl(){
-        return  this.parameters['API_URL'].replace('{domain}', localStorage.getItem('domain'));
+        // return  this.parameters['API_URL'].replace('{domain}', localStorage.getItem('domain'));
+        return  this.parameters['API_URL'];
     }
 }
