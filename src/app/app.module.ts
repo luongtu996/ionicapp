@@ -22,7 +22,6 @@ import { LoginService } from "../services/login-service";
 import { HomeService } from "../services/home-service";
 import { Parameters } from "../../parameters";
 import { HttpService } from "../shared/services/http/http.service";
-import { IonicStorageModule } from "@ionic/storage";
 import { TemplateService } from "../services/template.service";
 import { AuthService } from "../shared/services/auth/auth.service";
 import { CompanyService } from "../services/company.service";
@@ -57,7 +56,6 @@ import { DashboardService } from "../services/dashboard.service";
         AngularFireModule.initializeApp(AppSettings.FIREBASE_CONFIG),
         AngularFireDatabaseModule, AngularFireAuthModule,
         IonicModule.forRoot(MyApp),
-        IonicStorageModule.forRoot()
     ],
     bootstrap: [IonicApp],
     entryComponents: [MyApp],

@@ -3,13 +3,12 @@ import { IonicPage, MenuController, Content,  NavController, NavParams, FabButto
 import { IService } from '../../services/IService';
 import { HttpService } from "../../shared/services/http/http.service";
 import { LoadingService } from "../../services/loading-service";
-import { Storage } from '@ionic/storage';
 import { HomePage } from "../home/home";
 import { DashboardService } from "../../services/dashboard.service";
 
 @IonicPage()
 @Component({
-  templateUrl: 'leaderboard.html'
+    templateUrl: 'leaderboard.html'
 })
 export class Leaderboard implements OnInit, AfterViewInit{
 
@@ -25,7 +24,6 @@ export class Leaderboard implements OnInit, AfterViewInit{
         public navCtrl: NavController,
         navParams: NavParams,
         private loadingService: LoadingService,
-        private storage: Storage,
         public menu: MenuController,
         public dashboardService:DashboardService
     ) {
@@ -33,10 +31,10 @@ export class Leaderboard implements OnInit, AfterViewInit{
         this.page = navParams.get('page');
         this.service = navParams.get('service');
         if (this.service) {
-          this.params = this.service.prepareParams(this.page, navCtrl);
-          this.params.data = this.service.load(this.page);
+            this.params = this.service.prepareParams(this.page, navCtrl);
+            this.params.data = this.service.load(this.page);
         } else {
-          navCtrl.setRoot("HomePage");
+            navCtrl.setRoot("HomePage");
         }
     }
 
@@ -45,8 +43,6 @@ export class Leaderboard implements OnInit, AfterViewInit{
     }
 
     ngAfterViewInit() {
-
-
     }
 
     getLeaderboard(){

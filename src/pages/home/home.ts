@@ -1,7 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {IonicPage, NavController, Select} from 'ionic-angular';
 import { HomeService } from '../../services/home-service';
-import { Storage } from "@ionic/storage";
 import { LoadingService } from "../../services/loading-service";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { TemplateService } from "../../services/template.service";
@@ -12,9 +11,9 @@ import { SmsService } from "../../services/sms.service";
 
 @IonicPage()
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html',
-  providers: [HomeService, AuthService]
+    selector: 'page-home',
+    templateUrl: 'home.html',
+    providers: [HomeService, AuthService]
 
 })
 export class HomePage implements OnInit{
@@ -30,27 +29,26 @@ export class HomePage implements OnInit{
 
     @ViewChild('selectCompanies') selectModalCompanies: Select;
     constructor(
-      public navCtrl: NavController,
-      public service: HomeService,
-      public fb: FormBuilder,
-      private loadingService: LoadingService,
-      public templateService:TemplateService,
-      private storage: Storage,
-      public authService:AuthService,
-      public loginService: LoginService,
-      public companyService:CompanyService,
-      public smsService:SmsService
+        public navCtrl: NavController,
+        public service: HomeService,
+        public fb: FormBuilder,
+        private loadingService: LoadingService,
+        public templateService:TemplateService,
+        public authService:AuthService,
+        public loginService: LoginService,
+        public companyService:CompanyService,
+        public smsService:SmsService
     ) {
-      service.load().subscribe(snapshot => {
-        this.data = snapshot;
-      });
+        service.load().subscribe(snapshot => {
+            this.data = snapshot;
+        });
 
-      this.form = fb.group({
-          'body': ['', Validators.required],
-          'name': ['', Validators.required],
-          'to': ['', [Validators.required, Validators.minLength(14)]],
-          'company_id': [''],
-      });
+        this.form = fb.group({
+            'body': ['', Validators.required],
+            'name': ['', Validators.required],
+            'to': ['', [Validators.required, Validators.minLength(14)]],
+            'company_id': [''],
+        });
     }
 
     ionViewWillEnter () {
