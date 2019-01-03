@@ -1,6 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 496:
+/***/ 495:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginModule", function() { return LoginModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login__ = __webpack_require__(517);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login__ = __webpack_require__(515);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_shared_module__ = __webpack_require__(497);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -2949,7 +2949,7 @@ function _configFactory(initConfig, configValue) {
 
 /***/ }),
 
-/***/ 517:
+/***/ 515:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3021,7 +3021,6 @@ var Login = /** @class */ (function () {
             localStorage.setItem('expires_date', _this.calculateTokenExpiresDateTime(response.expires_in).toString());
             if (_this.loadingService.loading.index > -1)
                 _this.loadingService.hide();
-            console.log(localStorage.getItem('access_token'));
             _this.navCtrl.setRoot("HomePage", {
                 page: { "title": "Send A Review Invite", "theme": "home", "icon": "icon-lock-open-outline", "listView": false, "component": "", "singlePage": false },
                 componentName: "Login"

@@ -95,11 +95,11 @@ webpackEmptyAsyncContext.id = 193;
 
 var map = {
 	"../components/forms/layout-1/form-layout-1.module": [
-		486,
+		487,
 		11
 	],
 	"../components/forms/layout-2/form-layout-2.module": [
-		487,
+		486,
 		10
 	],
 	"../components/forms/layout-3/form-layout-3.module": [
@@ -119,19 +119,19 @@ var map = {
 		6
 	],
 	"../components/wizard/layout-3/wizard-layout-3.module": [
-		491,
+		493,
 		5
 	],
 	"../pages/home/home.module": [
-		492,
+		491,
 		2
 	],
 	"../pages/intro-page/intro-page.module": [
-		493,
+		492,
 		3
 	],
 	"../pages/items/items.module": [
-		495,
+		496,
 		4
 	],
 	"../pages/leaderboard/leaderboard.module": [
@@ -139,7 +139,7 @@ var map = {
 		1
 	],
 	"../pages/login/login.module": [
-		496,
+		495,
 		0
 	]
 };
@@ -382,42 +382,40 @@ var AuthService = /** @class */ (function () {
         return this.isLoggedIn;
     };
     AuthService.prototype.canActivate = function () {
-        // if(localStorage.getItem('access_token') == null || localStorage.getItem('access_token') == ''){
-        //     this.logout();
-        // }else{
-        //     if(localStorage.getItem('expires_date') == null || localStorage.getItem('expires_date') == ''){
-        //         this.logout();
-        //     }else{
-        //         const now = new Date(localStorage.getItem(''));
-        //         const expiresDate = new Date('expires_date');
-        //         const tokenStillValid = (now < expiresDate);
-        //
-        //         if(!tokenStillValid){
-        //             if(localStorage.getItem('refresh_token') == null || localStorage.getItem('refresh_token') == ''){
-        //                 this.logout();
-        //             }else{
-        //                 let params = {
-        //                     "grant_type":"refresh_token",
-        //                     "client_id":"1_3bcbxd9e24g0gk4swg0kwgcwg4o8k8g4g888kwc44gcc0gwwk4",
-        //                     "client_secret":"4ok2x70rlfokc8g0wws8c8kwcokw80k44sg48goc0ok4w0so0k",
-        //                     "refresh_token": localStorage.getItem('refresh_token')
-        //                 };
-        //
-        //                 this.http.post('oauth/v2/token', params).subscribe(
-        //                     (response) => {
-        //                         localStorage.setItem('access_token', response.access_token);
-        //                         localStorage.setItem('refresh_token', response.refresh_token);
-        //                         localStorage.setItem('expires_date', this.calculateTokenExpiresDateTime(response.expires_in).toString());
-        //                     },
-        //                     (error) => {
-        //
-        //                         this.logout();
-        //                     }
-        //                 );
-        //             }
-        //         }
-        //     }
-        // }
+        var _this = this;
+        if (localStorage.getItem('access_token') == null || localStorage.getItem('access_token') == '') {
+            this.logout();
+        }
+        else {
+            if (localStorage.getItem('expires_date') == null || localStorage.getItem('expires_date') == '') {
+                this.logout();
+            }
+            else {
+                var now = new Date(localStorage.getItem(''));
+                var expiresDate = new Date('expires_date');
+                var tokenStillValid = (now < expiresDate);
+                if (!tokenStillValid) {
+                    if (localStorage.getItem('refresh_token') == null || localStorage.getItem('refresh_token') == '') {
+                        this.logout();
+                    }
+                    else {
+                        var params = {
+                            "grant_type": "refresh_token",
+                            "client_id": "1_3bcbxd9e24g0gk4swg0kwgcwg4o8k8g4g888kwc44gcc0gwwk4",
+                            "client_secret": "4ok2x70rlfokc8g0wws8c8kwcokw80k44sg48goc0ok4w0so0k",
+                            "refresh_token": localStorage.getItem('refresh_token')
+                        };
+                        this.http.post('oauth/v2/token', params).subscribe(function (response) {
+                            localStorage.setItem('access_token', response.access_token);
+                            localStorage.setItem('refresh_token', response.refresh_token);
+                            localStorage.setItem('expires_date', _this.calculateTokenExpiresDateTime(response.expires_in).toString());
+                        }, function (error) {
+                            _this.logout();
+                        });
+                    }
+                }
+            }
+        }
     };
     AuthService.prototype.calculateTokenExpiresDateTime = function (expires_in) {
         var now = new Date();
@@ -706,18 +704,18 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_7_angularfire2_database__["b" /* AngularFireDatabaseModule */], __WEBPACK_IMPORTED_MODULE_8_angularfire2_auth__["a" /* AngularFireAuthModule */],
                 __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */], {}, {
                     links: [
-                        { loadChildren: '../components/forms/layout-1/form-layout-1.module#FormLayout1Module', name: 'FormLayout1', segment: 'form-layout-1', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/forms/layout-2/form-layout-2.module#FormLayout2Module', name: 'FormLayout2', segment: 'form-layout-2', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../components/forms/layout-1/form-layout-1.module#FormLayout1Module', name: 'FormLayout1', segment: 'form-layout-1', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/forms/layout-3/form-layout-3.module#FormLayout3Module', name: 'FormLayout3', segment: 'form-layout-3', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/forms/layout-4/form-layout-4.module#FormLayout4Module', name: 'FormLayout4', segment: 'form-layout-4', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/wizard/layout-1/wizard-layout-1.module#WizardLayout1Module', name: 'WizardLayout1', segment: 'wizard-layout-1', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/wizard/layout-2/wizard-layout-2.module#WizardLayout2Module', name: 'WizardLayout2', segment: 'wizard-layout-2', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../components/wizard/layout-3/wizard-layout-3.module#WizardLayout3Module', name: 'WizardLayout3', segment: 'wizard-layout-3', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/home/home.module#HomePageModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/intro-page/intro-page.module#IntroPageModule', name: 'IntroPage', segment: 'intro-page', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../components/wizard/layout-3/wizard-layout-3.module#WizardLayout3Module', name: 'WizardLayout3', segment: 'wizard-layout-3', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/leaderboard/leaderboard.module#LeaderboardModule', name: 'Leaderboard', segment: 'leaderboard', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/items/items.module#ItemsPageModule', name: 'ItemsPage', segment: 'items', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/login/login.module#LoginModule', name: 'Login', segment: 'login', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/login/login.module#LoginModule', name: 'Login', segment: 'login', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/items/items.module#ItemsPageModule', name: 'ItemsPage', segment: 'items', priority: 'low', defaultHistory: [] }
                     ]
                 }),
             ],
@@ -778,12 +776,12 @@ var HttpService = /** @class */ (function () {
         return this.http.request('delete', this.getUrl() + url, { headers: this.addAuthHeader(), body: body });
     };
     HttpService.prototype.addAuthHeader = function () {
-        // if (localStorage.getItem('access_token')) {
-        //     return new HttpHeaders().set('Authorization', `Bearer ${ localStorage.getItem('access_token') }`);
-        // } else {
-        //     return new HttpHeaders();
-        // }
-        return new __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["c" /* HttpHeaders */]().set('Authorization', "Bearer MzYxYWZiZmZiMTFhNWZmZDM3MTUxMzU5OTIyNzkyMzBmYjM3M2MxZmYyNmM0NGU1OGJmNDM2MTM2MzgwODQ3Mw");
+        if (localStorage.getItem('access_token')) {
+            return new __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["c" /* HttpHeaders */]().set('Authorization', "Bearer " + localStorage.getItem('access_token'));
+        }
+        else {
+            return new __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["c" /* HttpHeaders */]();
+        }
     };
     HttpService.prototype.addAuthParams = function (options) {
         // If undefined it's set to an empty object
