@@ -4,13 +4,31 @@
     <description>Pre-designed UI elements for Ionic 3 framework..</description>
     <author email="dev@csform.com" href="http://csform.com/">CreativeForm</author>
     <content src="index.html" />
-    <access origin="*" />
-    <allow-intent href="http://*/*" />
-    <allow-intent href="https://*/*" />
-    <allow-intent href="tel:*" />
-    <allow-intent href="sms:*" />
-    <allow-intent href="mailto:*" />
-    <allow-intent href="geo:*" />
+    <!--<access origin="*" />-->
+    <!--<allow-intent href="http://*/*" />-->
+    <!--<allow-intent href="https://*/*" />-->
+    <!--<allow-intent href="tel:*" />-->
+    <!--<allow-intent href="sms:*" />-->
+    <!--<allow-intent href="mailto:*" />-->
+    <!--<allow-intent href="geo:*" />-->
+
+
+
+
+    <access origin="*"/>
+    <access origin="tel:*" launch-external="yes"/>
+    <allow-navigation href="*"/>
+    <allow-navigation href="http://*/*"/>
+    <allow-navigation href="https://*/*"/>
+    <allow-navigation href="data:*"/>
+    <allow-intent href="*"/>
+    <access origin="*"/>
+
+
+
+
+
+
     <preference name="ScrollEnabled" value="false" />
     <preference name="android-minSdkVersion" value="19" />
     <preference name="BackupWebStorage" value="none" />
