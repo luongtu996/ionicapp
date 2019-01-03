@@ -74,9 +74,6 @@ export class Login implements OnInit, OnDestroy{
                 if(this.loadingService.loading.index > -1)
                     this.loadingService.hide();
 
-
-                console.log(localStorage.getItem('access_token'));
-
                 this.navCtrl.setRoot("HomePage", {
                     page: {"title" : "Send A Review Invite", "theme"  : "home",  "icon" : "icon-lock-open-outline", "listView" : false, "component":"", "singlePage":false},
                     componentName: "Login"

@@ -29,14 +29,11 @@ export class HttpService {
     }
 
     addAuthHeader(): HttpHeaders {
-        // if (localStorage.getItem('access_token')) {
-        //     return new HttpHeaders().set('Authorization', `Bearer ${ localStorage.getItem('access_token') }`);
-        // } else {
-        //     return new HttpHeaders();
-        // }
-
-        return new HttpHeaders().set('Authorization', `Bearer MzYxYWZiZmZiMTFhNWZmZDM3MTUxMzU5OTIyNzkyMzBmYjM3M2MxZmYyNmM0NGU1OGJmNDM2MTM2MzgwODQ3Mw`);
-
+        if (localStorage.getItem('access_token')) {
+            return new HttpHeaders().set('Authorization', `Bearer ${ localStorage.getItem('access_token') }`);
+        } else {
+            return new HttpHeaders();
+        }
     }
 
     addAuthParams(options: any): HttpParams {
