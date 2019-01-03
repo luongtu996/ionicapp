@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.csform.ionic.blue" version="0.0.7" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.csform.ionic.blue" version="0.0.7">
     <name>Ionic3 UI Theme - Blue Light</name>
     <description>Pre-designed UI elements for Ionic 3 framework..</description>
     <author email="dev@csform.com" href="http://csform.com/">CreativeForm</author>
@@ -14,7 +14,6 @@
 
 
 
-
     <access origin="*"/>
     <access origin="tel:*" launch-external="yes"/>
     <allow-navigation href="*"/>
@@ -23,9 +22,6 @@
     <allow-navigation href="data:*"/>
     <allow-intent href="*"/>
     <access origin="*"/>
-
-
-
 
 
 
