@@ -1,6 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 495:
+/***/ 496:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginModule", function() { return LoginModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login__ = __webpack_require__(515);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login__ = __webpack_require__(517);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_shared_module__ = __webpack_require__(497);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -2949,7 +2949,7 @@ function _configFactory(initConfig, configValue) {
 
 /***/ }),
 
-/***/ 515:
+/***/ 517:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3008,21 +3008,20 @@ var Login = /** @class */ (function () {
         this.menu.enable(true);
     };
     Login.prototype.onSubmit = function (formValue) {
-        // if(this.loadingService.loading.index == -1)
-        //     this.loadingService.show();
         var _this = this;
+        if (this.loadingService.loading.index == -1)
+            this.loadingService.show();
         formValue.username = formValue.username.replace(/[()\-\ ]+/g, '');
-        // if(!this.loadingService.loading)
-        //     this.loadingService.show();
         this.http.post('oauth/v2/token', formValue).subscribe(function (response) {
-            // if(this.loadingService.loading)
-            //     this.loadingService.hide();
-            // localStorage.setItem('access_token', response.access_token);
-            // localStorage.setItem('refresh_token', response.refresh_token);
-            // localStorage.setItem('domain', formValue.domain);
-            // localStorage.setItem('expires_date', this.calculateTokenExpiresDateTime(response.expires_in).toString());
+            if (_this.loadingService.loading)
+                _this.loadingService.hide();
+            localStorage.setItem('access_token', response.access_token);
+            localStorage.setItem('refresh_token', response.refresh_token);
+            localStorage.setItem('domain', formValue.domain);
+            localStorage.setItem('expires_date', _this.calculateTokenExpiresDateTime(response.expires_in).toString());
             if (_this.loadingService.loading.index > -1)
                 _this.loadingService.hide();
+            console.log(localStorage.getItem('access_token'));
             _this.navCtrl.setRoot("HomePage", {
                 page: { "title": "Send A Review Invite", "theme": "home", "icon": "icon-lock-open-outline", "listView": false, "component": "", "singlePage": false },
                 componentName: "Login"
@@ -3032,8 +3031,6 @@ var Login = /** @class */ (function () {
                 _this.loadingService.hide();
             if (formValue.username.includes("+1"))
                 formValue.username = formValue.username.substr(2);
-            // if(this.loadingService.loading)
-            //     this.loadingService.hide();
             console.log(error);
         });
     };

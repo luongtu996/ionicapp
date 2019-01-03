@@ -58,24 +58,24 @@ export class Login implements OnInit, OnDestroy{
     }
 
     onSubmit(formValue: any) {
-        // if(this.loadingService.loading.index == -1)
-        //     this.loadingService.show();
-
+        if(this.loadingService.loading.index == -1)
+            this.loadingService.show();
         formValue.username = formValue.username.replace(/[()\-\ ]+/g,'');
-        // if(!this.loadingService.loading)
-        //     this.loadingService.show();
         this.http.post('oauth/v2/token', formValue).subscribe(
             (response) => {
-                // if(this.loadingService.loading)
-                //     this.loadingService.hide();
+                if(this.loadingService.loading)
+                    this.loadingService.hide();
 
-                // localStorage.setItem('access_token', response.access_token);
-                // localStorage.setItem('refresh_token', response.refresh_token);
-                // localStorage.setItem('domain', formValue.domain);
-                // localStorage.setItem('expires_date', this.calculateTokenExpiresDateTime(response.expires_in).toString());
+                localStorage.setItem('access_token', response.access_token);
+                localStorage.setItem('refresh_token', response.refresh_token);
+                localStorage.setItem('domain', formValue.domain);
+                localStorage.setItem('expires_date', this.calculateTokenExpiresDateTime(response.expires_in).toString());
 
                 if(this.loadingService.loading.index > -1)
                     this.loadingService.hide();
+
+
+                console.log(localStorage.getItem('access_token'));
 
                 this.navCtrl.setRoot("HomePage", {
                     page: {"title" : "Send A Review Invite", "theme"  : "home",  "icon" : "icon-lock-open-outline", "listView" : false, "component":"", "singlePage":false},
@@ -88,8 +88,6 @@ export class Login implements OnInit, OnDestroy{
                     this.loadingService.hide();
                 if (formValue.username.includes("+1"))
                     formValue.username = formValue.username.substr(2);
-                // if(this.loadingService.loading)
-                //     this.loadingService.hide();
                 console.log(error);
             }
         );
