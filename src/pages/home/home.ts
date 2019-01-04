@@ -115,7 +115,7 @@ export class HomePage implements OnInit{
             if(this.loadingService.loading.index > -1)
                 this.loadingService.hide();
             this.form.reset();
-
+            this.toast.presentToast("Invite Sent");
             this.templates.forEach(item => {
                 if(item.orden == 1)
                     this.form.controls['body'].setValue(item.body);
