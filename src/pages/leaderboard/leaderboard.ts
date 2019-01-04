@@ -81,8 +81,10 @@ export class Leaderboard implements OnInit, AfterViewInit{
                 this.loadingService.show();
             this.dashboardService.getStatsByLeaderboardByRange(this.start, this.end).subscribe(
                 (response) => {
-
                     this.leaderboards = response.data;
+
+                    if(this.loadingService.loading.index > -1)
+                        this.loadingService.hide();
 
                     let self = this;
                     self.animateItems = [];
@@ -91,9 +93,6 @@ export class Leaderboard implements OnInit, AfterViewInit{
                             self.animateItems.push(self.leaderboards[i]);
                         }, 200 * i);
                     }
-
-                    if(this.loadingService.loading.index > -1)
-                        this.loadingService.hide();
                 },(error) => {
                     this.toast.presentToast(error.error.error.message);
                     if(this.loadingService.loading.index > -1)

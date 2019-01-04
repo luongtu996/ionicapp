@@ -4,7 +4,6 @@ import { LoginService } from "../../../services/login-service";
 import { NavController } from "ionic-angular";
 import { HttpService } from "../http/http.service";
 import { LoadingService } from "../../../services/loading-service";
-import { Nav } from "ionic-angular/navigation/nav-interfaces";
 
 @Injectable()
 export class AuthService {
