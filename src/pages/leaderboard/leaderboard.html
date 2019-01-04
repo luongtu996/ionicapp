@@ -10,6 +10,14 @@
 </ion-header>
 <!--Theme Appearance animation (Zoom In)-->
 <ion-content>
+    <ion-item>
+        <ion-label>Start</ion-label>
+        <ion-datetime displayFormat="YYYY/MM/DD" [(ngModel)]="start" (ngModelChange)="changeDate($event)"></ion-datetime>
+    </ion-item>
+    <ion-item>
+        <ion-label>End</ion-label>
+        <ion-datetime displayFormat="YYYY/MM/DD" [(ngModel)]="end" (ngModelChange)="changeDate($event)"></ion-datetime>
+    </ion-item>
     <ion-grid no-padding >
         <ion-row>
             <ion-col col-12>

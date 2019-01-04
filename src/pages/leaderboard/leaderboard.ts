@@ -6,6 +6,7 @@ import { LoadingService } from "../../services/loading-service";
 import { HomePage } from "../home/home";
 import { DashboardService } from "../../services/dashboard.service";
 import { ToastService } from "../../services/toast-service";
+import { AuthService } from "../../shared/services/auth/auth.service";
 
 @IonicPage()
 @Component({
@@ -17,27 +18,26 @@ export class Leaderboard implements OnInit, AfterViewInit{
     service: IService;
     params: any = {};
 
+    public start:any;
+    public end:any;
+
     public animateItems = [];
     public leaderboards:any[];
 
     constructor(
         protected http: HttpService,
-        public navCtrl: NavController,
+        // public authService:AuthService,
         navParams: NavParams,
         private loadingService: LoadingService,
         public menu: MenuController,
         public dashboardService:DashboardService,
-        public toast: ToastService
+        public toast: ToastService,
     ) {
-        // If we navigated to this page, we will have an item available as a nav param
-        this.page = navParams.get('page');
-        this.service = navParams.get('service');
-        if (this.service) {
-            this.params = this.service.prepareParams(this.page, navCtrl);
-            this.params.data = this.service.load(this.page);
-        } else {
-            navCtrl.setRoot("HomePage");
-        }
+
+    }
+
+    ionViewWillEnter () {
+        // this.authService.canActivate();
     }
 
     ngOnInit(){
@@ -48,10 +48,14 @@ export class Leaderboard implements OnInit, AfterViewInit{
     }
 
     getLeaderboard(){
-        this.loadingService.show();
+        if(this.loadingService.loading.index == -1)
+            this.loadingService.show();
         this.dashboardService.getStatsByLeaderboard().subscribe(
             (response) => {
                 this.leaderboards = response.data;
+
+                if(this.loadingService.loading.index > -1)
+                    this.loadingService.hide();
 
                 let self = this;
                 for (let i = 0; i < this.leaderboards.length; i++) {
@@ -60,12 +64,43 @@ export class Leaderboard implements OnInit, AfterViewInit{
                     }, 200 * i);
                 }
 
-                this.loadingService.hide();
             },(error) => {
+                if(this.loadingService.loading.index > -1)
+                    this.loadingService.hide();
                 this.toast.presentToast(error.error.error.message);
                 this.loadingService.hide();
                 console.log(error);
             }
         );
+    }
+
+
+    changeDate(item){
+        if(this.start && this.end){
+            if(this.loadingService.loading.index == -1)
+                this.loadingService.show();
+            this.dashboardService.getStatsByLeaderboardByRange(this.start, this.end).subscribe(
+                (response) => {
+
+                    this.leaderboards = response.data;
+
+                    let self = this;
+                    self.animateItems = [];
+                    for (let i = 0; i < this.leaderboards.length; i++) {
+                        setTimeout(function () {
+                            self.animateItems.push(self.leaderboards[i]);
+                        }, 200 * i);
+                    }
+
+                    if(this.loadingService.loading.index > -1)
+                        this.loadingService.hide();
+                },(error) => {
+                    this.toast.presentToast(error.error.error.message);
+                    if(this.loadingService.loading.index > -1)
+                        this.loadingService.hide();
+                    console.log(error);
+                }
+            );
+        }
     }
 }
