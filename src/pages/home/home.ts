@@ -91,8 +91,8 @@ export class HomePage implements OnInit{
         this.templateService.list().subscribe((response) => {
             if(this.loadingService.loading.index > -1)
                 this.loadingService.hide();
-            let templates = response.data.results;
-            templates.forEach(item => {
+            this.templates = response.data.results;
+            this.templates.forEach(item => {
                 if(item.orden == 1)
                     this.form.controls['body'].setValue(item.body);
             });
