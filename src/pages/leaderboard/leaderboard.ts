@@ -5,6 +5,7 @@ import { HttpService } from "../../shared/services/http/http.service";
 import { LoadingService } from "../../services/loading-service";
 import { HomePage } from "../home/home";
 import { DashboardService } from "../../services/dashboard.service";
+import { ToastService } from "../../services/toast-service";
 
 @IonicPage()
 @Component({
@@ -25,7 +26,8 @@ export class Leaderboard implements OnInit, AfterViewInit{
         navParams: NavParams,
         private loadingService: LoadingService,
         public menu: MenuController,
-        public dashboardService:DashboardService
+        public dashboardService:DashboardService,
+        public toast: ToastService
     ) {
         // If we navigated to this page, we will have an item available as a nav param
         this.page = navParams.get('page');
@@ -60,9 +62,9 @@ export class Leaderboard implements OnInit, AfterViewInit{
 
                 this.loadingService.hide();
             },(error) => {
+                this.toast.presentToast(error.error.error.message);
                 this.loadingService.hide();
                 console.log(error);
-
             }
         );
     }

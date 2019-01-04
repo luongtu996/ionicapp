@@ -2959,6 +2959,7 @@ function _configFactory(initConfig, configValue) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_services_http_http_service__ = __webpack_require__(41);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_loading_service__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_toast_service__ = __webpack_require__(94);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2973,13 +2974,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var Login = /** @class */ (function () {
-    function Login(http, navCtrl, navParams, fb, loadingService, menu) {
+    function Login(http, navCtrl, navParams, fb, loadingService, menu, toast) {
         this.http = http;
         this.navCtrl = navCtrl;
         this.fb = fb;
         this.loadingService = loadingService;
         this.menu = menu;
+        this.toast = toast;
         this.params = {};
         // If we navigated to this page, we will have an item available as a nav param
         this.page = navParams.get('page');
@@ -2994,7 +2997,7 @@ var Login = /** @class */ (function () {
         this.loginForm = fb.group({
             'username': ['heidy.resteasy@gmail.com', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required]],
             'password': ['REM4lif3', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required],
-            'domain': ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required],
+            'domain': ['repc', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required],
             'grant_type': ['password'],
             'client_id': ['1_3bcbxd9e24g0gk4swg0kwgcwg4o8k8g4g888kwc44gcc0gwwk4'],
             'client_secret': ['4ok2x70rlfokc8g0wws8c8kwcokw80k44sg48goc0ok4w0so0k'],
@@ -3012,12 +3015,10 @@ var Login = /** @class */ (function () {
         if (this.loadingService.loading.index == -1)
             this.loadingService.show();
         formValue.username = formValue.username.replace(/[()\-\ ]+/g, '');
+        localStorage.setItem('domain', formValue.domain);
         this.http.post('oauth/v2/token', formValue).subscribe(function (response) {
-            if (_this.loadingService.loading)
-                _this.loadingService.hide();
             localStorage.setItem('access_token', response.access_token);
             localStorage.setItem('refresh_token', response.refresh_token);
-            localStorage.setItem('domain', formValue.domain);
             localStorage.setItem('expires_date', _this.calculateTokenExpiresDateTime(response.expires_in).toString());
             if (_this.loadingService.loading.index > -1)
                 _this.loadingService.hide();
@@ -3026,6 +3027,10 @@ var Login = /** @class */ (function () {
                 componentName: "Login"
             });
         }, function (error) {
+            if (error.error.error_description)
+                _this.toast.presentToast(error.error.error_description);
+            else
+                _this.toast.presentToast('Domain Error!');
             if (_this.loadingService.loading.index > -1)
                 _this.loadingService.hide();
             if (formValue.username.includes("+1"))
@@ -3041,14 +3046,10 @@ var Login = /** @class */ (function () {
     Login = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"C:\Users\Bender\Desktop\ionicapp\src\pages\login\login.html"*/'<!-- Themes Login + logo -->\n\n<ion-content background-size default-background [ngStyle]="{\'background-image\': \'url(assets/images/background/auth-bg.jpg)\'}">\n\n    <ion-grid>\n\n        <ion-row wrap padding>\n\n            <ion-col >\n\n                <form  [formGroup]="loginForm" (submit)="onSubmit(loginForm.value)">\n\n                    <!---Logo-->\n\n                    <br>\n\n                    <br>\n\n                    <div align="center">\n\n                        <img padding-bottom src="assets/images/logo/logo-icon.png">\n\n                    </div>\n\n                    <br>\n\n                    <!---Input field username-->\n\n                    <ion-item no-lines box-shadow>\n\n                        <ion-label class="lm-label">\n\n                            <ion-icon name="person"></ion-icon>\n\n                        </ion-label>\n\n                        <ion-input lmMask no-margin type="text" placeholder="Email or Phone" formControlName="username"></ion-input>\n\n                    </ion-item>\n\n                    <br>\n\n                    <!---Input field password-->\n\n                    <ion-item no-lines box-shadow>\n\n                        <ion-label class="lm-label">\n\n                            <ion-icon name="lock"></ion-icon>\n\n                        </ion-label>\n\n                        <ion-input no-margin type="password" placeholder="Password" formControlName="password"></ion-input>\n\n                    </ion-item>\n\n                    <!---Input field password-->\n\n                    <br>\n\n                    <!---Input field domain-->\n\n                    <ion-item no-lines box-shadow>\n\n                        <ion-label class="lm-label">\n\n                            <ion-icon name="link"></ion-icon>\n\n                        </ion-label>\n\n                        <ion-input no-margin type="text" placeholder="Domain" formControlName="domain"></ion-input>\n\n                    </ion-item>\n\n                    <!---Input field domain-->\n\n                    <br>\n\n                    <button col-12 ion-button button-clear-outline [disabled]="loginForm.invalid">Log In</button>\n\n                </form>\n\n            </ion-col>\n\n        </ion-row>\n\n    </ion-grid>\n\n</ion-content>\n\n\n\n\n\n\n\n'/*ion-inline-end:"C:\Users\Bender\Desktop\ionicapp\src\pages\login\login.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__shared_services_http_http_service__["a" /* HttpService */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */],
-            __WEBPACK_IMPORTED_MODULE_4__services_loading_service__["a" /* LoadingService */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* MenuController */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__shared_services_http_http_service__["a" /* HttpService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__shared_services_http_http_service__["a" /* HttpService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__services_loading_service__["a" /* LoadingService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_loading_service__["a" /* LoadingService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* MenuController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* MenuController */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_5__services_toast_service__["a" /* ToastService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_toast_service__["a" /* ToastService */]) === "function" && _g || Object])
     ], Login);
     return Login;
+    var _a, _b, _c, _d, _e, _f, _g;
 }());
 
 //# sourceMappingURL=login.js.map

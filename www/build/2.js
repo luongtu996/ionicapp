@@ -1,6 +1,6 @@
 webpackJsonp([2],{
 
-/***/ 491:
+/***/ 493:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomePageModule", function() { return HomePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home__ = __webpack_require__(510);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home__ = __webpack_require__(513);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_shared_module__ = __webpack_require__(497);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2922,7 +2922,7 @@ function _configFactory(initConfig, configValue) {
 
 /***/ }),
 
-/***/ 510:
+/***/ 513:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2937,6 +2937,7 @@ function _configFactory(initConfig, configValue) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_login_service__ = __webpack_require__(93);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_company_service__ = __webpack_require__(291);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_sms_service__ = __webpack_require__(292);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_toast_service__ = __webpack_require__(94);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2956,9 +2957,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var HomePage = /** @class */ (function () {
-    function HomePage(navCtrl, service, fb, loadingService, templateService, authService, loginService, companyService, smsService) {
-        var _this = this;
+    function HomePage(navCtrl, service, fb, loadingService, templateService, authService, loginService, companyService, smsService, toast) {
         this.navCtrl = navCtrl;
         this.service = service;
         this.fb = fb;
@@ -2968,11 +2969,9 @@ var HomePage = /** @class */ (function () {
         this.loginService = loginService;
         this.companyService = companyService;
         this.smsService = smsService;
+        this.toast = toast;
         this.data = {};
         this.isBuyButtonEnabled = false;
-        service.load().subscribe(function (snapshot) {
-            _this.data = snapshot;
-        });
         this.form = fb.group({
             'body': ['', __WEBPACK_IMPORTED_MODULE_4__angular_forms__["f" /* Validators */].required],
             'name': ['', __WEBPACK_IMPORTED_MODULE_4__angular_forms__["f" /* Validators */].required],
@@ -3000,6 +2999,7 @@ var HomePage = /** @class */ (function () {
                 _this.loadingService.hide();
             _this.getTemplates();
         }, function (error) {
+            _this.toast.presentToast(error.error.error.message);
             if (_this.loadingService.loading.index > -1)
                 _this.loadingService.hide();
             console.log(error);
@@ -3021,6 +3021,7 @@ var HomePage = /** @class */ (function () {
                     _this.form.controls['body'].setValue(item.body);
             });
         }, function (error) {
+            _this.toast.presentToast(error.error.error.message);
             console.log(error);
             if (_this.loadingService.loading.index > -1)
                 _this.loadingService.hide();
@@ -3042,6 +3043,7 @@ var HomePage = /** @class */ (function () {
                     _this.form.controls['body'].setValue(item.body);
             });
         }, function (error) {
+            _this.toast.presentToast(error.error.error.message);
             if (formValue.to.includes("+1")) {
                 formValue.to = formValue.to.substr(2);
             }
@@ -3050,30 +3052,19 @@ var HomePage = /** @class */ (function () {
             console.log(error);
         });
     };
-    HomePage.prototype.openListCompanies = function () {
-        console.log(this.loadingService.loading.index);
-        this.selectModalCompanies.open();
-    };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])('selectCompanies'),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Select */])
+        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Select */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Select */]) === "function" && _a || Object)
     ], HomePage.prototype, "selectModalCompanies", void 0);
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"C:\Users\Bender\Desktop\ionicapp\src\pages\home\home.html"*/'<ion-select [(ngModel)]="company" multiple="false" interface="action-sheet" *ngIf="company" #selectCompanies>\n\n    <ion-option *ngFor="let item of companies; let i= index" [value]="item">{{item.name}}</ion-option>\n\n</ion-select>\n\n<!--Fist Screen-->\n\n<ion-header>\n\n    <ion-navbar>\n\n        <button ion-button menuToggle>\n\n            <ion-icon class="icon-menu" name="menu"></ion-icon>\n\n        </button>\n\n        <!---Title-->\n\n        <ion-title>Send A Review Invite</ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n<!-- Themes Login + logo -->\n\n<ion-content >\n\n    <ion-grid>\n\n        <ion-row wrap padding>\n\n            <ion-col>\n\n                <h3 style="text-align: right">{{company?.name}}</h3>\n\n                <br>\n\n                <form  [formGroup]="form" (submit)="onSubmit(form.value)">\n\n                    <!---Input field username-->\n\n                    <ion-item no-lines box-shadow>\n\n                        <ion-label class="lm-label">\n\n                            <ion-icon name="person"></ion-icon>\n\n                        </ion-label>\n\n                        <ion-input no-margin type="text" placeholder="Name" formControlName="name"></ion-input>\n\n                    </ion-item>\n\n                    <br>\n\n                    <!---Input field password-->\n\n                    <ion-item no-lines box-shadow>\n\n                        <ion-label class="lm-label">\n\n                            <ion-icon name="call"></ion-icon>\n\n                        </ion-label>\n\n                        <ion-input mask="(000) 000-0000" no-margin type="text" placeholder="Phone Number" formControlName="to"></ion-input>\n\n                    </ion-item>\n\n                    <!---Input field password-->\n\n                    <br>\n\n                    <!---Input field domain-->\n\n                    <ion-item no-lines box-shadow hidden>\n\n                        <ion-input no-margin type="text" placeholder="" formControlName="body"></ion-input>\n\n                    </ion-item>\n\n                    <!---Input field domain-->\n\n                    <br>\n\n                    <button col-12 ion-button button-clear-outline [disabled]="form.invalid">\n\n                        Send\n\n                        <ion-icon name="paper-plane"></ion-icon>\n\n                    </button>\n\n                </form>\n\n            </ion-col>\n\n        </ion-row>\n\n    </ion-grid>\n\n</ion-content>\n\n<ion-fab #fab bottom right>\n\n    <button button-ion-fab ion-fab (click)="openListCompanies()">\n\n        <i class="mdi mdi-food-apple" style="-webkit-text-stroke-color: white" ></i>\n\n    </button>\n\n</ion-fab>\n\n\n\n\n\n'/*ion-inline-end:"C:\Users\Bender\Desktop\ionicapp\src\pages\home\home.html"*/,
+            selector: 'page-home',template:/*ion-inline-start:"C:\Users\Bender\Desktop\ionicapp\src\pages\home\home.html"*/'<ion-select [(ngModel)]="company" multiple="false" interface="action-sheet" *ngIf="company" #selectCompanies>\n\n    <ion-option *ngFor="let item of companies; let i= index" [value]="item">{{item.name}}</ion-option>\n\n</ion-select>\n\n<!--Fist Screen-->\n\n<ion-header>\n\n    <ion-navbar>\n\n        <button ion-button menuToggle>\n\n            <ion-icon class="icon-menu" name="menu"></ion-icon>\n\n        </button>\n\n        <!---Title-->\n\n        <ion-title>Send A Review Invite</ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n<!-- Themes Login + logo -->\n\n<ion-content >\n\n    <ion-grid>\n\n        <ion-row wrap padding>\n\n            <ion-col>\n\n                <h3 style="text-align: right">{{company?.name}}</h3>\n\n                <br>\n\n                <form  [formGroup]="form" (submit)="onSubmit(form.value)">\n\n                    <!---Input field username-->\n\n                    <ion-item no-lines box-shadow>\n\n                        <ion-label class="lm-label">\n\n                            <ion-icon name="person"></ion-icon>\n\n                        </ion-label>\n\n                        <ion-input no-margin type="text" placeholder="Name" formControlName="name"></ion-input>\n\n                    </ion-item>\n\n                    <br>\n\n                    <!---Input field password-->\n\n                    <ion-item no-lines box-shadow>\n\n                        <ion-label class="lm-label">\n\n                            <ion-icon name="call"></ion-icon>\n\n                        </ion-label>\n\n                        <ion-input mask="(000) 000-0000" no-margin type="text" placeholder="Phone Number" formControlName="to"></ion-input>\n\n                    </ion-item>\n\n                    <!---Input field password-->\n\n                    <br>\n\n                    <!---Input field domain-->\n\n                    <ion-item no-lines box-shadow hidden>\n\n                        <ion-input no-margin type="text" placeholder="" formControlName="body"></ion-input>\n\n                    </ion-item>\n\n                    <!---Input field domain-->\n\n                    <br>\n\n                    <button col-12 ion-button button-clear-outline [disabled]="form.invalid">\n\n                        Send\n\n                        <ion-icon name="paper-plane"></ion-icon>\n\n                    </button>\n\n                </form>\n\n            </ion-col>\n\n        </ion-row>\n\n    </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Bender\Desktop\ionicapp\src\pages\home\home.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_2__services_home_service__["a" /* HomeService */], __WEBPACK_IMPORTED_MODULE_6__shared_services_auth_auth_service__["a" /* AuthService */]]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_2__services_home_service__["a" /* HomeService */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_forms__["a" /* FormBuilder */],
-            __WEBPACK_IMPORTED_MODULE_3__services_loading_service__["a" /* LoadingService */],
-            __WEBPACK_IMPORTED_MODULE_5__services_template_service__["a" /* TemplateService */],
-            __WEBPACK_IMPORTED_MODULE_6__shared_services_auth_auth_service__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_7__services_login_service__["a" /* LoginService */],
-            __WEBPACK_IMPORTED_MODULE_8__services_company_service__["a" /* CompanyService */],
-            __WEBPACK_IMPORTED_MODULE_9__services_sms_service__["a" /* SmsService */]])
+        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_home_service__["a" /* HomeService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_home_service__["a" /* HomeService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_forms__["a" /* FormBuilder */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__services_loading_service__["a" /* LoadingService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_loading_service__["a" /* LoadingService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_5__services_template_service__["a" /* TemplateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_template_service__["a" /* TemplateService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_6__shared_services_auth_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__shared_services_auth_auth_service__["a" /* AuthService */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_7__services_login_service__["a" /* LoginService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__services_login_service__["a" /* LoginService */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_8__services_company_service__["a" /* CompanyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_8__services_company_service__["a" /* CompanyService */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_9__services_sms_service__["a" /* SmsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_9__services_sms_service__["a" /* SmsService */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_10__services_toast_service__["a" /* ToastService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_10__services_toast_service__["a" /* ToastService */]) === "function" && _l || Object])
     ], HomePage);
     return HomePage;
+    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
 }());
 
 //# sourceMappingURL=home.js.map

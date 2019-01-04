@@ -8,6 +8,7 @@ import { AuthService } from "../../shared/services/auth/auth.service";
 import { LoginService } from "../../services/login-service";
 import { CompanyService } from "../../services/company.service";
 import { SmsService } from "../../services/sms.service";
+import {ToastService} from "../../services/toast-service";
 
 @IonicPage()
 @Component({
@@ -37,11 +38,10 @@ export class HomePage implements OnInit{
         public authService:AuthService,
         public loginService: LoginService,
         public companyService:CompanyService,
-        public smsService:SmsService
+        public smsService:SmsService,
+        public toast: ToastService
     ) {
-        service.load().subscribe(snapshot => {
-            this.data = snapshot;
-        });
+
 
         this.form = fb.group({
             'body': ['', Validators.required],
@@ -74,6 +74,7 @@ export class HomePage implements OnInit{
 
             this.getTemplates();
         }, (error) => {
+            this.toast.presentToast(error.error.error.message);
             if(this.loadingService.loading.index > -1)
                 this.loadingService.hide();
             console.log(error);
@@ -96,6 +97,7 @@ export class HomePage implements OnInit{
                     this.form.controls['body'].setValue(item.body);
             });
         }, (error) => {
+            this.toast.presentToast(error.error.error.message);
             console.log(error);
             if(this.loadingService.loading.index > -1)
                 this.loadingService.hide();
@@ -119,6 +121,7 @@ export class HomePage implements OnInit{
                     this.form.controls['body'].setValue(item.body);
             });
         }, (error) => {
+            this.toast.presentToast(error.error.error.message);
             if (formValue.to.includes("+1")) {
                 formValue.to = formValue.to.substr(2);
             }
@@ -126,13 +129,5 @@ export class HomePage implements OnInit{
                 this.loadingService.hide();
             console.log(error);
         });
-    }
-
-
-    openListCompanies(){
-
-
-        console.log(this.loadingService.loading.index);
-        this.selectModalCompanies.open();
     }
 }

@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpService } from "../../shared/services/http/http.service";
 import { LoadingService } from "../../services/loading-service";
 import { HomePage } from "../home/home";
+import { ToastService } from "../../services/toast-service";
 
 @IonicPage()
 @Component({
@@ -25,6 +26,7 @@ export class Login implements OnInit, OnDestroy{
         public fb: FormBuilder,
         private loadingService: LoadingService,
         public menu: MenuController,
+        public toast: ToastService
     ) {
         // If we navigated to this page, we will have an item available as a nav param
         this.page = navParams.get('page');
@@ -39,13 +41,11 @@ export class Login implements OnInit, OnDestroy{
         this.loginForm = fb.group({
             'username': ['heidy.resteasy@gmail.com',[Validators.required]],
             'password': ['REM4lif3', Validators.required],
-            'domain': ['', Validators.required],
+            'domain': ['repc', Validators.required],
             'grant_type': ['password'],
             'client_id': ['1_3bcbxd9e24g0gk4swg0kwgcwg4o8k8g4g888kwc44gcc0gwwk4'],
             'client_secret': ['4ok2x70rlfokc8g0wws8c8kwcokw80k44sg48goc0ok4w0so0k'],
         });
-
-
     }
 
     ngOnInit(){
@@ -61,14 +61,11 @@ export class Login implements OnInit, OnDestroy{
         if(this.loadingService.loading.index == -1)
             this.loadingService.show();
         formValue.username = formValue.username.replace(/[()\-\ ]+/g,'');
+        localStorage.setItem('domain', formValue.domain);
         this.http.post('oauth/v2/token', formValue).subscribe(
             (response) => {
-                if(this.loadingService.loading)
-                    this.loadingService.hide();
-
                 localStorage.setItem('access_token', response.access_token);
                 localStorage.setItem('refresh_token', response.refresh_token);
-                localStorage.setItem('domain', formValue.domain);
                 localStorage.setItem('expires_date', this.calculateTokenExpiresDateTime(response.expires_in).toString());
 
                 if(this.loadingService.loading.index > -1)
@@ -78,9 +75,13 @@ export class Login implements OnInit, OnDestroy{
                     page: {"title" : "Send A Review Invite", "theme"  : "home",  "icon" : "icon-lock-open-outline", "listView" : false, "component":"", "singlePage":false},
                     componentName: "Login"
                 });
-
             },
             (error) => {
+
+                if(error.error.error_description)
+                    this.toast.presentToast(error.error.error_description);
+                else
+                    this.toast.presentToast('Domain Error!');
                 if(this.loadingService.loading.index > -1)
                     this.loadingService.hide();
                 if (formValue.username.includes("+1"))

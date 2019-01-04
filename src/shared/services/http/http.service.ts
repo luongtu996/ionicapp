@@ -44,7 +44,6 @@ export class HttpService {
     }
 
     getUrl(){
-        // return  this.parameters['API_URL'].replace('{domain}', localStorage.getItem('domain'));
-        return  this.parameters['API_URL'];
+        return  this.parameters['API_URL'].replace('{domain}', localStorage.getItem('domain'));
     }
 }

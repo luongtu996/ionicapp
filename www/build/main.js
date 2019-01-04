@@ -119,19 +119,19 @@ var map = {
 		6
 	],
 	"../components/wizard/layout-3/wizard-layout-3.module": [
-		493,
+		491,
 		5
 	],
 	"../pages/home/home.module": [
-		491,
+		493,
 		2
 	],
 	"../pages/intro-page/intro-page.module": [
-		492,
+		496,
 		3
 	],
 	"../pages/items/items.module": [
-		496,
+		492,
 		4
 	],
 	"../pages/leaderboard/leaderboard.module": [
@@ -424,12 +424,10 @@ var AuthService = /** @class */ (function () {
     };
     AuthService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1__services_login_service__["a" /* LoginService */],
-            __WEBPACK_IMPORTED_MODULE_3__http_http_service__["a" /* HttpService */],
-            __WEBPACK_IMPORTED_MODULE_4__services_loading_service__["a" /* LoadingService */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__services_login_service__["a" /* LoginService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_login_service__["a" /* LoginService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__http_http_service__["a" /* HttpService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__http_http_service__["a" /* HttpService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__services_loading_service__["a" /* LoadingService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_loading_service__["a" /* LoadingService */]) === "function" && _d || Object])
     ], AuthService);
     return AuthService;
+    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=auth.service.js.map
@@ -710,12 +708,12 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../components/forms/layout-4/form-layout-4.module#FormLayout4Module', name: 'FormLayout4', segment: 'form-layout-4', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/wizard/layout-1/wizard-layout-1.module#WizardLayout1Module', name: 'WizardLayout1', segment: 'wizard-layout-1', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/wizard/layout-2/wizard-layout-2.module#WizardLayout2Module', name: 'WizardLayout2', segment: 'wizard-layout-2', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/home/home.module#HomePageModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/intro-page/intro-page.module#IntroPageModule', name: 'IntroPage', segment: 'intro-page', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/wizard/layout-3/wizard-layout-3.module#WizardLayout3Module', name: 'WizardLayout3', segment: 'wizard-layout-3', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/items/items.module#ItemsPageModule', name: 'ItemsPage', segment: 'items', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/home/home.module#HomePageModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/leaderboard/leaderboard.module#LeaderboardModule', name: 'Leaderboard', segment: 'leaderboard', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginModule', name: 'Login', segment: 'login', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/items/items.module#ItemsPageModule', name: 'ItemsPage', segment: 'items', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/intro-page/intro-page.module#IntroPageModule', name: 'IntroPage', segment: 'intro-page', priority: 'low', defaultHistory: [] }
                     ]
                 }),
             ],
@@ -789,8 +787,7 @@ var HttpService = /** @class */ (function () {
         return options;
     };
     HttpService.prototype.getUrl = function () {
-        // return  this.parameters['API_URL'].replace('{domain}', localStorage.getItem('domain'));
-        return this.parameters['API_URL'];
+        return this.parameters['API_URL'].replace('{domain}', localStorage.getItem('domain'));
     };
     HttpService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
@@ -1067,9 +1064,9 @@ var MenuService = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Parameters; });
 var Parameters = /** @class */ (function () {
     function Parameters() {
+        this.API_URL = "https://api.{domain}.2stepreviewsapp.com/app_dev.php/";
         // API_URL = `http://localhost/reviews/web/app_dev.php/`;
-        // API_URL = `https://api.{domain}.2stepreviewsapp.com/app_dev.php/`;
-        this.API_URL = "https://api.repc.2stepreviewsapp.com/app_dev.php/";
+        // API_URL = `https://api.repc.2stepreviewsapp.com/app_dev.php/`;
     }
     return Parameters;
 }());
