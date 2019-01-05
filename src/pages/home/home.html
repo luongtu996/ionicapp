@@ -8,7 +8,7 @@
             <ion-icon class="icon-menu" name="menu"></ion-icon>
         </button>
         <!---Title-->
-        <ion-title>Send A Review Invite</ion-title>
+        <ion-title>2Step Reviews</ion-title>
     </ion-navbar>
 </ion-header>
 <!-- Themes Login + logo -->
@@ -17,6 +17,8 @@
         <ion-row wrap padding>
             <ion-col>
                 <h3 style="text-align: right">{{company?.name}}</h3>
+                <br>
+                <h3 style="text-align: center">Send A Review Invite</h3>
                 <br>
                 <form  [formGroup]="form" (submit)="onSubmit(form.value)">
                     <!---Input field username-->

@@ -5,17 +5,18 @@
             <ion-icon class="icon-menu" name="menu"></ion-icon>
         </button>
         <!---Title-->
-        <ion-title>Leaderboard</ion-title>
+        <ion-title>2Step Reviews</ion-title>
     </ion-navbar>
 </ion-header>
 <!--Theme Appearance animation (Zoom In)-->
 <ion-content>
+    <h3 style="text-align: center">Leaderboard</h3>
     <ion-item>
-        <ion-label>Start</ion-label>
+        <ion-label>Start Date</ion-label>
         <ion-datetime displayFormat="YYYY/MM/DD" [(ngModel)]="start" (ngModelChange)="changeDate($event)"></ion-datetime>
     </ion-item>
     <ion-item>
-        <ion-label>End</ion-label>
+        <ion-label>End Date</ion-label>
         <ion-datetime displayFormat="YYYY/MM/DD" [(ngModel)]="end" (ngModelChange)="changeDate($event)"></ion-datetime>
     </ion-item>
     <ion-grid no-padding >
