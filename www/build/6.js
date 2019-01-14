@@ -1,14 +1,14 @@
 webpackJsonp([6],{
 
-/***/ 490:
+/***/ 498:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WizardLayout2Module", function() { return WizardLayout2Module; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ReviewsPageModule", function() { return ReviewsPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__wizard_layout_2__ = __webpack_require__(509);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__reviews__ = __webpack_require__(521);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,35 +18,31 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var WizardLayout2Module = /** @class */ (function () {
-    function WizardLayout2Module() {
+var ReviewsPageModule = /** @class */ (function () {
+    function ReviewsPageModule() {
     }
-    WizardLayout2Module = __decorate([
+    ReviewsPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__wizard_layout_2__["a" /* WizardLayout2 */],
+                __WEBPACK_IMPORTED_MODULE_2__reviews__["a" /* ReviewsPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__wizard_layout_2__["a" /* WizardLayout2 */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__reviews__["a" /* ReviewsPage */]),
             ],
-            exports: [
-                __WEBPACK_IMPORTED_MODULE_2__wizard_layout_2__["a" /* WizardLayout2 */]
-            ],
-            schemas: [__WEBPACK_IMPORTED_MODULE_0__angular_core__["i" /* CUSTOM_ELEMENTS_SCHEMA */]]
         })
-    ], WizardLayout2Module);
-    return WizardLayout2Module;
+    ], ReviewsPageModule);
+    return ReviewsPageModule;
 }());
 
-//# sourceMappingURL=wizard-layout-2.module.js.map
+//# sourceMappingURL=reviews.module.js.map
 
 /***/ }),
 
-/***/ 509:
+/***/ 521:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WizardLayout2; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReviewsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(51);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -60,56 +56,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-var WizardLayout2 = /** @class */ (function () {
-    function WizardLayout2() {
-        this.next = true;
-        this.finish = true;
-        this.next = true;
-        this.finish = false;
+/**
+ * Generated class for the ReviewsPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var ReviewsPage = /** @class */ (function () {
+    function ReviewsPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
     }
-    WizardLayout2.prototype.changeSlide = function (index) {
-        if (index > 0) {
-            this.slider.slideNext(300);
-        }
-        else {
-            this.slider.slidePrev(300);
-        }
+    ReviewsPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad ReviewsPage');
     };
-    WizardLayout2.prototype.slideHasChanged = function (index) {
-        try {
-            this.next = this.slider.getActiveIndex() < (this.slider.length() - 1);
-            this.finish = this.slider.isEnd();
-        }
-        catch (e) { }
-    };
-    WizardLayout2.prototype.onEvent = function (event) {
-        if (this.events[event]) {
-            this.events[event]();
-        }
-        console.log(event);
-    };
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
-        __metadata("design:type", Object)
-    ], WizardLayout2.prototype, "data", void 0);
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
-        __metadata("design:type", Object)
-    ], WizardLayout2.prototype, "events", void 0);
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])('wizardSlider'),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* Slides */])
-    ], WizardLayout2.prototype, "slider", void 0);
-    WizardLayout2 = __decorate([
+    ReviewsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'wizard-layout-2',template:/*ion-inline-start:"C:\Users\Bender\Desktop\ionicapp\src\components\wizard\layout-2\wizard.html"*/'<!--Theme Wizard Big Image -->\n\n<!--Content-->\n\n<ion-slides #wizardSlider (ionSlideDidChange)="slideHasChanged()" pager="true" *ngIf="data != null">\n\n    <ion-slide background-size *ngFor="let item of data.items;" [ngStyle]="{\'background-image\': \'url(\' + item.backgroundImage + \')\'}">\n\n        <h1 wizard-title>{{item.title}}</h1>\n\n    </ion-slide>\n\n</ion-slides>\n\n<!--Button section-->\n\n<div *ngIf="data != null">\n\n    <button default-button full ion-button (click)="changeSlide(1)" *ngIf="next">\n\n    {{data.btnNext}}\n\n  </button>\n\n    <button default-button full ion-button (click)="onEvent(\'onFinish\')" *ngIf="finish">\n\n    {{data.btnFinish}}\n\n  </button>\n\n</div>\n\n'/*ion-inline-end:"C:\Users\Bender\Desktop\ionicapp\src\components\wizard\layout-2\wizard.html"*/
+            selector: 'page-reviews',template:/*ion-inline-start:"C:\Users\Bender\Desktop\ionicapp\src\pages\reviews\reviews.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>reviews</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\Bender\Desktop\ionicapp\src\pages\reviews\reviews.html"*/,
         }),
-        __metadata("design:paramtypes", [])
-    ], WizardLayout2);
-    return WizardLayout2;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
+    ], ReviewsPage);
+    return ReviewsPage;
 }());
 
-//# sourceMappingURL=wizard-layout-2.js.map
+//# sourceMappingURL=reviews.js.map
 
 /***/ })
 

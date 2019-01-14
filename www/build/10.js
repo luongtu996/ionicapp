@@ -1,14 +1,14 @@
 webpackJsonp([10],{
 
-/***/ 486:
+/***/ 485:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FormLayout2Module", function() { return FormLayout2Module; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WizardLayout1Module", function() { return WizardLayout1Module; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__form_layout_2__ = __webpack_require__(505);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__wizard_layout_1__ = __webpack_require__(507);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,36 +18,37 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var FormLayout2Module = /** @class */ (function () {
-    function FormLayout2Module() {
+var WizardLayout1Module = /** @class */ (function () {
+    function WizardLayout1Module() {
     }
-    FormLayout2Module = __decorate([
+    WizardLayout1Module = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__form_layout_2__["a" /* FormLayout2 */],
+                __WEBPACK_IMPORTED_MODULE_2__wizard_layout_1__["a" /* WizardLayout1 */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__form_layout_2__["a" /* FormLayout2 */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__wizard_layout_1__["a" /* WizardLayout1 */]),
             ],
             exports: [
-                __WEBPACK_IMPORTED_MODULE_2__form_layout_2__["a" /* FormLayout2 */]
+                __WEBPACK_IMPORTED_MODULE_2__wizard_layout_1__["a" /* WizardLayout1 */]
             ],
             schemas: [__WEBPACK_IMPORTED_MODULE_0__angular_core__["i" /* CUSTOM_ELEMENTS_SCHEMA */]]
         })
-    ], FormLayout2Module);
-    return FormLayout2Module;
+    ], WizardLayout1Module);
+    return WizardLayout1Module;
 }());
 
-//# sourceMappingURL=form-layout-2.module.js.map
+//# sourceMappingURL=wizard-layout-1.module.js.map
 
 /***/ }),
 
-/***/ 505:
+/***/ 507:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FormLayout2; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WizardLayout1; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(51);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -58,53 +59,65 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-var FormLayout2 = /** @class */ (function () {
-    function FormLayout2() {
+
+var WizardLayout1 = /** @class */ (function () {
+    function WizardLayout1() {
+        this.sliderOptions = { pager: true };
+        this.path = false;
+        this.prev = true;
+        this.next = true;
+        this.finish = true;
+        this.prev = false;
+        this.next = true;
+        this.finish = false;
     }
-    FormLayout2.prototype.onEvent = function (event, e) {
-        if (e) {
-            e.stopPropagation();
+    WizardLayout1.prototype.changeSlide = function (index) {
+        if (index > 0) {
+            this.slider.slideNext(300);
         }
+        else {
+            this.slider.slidePrev(300);
+        }
+    };
+    WizardLayout1.prototype.slideHasChanged = function (index) {
+        try {
+            this.prev = !this.slider.isBeginning();
+            this.next = this.slider.getActiveIndex() < (this.slider.length() - 1);
+            this.finish = this.slider.isEnd();
+        }
+        catch (e) { }
+    };
+    WizardLayout1.prototype.ngOnChanges = function (changes) {
+        this.data = changes['data'].currentValue;
+    };
+    WizardLayout1.prototype.onEvent = function (event) {
         if (this.events[event]) {
-            this.events[event](this.getItemData());
-            this.resetValue();
+            this.events[event]();
         }
+        console.log(event);
     };
-    FormLayout2.prototype.getItemData = function () {
-        return {
-            'description': this.description
-        };
-    };
-    FormLayout2.prototype.resetValue = function () {
-        this.description = "";
-    };
-    FormLayout2.prototype.onStarClass = function (items, index, e) {
-        for (var i = 0; i < items.length; i++) {
-            items[i].isActive = i <= index;
-        }
-        if (this.events['onRates']) {
-            this.events['onRates'](index);
-        }
-    };
-    ;
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
         __metadata("design:type", Object)
-    ], FormLayout2.prototype, "data", void 0);
+    ], WizardLayout1.prototype, "data", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
         __metadata("design:type", Object)
-    ], FormLayout2.prototype, "events", void 0);
-    FormLayout2 = __decorate([
+    ], WizardLayout1.prototype, "events", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])('wizardSlider'),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* Slides */])
+    ], WizardLayout1.prototype, "slider", void 0);
+    WizardLayout1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'form-layout-2',template:/*ion-inline-start:"C:\Users\Bender\Desktop\ionicapp\src\components\forms\layout-2\form.html"*/'<!-- Theme Form - Form + Write Reviev -->\n\n  <ion-content>\n\n    <ion-grid *ngIf="data != null">\n\n      <ion-row padding>\n\n        <ion-col col-12 text-center>\n\n          <span font-bold span-small>{{data.rateTitle}}</span>\n\n        </ion-col>\n\n        <ion-col col-12 text-center>\n\n            <ion-icon\n\n              *ngFor="let item of data.iconsStars;let i = index"\n\n              color="dark"\n\n              [name]="item.icon"\n\n              [ngClass]="{\'active\':item.isActive}"\n\n              (click)="onStarClass(data.iconsStars, i, $event)">\n\n            </ion-icon>\n\n        </ion-col>\n\n        <ion-col col-12 text-center>\n\n          <span font-bold span-small>{{data.title}}</span>\n\n        </ion-col>\n\n        <ion-col col-12 textarea>\n\n          <ion-item no-lines box-shadow>\n\n            <ion-textarea [placeholder]="data.descriptionPlaceholder" [(ngModel)]="description"></ion-textarea>\n\n          </ion-item>\n\n        </ion-col>\n\n        <ion-col col-12>\n\n          <button ion-button button-clear-outline round outline block text-capitalize (click)="onEvent(\'onSubmit\', $event)">\n\n          {{data.btnSubmit}}\n\n          </button>\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-grid>\n\n  </ion-content>\n\n'/*ion-inline-end:"C:\Users\Bender\Desktop\ionicapp\src\components\forms\layout-2\form.html"*/
+            selector: 'wizard-layout-1',template:/*ion-inline-start:"C:\Users\Bender\Desktop\ionicapp\src\components\wizard\layout-1\wizard.html"*/'<!--Theme Wizard Simple + icon-->\n\n<!--Content -->\n\n<ion-slides #wizardSlider (ionSlideDidChange)="slideHasChanged()" pager="true" *ngIf="data != null">\n\n    <ion-slide *ngFor="let item of data.items;">\n\n        <ion-icon icon-large>\n\n            <i class="icon {{item.iconSlider}}"></i>\n\n        </ion-icon>\n\n        <h1 wizard-title>{{item.title}}</h1>\n\n        <p wizard-body-text>{{item.description}}</p>\n\n    </ion-slide>\n\n</ion-slides>\n\n<!--Button section-->\n\n<div *ngIf="data != null">\n\n    <button ion-button button-clear clear float-left (click)="changeSlide(-1)" *ngIf="prev">\n\n        {{data.btnPrev}}\n\n    </button>\n\n    <button ion-button button-clear clear float-right (click)="changeSlide(1)" *ngIf="next">\n\n        {{data.btnNext}}\n\n    </button>\n\n    <button ion-button button-clear clear float-right (click)="onEvent(\'onFinish\')" *ngIf="finish">\n\n        {{data.btnFinish}}\n\n    </button>\n\n</div>\n\n'/*ion-inline-end:"C:\Users\Bender\Desktop\ionicapp\src\components\wizard\layout-1\wizard.html"*/
         }),
         __metadata("design:paramtypes", [])
-    ], FormLayout2);
-    return FormLayout2;
+    ], WizardLayout1);
+    return WizardLayout1;
 }());
 
-//# sourceMappingURL=form-layout-2.js.map
+//# sourceMappingURL=wizard-layout-1.js.map
 
 /***/ })
 

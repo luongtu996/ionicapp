@@ -1,14 +1,14 @@
 webpackJsonp([5],{
 
-/***/ 492:
+/***/ 496:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WizardLayout3Module", function() { return WizardLayout3Module; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TabPageModule", function() { return TabPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__wizard_layout_3__ = __webpack_require__(511);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tab__ = __webpack_require__(519);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,35 +18,31 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var WizardLayout3Module = /** @class */ (function () {
-    function WizardLayout3Module() {
+var TabPageModule = /** @class */ (function () {
+    function TabPageModule() {
     }
-    WizardLayout3Module = __decorate([
+    TabPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__wizard_layout_3__["a" /* WizardLayout3 */],
+                __WEBPACK_IMPORTED_MODULE_2__tab__["a" /* TabPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__wizard_layout_3__["a" /* WizardLayout3 */]),
-            ],
-            exports: [
-                __WEBPACK_IMPORTED_MODULE_2__wizard_layout_3__["a" /* WizardLayout3 */]
-            ],
-            schemas: [__WEBPACK_IMPORTED_MODULE_0__angular_core__["i" /* CUSTOM_ELEMENTS_SCHEMA */]]
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__tab__["a" /* TabPage */]),
+            ]
         })
-    ], WizardLayout3Module);
-    return WizardLayout3Module;
+    ], TabPageModule);
+    return TabPageModule;
 }());
 
-//# sourceMappingURL=wizard-layout-3.module.js.map
+//# sourceMappingURL=tab.module.js.map
 
 /***/ }),
 
-/***/ 511:
+/***/ 519:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WizardLayout3; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(51);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -60,55 +56,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-var WizardLayout3 = /** @class */ (function () {
-    function WizardLayout3() {
-        this.next = true;
-        this.finish = true;
-        this.next = true;
-        this.finish = false;
+/**
+ * Generated class for the TabPage tabs.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var TabPage = /** @class */ (function () {
+    function TabPage(navCtrl) {
+        this.navCtrl = navCtrl;
+        this.homeRoot = 'HomePage';
+        this.leaderboardRoot = 'Leaderboard';
+        this.reviewsRoot = 'ReviewsPage';
+        this.profileRoot = 'ProfilePage';
     }
-    WizardLayout3.prototype.changeSlide = function (index) {
-        if (index > 0) {
-            this.slider.slideNext(300);
-        }
-        else {
-            this.slider.slidePrev(300);
-        }
-    };
-    WizardLayout3.prototype.slideHasChanged = function (index) {
-        try {
-            this.next = this.slider.getActiveIndex() < (this.slider.length() - 1);
-            this.finish = this.slider.isEnd();
-        }
-        catch (e) { }
-    };
-    WizardLayout3.prototype.onEvent = function (event) {
-        if (this.events[event]) {
-            this.events[event]();
-        }
-    };
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
-        __metadata("design:type", Object)
-    ], WizardLayout3.prototype, "data", void 0);
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
-        __metadata("design:type", Object)
-    ], WizardLayout3.prototype, "events", void 0);
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])('wizardSlider'),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* Slides */])
-    ], WizardLayout3.prototype, "slider", void 0);
-    WizardLayout3 = __decorate([
+    TabPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'wizard-layout-3',template:/*ion-inline-start:"C:\Users\Bender\Desktop\ionicapp\src\components\wizard\layout-3\wizard.html"*/'<!--Theme Wizard Big Image -->\n\n\n\n  <button *ngIf="data != null" skip button-clear clear ion-button text-right>\n\n      {{data.btnSkip}}\n\n  </button>\n\n<!--- Wizard Content-->\n\n<ion-slides #wizardSlider (ionSlideDidChange)="slideHasChanged()" pager="true" *ngIf="data != null">\n\n    <ion-slide background-size *ngFor="let item of data.items;" [ngStyle]="{\'background-image\': \'url(\' + item.backgroundImage + \')\'}">\n\n        <div wizard-description text-left>\n\n            <h1 wizard-title>{{item.title}}</h1>\n\n            <h3 wizard-body-text>{{item.description}}</h3>\n\n        </div>\n\n    </ion-slide>\n\n</ion-slides>\n\n<!--Button section-->\n\n<div *ngIf="data != null">\n\n    <button navigation text-center button-clear clear ion-button (click)="changeSlide(1)" *ngIf="next">\n\n        {{data.btnNext}}\n\n    </button>\n\n    <button navigation button-clear clear ion-button (click)="onEvent(\'onFinish\')" *ngIf="finish">\n\n        {{data.btnFinish}}\n\n    </button>\n\n</div>\n\n'/*ion-inline-end:"C:\Users\Bender\Desktop\ionicapp\src\components\wizard\layout-3\wizard.html"*/
+            selector: 'page-tab',template:/*ion-inline-start:"C:\Users\Bender\Desktop\ionicapp\src\pages\tab\tab.html"*/'<ion-tabs >\n    <ion-tab [root]="homeRoot" tabTitle="Invite" tabIcon="paper-plane"></ion-tab>\n    <ion-tab [root]="leaderboardRoot" tabIcon="people"></ion-tab>\n    <ion-tab [root]="reviewsRoot" tabIcon="chatboxes"></ion-tab>\n    <ion-tab [root]="profileRoot" tabIcon="contact"></ion-tab>\n</ion-tabs>\n'/*ion-inline-end:"C:\Users\Bender\Desktop\ionicapp\src\pages\tab\tab.html"*/
         }),
-        __metadata("design:paramtypes", [])
-    ], WizardLayout3);
-    return WizardLayout3;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]])
+    ], TabPage);
+    return TabPage;
 }());
 
-//# sourceMappingURL=wizard-layout-3.js.map
+//# sourceMappingURL=tab.js.map
 
 /***/ })
 

@@ -1,14 +1,14 @@
 webpackJsonp([1],{
 
-/***/ 493:
+/***/ 495:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LeaderboardModule", function() { return LeaderboardModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(41);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__leaderboard__ = __webpack_require__(514);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__leaderboard__ = __webpack_require__(518);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_shared_module__ = __webpack_require__(500);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -75,7 +75,7 @@ var LeaderboardModule = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SharedModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ngx_avatar__ = __webpack_require__(501);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__directives_lm_mask_directive__ = __webpack_require__(504);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__directives_lm_strong_directive__ = __webpack_require__(505);
@@ -137,7 +137,7 @@ var SharedModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ts_md5_dist_md5___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_ts_md5_dist_md5__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(159);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common__ = __webpack_require__(45);
 
 
 
@@ -1888,7 +1888,7 @@ var LmStrongDirective = /** @class */ (function () {
 /* unused harmony export ɵa */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_tslib__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(30);
 
 
@@ -2949,17 +2949,17 @@ function _configFactory(initConfig, configValue) {
 
 /***/ }),
 
-/***/ 514:
+/***/ 518:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Leaderboard; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(41);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_services_http_http_service__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_loading_service__ = __webpack_require__(69);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_dashboard_service__ = __webpack_require__(294);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_toast_service__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_services_http_http_service__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_loading_service__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_dashboard_service__ = __webpack_require__(293);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_toast_service__ = __webpack_require__(93);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2978,13 +2978,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var Leaderboard = /** @class */ (function () {
     function Leaderboard(http, 
     // public authService:AuthService,
-    navParams, loadingService, menu, dashboardService, toast, navCtrl) {
+    navParams, loadingService, menu, dashboardService, toast) {
         this.http = http;
         this.loadingService = loadingService;
         this.menu = menu;
         this.dashboardService = dashboardService;
         this.toast = toast;
-        this.navCtrl = navCtrl;
         this.params = {};
         this.animateItems = [];
     }
@@ -3048,12 +3047,6 @@ var Leaderboard = /** @class */ (function () {
             });
         }
     };
-    Leaderboard.prototype.logout = function () {
-        this.navCtrl.push("Login", {
-            page: { "title": "Login Pages", "theme": "login", "icon": "icon-lock-open-outline", "listView": false, "component": "Login", "singlePage": true },
-            componentName: "Login"
-        });
-    };
     Leaderboard = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"C:\Users\Bender\Desktop\ionicapp\src\pages\leaderboard\leaderboard.html"*/'<!--Fist Screen-->\n\n<ion-header>\n\n    <ion-navbar>\n\n        <button ion-button menuToggle>\n\n            <ion-icon class="icon-menu" name="menu"></ion-icon>\n\n        </button>\n\n        <!---Title-->\n\n        <ion-title>2Step Reviews</ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n<!--Theme Appearance animation (Zoom In)-->\n\n<ion-content>\n\n    <h3 style="text-align: center">Leaderboard</h3>\n\n    <ion-item>\n\n        <ion-label>Start Date</ion-label>\n\n        <ion-datetime displayFormat="YYYY/MM/DD" [(ngModel)]="start" (ngModelChange)="changeDate($event)"></ion-datetime>\n\n    </ion-item>\n\n    <ion-item>\n\n        <ion-label>End Date</ion-label>\n\n        <ion-datetime displayFormat="YYYY/MM/DD" [(ngModel)]="end" (ngModelChange)="changeDate($event)"></ion-datetime>\n\n    </ion-item>\n\n    <ion-grid no-padding >\n\n        <ion-row>\n\n            <ion-col col-12>\n\n                <ion-list no-margin>\n\n                    <ion-item no-lines [ngClass]="{ \'zoom-in\': true }"  *ngFor="let item of animateItems; let i = index;"  >\n\n                        <ion-avatar item-start>\n\n                            <ngx-avatar name="{{ item.user }}"></ngx-avatar>\n\n                        </ion-avatar>\n\n                        <h2 item-title >{{item.user}}</h2>\n\n                        <h2 item-subtitle >Invites Sent {{ item.invites }}</h2>\n\n                        <h2 item-subtitle >Review {{ item.reviews }}</h2>\n\n                        <h2 item-subtitle >Success Rate {{ item.success_rate }}</h2>\n\n                    </ion-item>\n\n                </ion-list>\n\n            </ion-col>\n\n        </ion-row>\n\n    </ion-grid>\n\n</ion-content>\n\n<!-- Fab Button -->\n\n<!--<ion-fab #fab bottom right>-->\n\n    <!--<button button-ion-fab ion-fab>-->\n\n        <!--<ion-icon name="calendar"></ion-icon>-->\n\n    <!--</button>-->\n\n<!--</ion-fab>-->\n\n'/*ion-inline-end:"C:\Users\Bender\Desktop\ionicapp\src\pages\leaderboard\leaderboard.html"*/
         }),
@@ -3062,8 +3055,7 @@ var Leaderboard = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_3__services_loading_service__["a" /* LoadingService */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* MenuController */],
             __WEBPACK_IMPORTED_MODULE_4__services_dashboard_service__["a" /* DashboardService */],
-            __WEBPACK_IMPORTED_MODULE_5__services_toast_service__["a" /* ToastService */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]])
+            __WEBPACK_IMPORTED_MODULE_5__services_toast_service__["a" /* ToastService */]])
     ], Leaderboard);
     return Leaderboard;
 }());

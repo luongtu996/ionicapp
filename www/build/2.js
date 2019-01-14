@@ -7,8 +7,8 @@ webpackJsonp([2],{
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomePageModule", function() { return HomePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(41);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home__ = __webpack_require__(513);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home__ = __webpack_require__(514);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_shared_module__ = __webpack_require__(500);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -48,7 +48,7 @@ var HomePageModule = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SharedModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ngx_avatar__ = __webpack_require__(501);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__directives_lm_mask_directive__ = __webpack_require__(504);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__directives_lm_strong_directive__ = __webpack_require__(505);
@@ -110,7 +110,7 @@ var SharedModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ts_md5_dist_md5___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_ts_md5_dist_md5__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(159);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common__ = __webpack_require__(45);
 
 
 
@@ -1861,7 +1861,7 @@ var LmStrongDirective = /** @class */ (function () {
 /* unused harmony export ɵa */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_tslib__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(30);
 
 
@@ -2922,22 +2922,22 @@ function _configFactory(initConfig, configValue) {
 
 /***/ }),
 
-/***/ 513:
+/***/ 514:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(41);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_home_service__ = __webpack_require__(289);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_loading_service__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_home_service__ = __webpack_require__(160);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_loading_service__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_template_service__ = __webpack_require__(290);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__shared_services_auth_auth_service__ = __webpack_require__(291);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_template_service__ = __webpack_require__(289);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__shared_services_auth_auth_service__ = __webpack_require__(290);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_login_service__ = __webpack_require__(94);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_company_service__ = __webpack_require__(292);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_sms_service__ = __webpack_require__(293);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_toast_service__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_company_service__ = __webpack_require__(291);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_sms_service__ = __webpack_require__(292);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_toast_service__ = __webpack_require__(93);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2980,21 +2980,23 @@ var HomePage = /** @class */ (function () {
         });
     }
     HomePage.prototype.ionViewWillEnter = function () {
-        // this.authService.canActivate();
+        this.authService.canActivate();
     };
     HomePage.prototype.ngOnInit = function () {
         this.getCompanies();
     };
     HomePage.prototype.getCompanies = function () {
         var _this = this;
-        this.loadingService.show();
+        if (this.loadingService.loading.index == -1)
+            this.loadingService.show();
         this.companyService.list().subscribe(function (response) {
             _this.companies = response.data.results;
-            _this.loadingService.hide();
             if (_this.companies.length != 0) {
                 _this.company = _this.companies[0];
                 _this.selectCompany(_this.company);
             }
+            if (_this.loadingService.loading.index > -1)
+                _this.loadingService.hide();
             _this.getTemplates();
         }, function (error) {
             _this.toast.presentToast(error.error.error.message);
@@ -3008,9 +3010,11 @@ var HomePage = /** @class */ (function () {
     };
     HomePage.prototype.getTemplates = function () {
         var _this = this;
-        this.loadingService.show();
+        if (this.loadingService.loading.index == -1)
+            this.loadingService.show();
         this.templateService.list().subscribe(function (response) {
-            _this.loadingService.hide();
+            if (_this.loadingService.loading.index > -1)
+                _this.loadingService.hide();
             _this.templates = response.data.results;
             _this.templates.forEach(function (item) {
                 if (item.orden == 1)
@@ -3018,17 +3022,21 @@ var HomePage = /** @class */ (function () {
             });
         }, function (error) {
             _this.toast.presentToast(error.error.error.message);
-            _this.loadingService.hide();
+            console.log(error);
+            if (_this.loadingService.loading.index > -1)
+                _this.loadingService.hide();
         });
     };
     HomePage.prototype.onSubmit = function (formValue) {
         var _this = this;
-        this.loadingService.show();
+        if (this.loadingService.loading.index == -1)
+            this.loadingService.show();
         formValue.to = formValue.to.replace(/\D+/g, '');
         formValue.company_id = this.company['id'];
         formValue.to = "+1" + formValue.to;
         this.smsService.create(formValue).subscribe(function (response) {
-            _this.loadingService.hide();
+            if (_this.loadingService.loading.index > -1)
+                _this.loadingService.hide();
             _this.form.reset();
             _this.toast.presentToast("Invite Sent");
             _this.templates.forEach(function (item) {
@@ -3040,7 +3048,9 @@ var HomePage = /** @class */ (function () {
             if (formValue.to.includes("+1")) {
                 formValue.to = formValue.to.substr(2);
             }
-            _this.loadingService.hide();
+            if (_this.loadingService.loading.index > -1)
+                _this.loadingService.hide();
+            console.log(error);
         });
     };
     __decorate([
