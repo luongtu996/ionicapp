@@ -10,17 +10,16 @@ import { NgxMaskIonicModule } from "ngx-mask-ionic";
     CommonModule,
     AvatarModule,
     NgxMaskIonicModule.forRoot()
-
   ],
   declarations: [
       LmMaskDirective,
-      LmStrongDirective,
+      LmStrongDirective
   ],
   exports: [
     AvatarModule,
     LmMaskDirective,
     LmStrongDirective,
     NgxMaskIonicModule
-  ]
+  ],
 })
 export class SharedModule { }

@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { isNullOrUndefined, isUndefined } from "util";
-import { HttpClient, HttpHeaders, HttpRequest, HttpParams  } from '@angular/common/http';
+import { isUndefined } from "util";
+import { HttpClient, HttpHeaders, HttpParams  } from '@angular/common/http';
 
 @Injectable()
 export class HttpService {

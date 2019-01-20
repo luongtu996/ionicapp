@@ -1,12 +1,14 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { IonicPage, MenuController, Content,  NavController, NavParams, FabButton } from 'ionic-angular';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { IonicPage, NavParams, NavController } from 'ionic-angular';
 import { IService } from '../../services/IService';
 import { HttpService } from "../../shared/services/http/http.service";
 import { LoadingService } from "../../services/loading-service";
-import { HomePage } from "../home/home";
 import { DashboardService } from "../../services/dashboard.service";
 import { ToastService } from "../../services/toast-service";
 import { AuthService } from "../../shared/services/auth/auth.service";
+import {HomePage} from "../home/home";
+import {Login} from "../login/login";
+import {TabPage} from "../tab/tab";
 
 @IonicPage()
 @Component({
@@ -27,9 +29,9 @@ export class Leaderboard implements OnInit, AfterViewInit{
     constructor(
         protected http: HttpService,
         // public authService:AuthService,
+        public navCtrl: NavController,
         navParams: NavParams,
         private loadingService: LoadingService,
-        public menu: MenuController,
         public dashboardService:DashboardService,
         public toast: ToastService,
     ) {
@@ -48,14 +50,13 @@ export class Leaderboard implements OnInit, AfterViewInit{
     }
 
     getLeaderboard(){
-        if(this.loadingService.loading.index == -1)
-            this.loadingService.show();
+        this.loadingService.show();
+
         this.dashboardService.getStatsByLeaderboard().subscribe(
             (response) => {
                 this.leaderboards = response.data;
 
-                if(this.loadingService.loading.index > -1)
-                    this.loadingService.hide();
+                this.loadingService.hide();
 
                 let self = this;
                 for (let i = 0; i < this.leaderboards.length; i++) {
@@ -65,11 +66,8 @@ export class Leaderboard implements OnInit, AfterViewInit{
                 }
 
             },(error) => {
-                if(this.loadingService.loading.index > -1)
-                    this.loadingService.hide();
-                this.toast.presentToast(error.error.error.message);
                 this.loadingService.hide();
-                console.log(error);
+                this.toast.presentToast(error.error.error.message);
             }
         );
     }
@@ -77,14 +75,13 @@ export class Leaderboard implements OnInit, AfterViewInit{
 
     changeDate(item){
         if(this.start && this.end){
-            if(this.loadingService.loading.index == -1)
-                this.loadingService.show();
+            this.loadingService.show();
+
             this.dashboardService.getStatsByLeaderboardByRange(this.start, this.end).subscribe(
                 (response) => {
                     this.leaderboards = response.data;
 
-                    if(this.loadingService.loading.index > -1)
-                        this.loadingService.hide();
+                    this.loadingService.hide();
 
                     let self = this;
                     self.animateItems = [];
@@ -95,11 +92,23 @@ export class Leaderboard implements OnInit, AfterViewInit{
                     }
                 },(error) => {
                     this.toast.presentToast(error.error.error.message);
-                    if(this.loadingService.loading.index > -1)
-                        this.loadingService.hide();
-                    console.log(error);
+                    this.loadingService.hide();
                 }
             );
         }
+    }
+
+
+    probando(){
+        // this.navCtrl.setRoot(HomePage);
+        this.navCtrl.setRoot(HomePage, { tabIndex: 0 });
+
+        // this.tabRef.navCtrl.setRoot(HomePage);
+
+
+        // select(1, { animate: false });
+
+        // this.nav.setRoot(page.component, {tabIndex: 2});
+
     }
 }

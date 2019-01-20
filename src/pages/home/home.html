@@ -12,13 +12,14 @@
     </ion-navbar>
 </ion-header>
 <!-- Themes Login + logo -->
-<ion-content >
+<ion-content class="masters">
     <ion-grid>
         <ion-row wrap padding>
             <ion-col>
-                <h3 style="text-align: right">{{company?.name}}</h3>
+                <!--<h3 style="text-align: right">{{company?.name}}</h3>-->
                 <br>
-                <h3 style="text-align: center">Send A Review Invite</h3>
+                <!--<h3 style="text-align: center">Send A Review Invite</h3>-->
+                <div style="text-align: center" span-medium><b>Send A Review Invite</b></div>
                 <br>
                 <form  [formGroup]="form" (submit)="onSubmit(form.value)">
                     <!---Input field username-->
@@ -26,7 +27,7 @@
                         <ion-label class="lm-label">
                             <ion-icon name="person"></ion-icon>
                         </ion-label>
-                        <ion-input no-margin type="text" placeholder="Name" formControlName="name"></ion-input>
+                        <ion-input type="email" no-margin type="text" placeholder="Name" formControlName="name"></ion-input>
                     </ion-item>
                     <br>
                     <!---Input field password-->
@@ -34,7 +35,7 @@
                         <ion-label class="lm-label">
                             <ion-icon name="call"></ion-icon>
                         </ion-label>
-                        <ion-input mask="(000) 000-0000" no-margin type="text" placeholder="Phone Number" formControlName="to"></ion-input>
+                        <ion-input type="tel" mask="(000) 000-0000" no-margin type="text" placeholder="Phone Number" formControlName="to"></ion-input>
                     </ion-item>
                     <!---Input field password-->
                     <br>

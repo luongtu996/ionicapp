@@ -4009,16 +4009,6 @@ i {
 
 /* 33# Settings Input Field Section
 ================================================*/
-/* 34# Settings Tabs Section
-================================================*/
-[tabs-title] {
-  color: white;
-}
-
-[tabs-subtitle] {
-  color: white;
-}
-
 /* 35# Settings Search Bar Section
 ================================================*/
 /* 36# Settings Range Section
@@ -35059,7 +35049,7 @@ ion-spinner.spinner-paused svg {
   -ms-flex-pack: center;
   justify-content: center;
   border-top: 0.55px solid rgba(0, 0, 0, 0.3);
-  background: #2962ff;
+  background: #f8f8f8;
 }
 
 .tabs-ios[tabsPlacement=top] .tabbar {
@@ -35072,17 +35062,17 @@ ion-spinner.spinner-paused svg {
   min-height: 49px;
   font-size: 10px;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   padding: 0 2px;
 }
 
 .tabs-ios .tab-button:hover:not(.disable-hover),
 .tabs-ios .tab-button[aria-selected=true] {
-  color: white;
+  color: #0090d0;
 }
 
 .tabs-ios .tab-button[aria-selected=true] .tab-button-icon {
-  color: white;
+  color: #0090d0;
 }
 
 .tabs-ios .tab-button-text {
@@ -35101,7 +35091,7 @@ ion-spinner.spinner-paused svg {
   min-width: 35px;
   height: 30px;
   font-size: 30px;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
 }
 
 .tabs-ios .tab-button-icon::before {
@@ -35330,18 +35320,18 @@ ion-spinner.spinner-paused svg {
 }
 
 .tabs-md .tabbar {
-  background: #2962ff;
+  background: #f8f8f8;
 }
 
 .tabs-md .tab-button {
   min-height: 5.6rem;
   font-weight: normal;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(60, 60, 60, 0.7);
   padding: 0;
 }
 
 .tabs-md .tab-button[aria-selected=true] {
-  color: white;
+  color: #0090d0;
   padding: 0;
 }
 
@@ -35379,7 +35369,7 @@ ion-spinner.spinner-paused svg {
   margin-top: 1px;
   min-width: 2.4rem;
   font-size: 2.4rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(60, 60, 60, 0.7);
   -webkit-transition: -webkit-transform 0.3s ease-in-out;
   transition: -webkit-transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out;
@@ -35389,7 +35379,7 @@ ion-spinner.spinner-paused svg {
 }
 
 .tabs-md .tab-button[aria-selected=true] .tab-button-icon {
-  color: white;
+  color: #0090d0;
   -webkit-transform: translate3d(0,  -2px,  0);
   transform: translate3d(0,  -2px,  0);
 }
@@ -35651,7 +35641,7 @@ ion-spinner.spinner-paused svg {
 }
 
 .tabs-wp .tabbar {
-  background: #2962ff;
+  background: #f8f8f8;
 }
 
 .tabs-wp .tab-button {
@@ -53439,6 +53429,10 @@ page-home ion-navbar [buy] [defoult-button] {
   position: absolute;
   right: 5px;
   top: 5px;
+}
+
+.masters {
+  background-color: white;
 }
 
 ion-header ion-navbar [buy] .title-ios {

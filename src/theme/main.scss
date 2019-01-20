@@ -670,26 +670,26 @@ $label-ios-text-color: theme-colors('textColors', 'secondary') !important;
 //$text-input-ios-highlight-color-valid: theme-colors('textColors', 'secondary') !important;
 
 
-/* 34# Settings Tabs Section
-================================================*/
-$tabs-background: theme-colors('mainColors', 'primary');
-// Settings Search For Android
-$tabs-md-tab-icon-color: theme-colors('textColors', 'accent-first', 'opacity50');
-$tabs-md-tab-text-color: theme-colors('textColors', 'accent-first', 'opacity50');
-$tabs-md-tab-text-color-active: theme-colors('textColors', 'accent-first');
-$tabs-md-tab-icon-color-active: theme-colors('textColors', 'accent-first');
-// Settings Search For Ios
-$tabs-ios-tab-icon-color: theme-colors('textColors', 'accent-first', 'opacity50');
-$tabs-ios-tab-text-color: theme-colors('textColors', 'accent-first', 'opacity50');
-$tabs-ios-tab-text-color-active: theme-colors('textColors', 'accent-first');
-$tabs-ios-tab-icon-color-active: theme-colors('textColors', 'accent-first');
-
-[tabs-title] {
-  color: theme-colors('textColors', 'accent-first');
-}
-[tabs-subtitle] {
-  color: theme-colors('textColors', 'accent-first');
-}
+///* 34# Settings Tabs Section
+//================================================*/
+//$tabs-background: theme-colors('mainColors', 'primary');
+//// Settings Search For Android
+//$tabs-md-tab-icon-color: theme-colors('textColors', 'accent-first', 'opacity50');
+//$tabs-md-tab-text-color: theme-colors('textColors', 'accent-first', 'opacity50');
+//$tabs-md-tab-text-color-active: theme-colors('textColors', 'accent-first');
+//$tabs-md-tab-icon-color-active: theme-colors('textColors', 'accent-first');
+//// Settings Search For Ios
+//$tabs-ios-tab-icon-color: theme-colors('textColors', 'accent-first', 'opacity50');
+//$tabs-ios-tab-text-color: theme-colors('textColors', 'accent-first', 'opacity50');
+//$tabs-ios-tab-text-color-active: theme-colors('textColors', 'accent-first');
+//$tabs-ios-tab-icon-color-active: theme-colors('textColors', 'accent-first');
+//
+//[tabs-title] {
+//  color: theme-colors('textColors', 'accent-first');
+//}
+//[tabs-subtitle] {
+//  color: theme-colors('textColors', 'accent-first');
+//}
 
 
 /* 35# Settings Search Bar Section

@@ -1,6 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {IonicPage, NavController, Select} from 'ionic-angular';
-import { HomeService } from '../../services/home-service';
+import { IonicPage, NavController, Select, NavParams } from 'ionic-angular';
 import { LoadingService } from "../../services/loading-service";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { TemplateService } from "../../services/template.service";
@@ -8,19 +7,22 @@ import { AuthService } from "../../shared/services/auth/auth.service";
 import { LoginService } from "../../services/login-service";
 import { CompanyService } from "../../services/company.service";
 import { SmsService } from "../../services/sms.service";
-import {ToastService} from "../../services/toast-service";
+import { ToastService } from "../../services/toast-service";
+import { App } from 'ionic-angular';
 
 @IonicPage()
 @Component({
     selector: 'page-home',
     templateUrl: 'home.html',
-    providers: [HomeService, AuthService]
+    providers: [AuthService]
 
 })
 export class HomePage implements OnInit{
 
     data: any = {};
     isBuyButtonEnabled = false;
+
+    selectedTabIndex = this.navParams.get('tabIndex');
 
     public form: FormGroup;
     public templates:any[];
@@ -31,7 +33,7 @@ export class HomePage implements OnInit{
     @ViewChild('selectCompanies') selectModalCompanies: Select;
     constructor(
         public navCtrl: NavController,
-        public service: HomeService,
+        public navParams: NavParams,
         public fb: FormBuilder,
         private loadingService: LoadingService,
         public templateService:TemplateService,
@@ -39,7 +41,8 @@ export class HomePage implements OnInit{
         public loginService: LoginService,
         public companyService:CompanyService,
         public smsService:SmsService,
-        public toast: ToastService
+        public toast: ToastService,
+        private app: App
     ) {
 
 
@@ -60,8 +63,8 @@ export class HomePage implements OnInit{
     }
 
     getCompanies(){
-        if(this.loadingService.loading.index == -1)
-            this.loadingService.show();
+        this.loadingService.show();
+
         this.companyService.list().subscribe((response) => {
             this.companies = response.data.results;
 
@@ -69,15 +72,13 @@ export class HomePage implements OnInit{
                 this.company = this.companies[0];
                 this.selectCompany(this.company);
             }
-            if(this.loadingService.loading.index > -1)
-                this.loadingService.hide();
+
+            this.loadingService.hide();
 
             this.getTemplates();
         }, (error) => {
             this.toast.presentToast(error.error.error.message);
-            if(this.loadingService.loading.index > -1)
-                this.loadingService.hide();
-            console.log(error);
+            this.loadingService.hide();
         });
     }
 
@@ -86,11 +87,11 @@ export class HomePage implements OnInit{
     }
 
     getTemplates(){
-        if(this.loadingService.loading.index == -1)
-            this.loadingService.show();
+        this.loadingService.show();
+
         this.templateService.list().subscribe((response) => {
-            if(this.loadingService.loading.index > -1)
-                this.loadingService.hide();
+            this.loadingService.hide();
+
             this.templates = response.data.results;
             this.templates.forEach(item => {
                 if(item.orden == 1)
@@ -98,22 +99,19 @@ export class HomePage implements OnInit{
             });
         }, (error) => {
             this.toast.presentToast(error.error.error.message);
-            console.log(error);
-            if(this.loadingService.loading.index > -1)
-                this.loadingService.hide();
+            this.loadingService.hide();
         })
     }
 
     onSubmit(formValue: any) {
-        if(this.loadingService.loading.index == -1)
-            this.loadingService.show();
+        this.loadingService.show();
 
         formValue.to = formValue.to.replace(/\D+/g, '');
         formValue.company_id = this.company['id'];
         formValue.to = "+1" + formValue.to;
         this.smsService.create(formValue).subscribe((response) => {
-            if(this.loadingService.loading.index > -1)
-                this.loadingService.hide();
+            this.loadingService.hide();
+
             this.form.reset();
             this.toast.presentToast("Invite Sent");
             this.templates.forEach(item => {
@@ -125,9 +123,8 @@ export class HomePage implements OnInit{
             if (formValue.to.includes("+1")) {
                 formValue.to = formValue.to.substr(2);
             }
-            if(this.loadingService.loading.index > -1)
-                this.loadingService.hide();
-            console.log(error);
+
+            this.loadingService.hide();
         });
     }
 }

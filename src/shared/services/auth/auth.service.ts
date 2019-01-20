@@ -1,9 +1,10 @@
-import {Injectable, ViewChild} from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Observable } from "rxjs/Rx";
 import { LoginService } from "../../../services/login-service";
 import { NavController } from "ionic-angular";
 import { HttpService } from "../http/http.service";
 import { LoadingService } from "../../../services/loading-service";
+import { App } from 'ionic-angular';
 
 @Injectable()
 export class AuthService {
@@ -15,6 +16,7 @@ export class AuthService {
         public loginService: LoginService,
         public http:HttpService,
         public loadingService: LoadingService,
+        private app: App
     ) {
         this.isLoggedIn = true;
     }
@@ -27,12 +29,7 @@ export class AuthService {
     // every information related to a user
     logout() : void {
         this.isLoggedIn = false;
-
-        this.navCtrl.push("Login", {
-            service: this.loginService,
-            page: {"title" : "Login Pages", "theme"  : "login",  "icon" : "icon-lock-open-outline", "listView" : false, "component":"Login", "singlePage":true},
-            componentName: "Login"
-        });
+        this.app.getRootNavs()[0].setRoot("Login");
     }
 
     // Returns whether the user is currently authenticated

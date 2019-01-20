@@ -1,5 +1,5 @@
 import { NgModule, ErrorHandler, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import {IonicApp, IonicModule, IonicErrorHandler, NavController} from 'ionic-angular';
+import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
@@ -19,7 +19,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { Camera } from '@ionic-native/camera';
 import { LoginService } from "../services/login-service";
-import { HomeService } from "../services/home-service";
 import { Parameters } from "../../parameters";
 import { HttpService } from "../shared/services/http/http.service";
 import { TemplateService } from "../services/template.service";
@@ -29,8 +28,11 @@ import { SmsService } from "../services/sms.service";
 import { LeaderboardService } from "../services/leaderboard-service";
 import { DashboardService } from "../services/dashboard.service";
 
+
 @NgModule({
-    declarations: [MyApp],
+    declarations: [
+        MyApp
+    ],
     providers: [
         StatusBar,
         SplashScreen,
@@ -39,7 +41,6 @@ import { DashboardService } from "../services/dashboard.service";
         ToastService,
         LoadingService,
         LoginService,
-        HomeService,
         HttpService,
         TemplateService,
         AuthService,
@@ -55,10 +56,12 @@ import { DashboardService } from "../services/dashboard.service";
         HttpModule, HttpClientModule,
         AngularFireModule.initializeApp(AppSettings.FIREBASE_CONFIG),
         AngularFireDatabaseModule, AngularFireAuthModule,
-        IonicModule.forRoot(MyApp),
+        IonicModule.forRoot(MyApp)
     ],
     bootstrap: [IonicApp],
-    entryComponents: [MyApp],
+    entryComponents: [
+        MyApp
+    ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 
