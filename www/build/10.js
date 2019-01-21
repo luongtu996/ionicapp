@@ -1,14 +1,14 @@
 webpackJsonp([10],{
 
-/***/ 622:
+/***/ 626:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WizardLayout1Module", function() { return WizardLayout1Module; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FormLayout4Module", function() { return FormLayout4Module; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__wizard_layout_1__ = __webpack_require__(644);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__form_layout_4__ = __webpack_require__(647);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,37 +18,38 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var WizardLayout1Module = /** @class */ (function () {
-    function WizardLayout1Module() {
+var FormLayout4Module = /** @class */ (function () {
+    function FormLayout4Module() {
     }
-    WizardLayout1Module = __decorate([
+    FormLayout4Module = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__wizard_layout_1__["a" /* WizardLayout1 */],
+                __WEBPACK_IMPORTED_MODULE_2__form_layout_4__["a" /* FormLayout4 */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_2__wizard_layout_1__["a" /* WizardLayout1 */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_2__form_layout_4__["a" /* FormLayout4 */]),
             ],
             exports: [
-                __WEBPACK_IMPORTED_MODULE_2__wizard_layout_1__["a" /* WizardLayout1 */]
+                __WEBPACK_IMPORTED_MODULE_2__form_layout_4__["a" /* FormLayout4 */]
             ],
             schemas: [__WEBPACK_IMPORTED_MODULE_0__angular_core__["CUSTOM_ELEMENTS_SCHEMA"]]
         })
-    ], WizardLayout1Module);
-    return WizardLayout1Module;
+    ], FormLayout4Module);
+    return FormLayout4Module;
 }());
 
-//# sourceMappingURL=wizard-layout-1.module.js.map
+//# sourceMappingURL=form-layout-4.module.js.map
 
 /***/ }),
 
-/***/ 644:
+/***/ 647:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WizardLayout1; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FormLayout4; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__ = __webpack_require__(419);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -60,64 +61,80 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-var WizardLayout1 = /** @class */ (function () {
-    function WizardLayout1() {
-        this.sliderOptions = { pager: true };
-        this.path = false;
-        this.prev = true;
-        this.next = true;
-        this.finish = true;
-        this.prev = false;
-        this.next = true;
-        this.finish = false;
+
+var FormLayout4 = /** @class */ (function () {
+    function FormLayout4(camera, alertCtrl) {
+        this.camera = camera;
+        this.alertCtrl = alertCtrl;
+        this.options = {
+            quality: 100,
+            destinationType: this.camera.DestinationType.FILE_URI,
+            encodingType: this.camera.EncodingType.JPEG,
+            mediaType: this.camera.MediaType.PICTURE,
+            correctOrientation: true,
+            saveToPhotoAlbum: true,
+        };
+        this.item = {
+            'description': '',
+            'stars': 1,
+            'imageUrl': ''
+        };
     }
-    WizardLayout1.prototype.changeSlide = function (index) {
-        if (index > 0) {
-            this.slider.slideNext(300);
-        }
-        else {
-            this.slider.slidePrev(300);
-        }
+    FormLayout4.prototype.onAddVideoPhoto = function () {
+        var _this = this;
+        this.camera.getPicture(this.options).then(function (imageData) {
+            _this.item.imageUrl = window.Ionic.WebView.convertFileSrc(imageData);
+        }, function (err) {
+            _this.displayErrorAlert(err);
+        });
     };
-    WizardLayout1.prototype.slideHasChanged = function (index) {
-        try {
-            this.prev = !this.slider.isBeginning();
-            this.next = this.slider.getActiveIndex() < (this.slider.length() - 1);
-            this.finish = this.slider.isEnd();
+    ;
+    FormLayout4.prototype.displayErrorAlert = function (err) {
+        console.log(err);
+        var alert = this.alertCtrl.create({
+            title: 'Error',
+            subTitle: 'Error while trying to capture picture',
+            buttons: ['OK']
+        });
+        alert.present();
+    };
+    FormLayout4.prototype.onEvent = function (event, e, index) {
+        if (e) {
+            e.stopPropagation();
         }
-        catch (e) { }
-    };
-    WizardLayout1.prototype.ngOnChanges = function (changes) {
-        this.data = changes['data'].currentValue;
-    };
-    WizardLayout1.prototype.onEvent = function (event) {
         if (this.events[event]) {
-            this.events[event]();
+            this.events[event](this.item);
         }
-        console.log(event);
     };
+    FormLayout4.prototype.onStarClass = function (items, index, e) {
+        this.item.stars = index;
+        for (var i = 0; i < items.length; i++) {
+            items[i].isActive = i <= index;
+        }
+        if (this.events['onRates']) {
+            this.events['onRates'](index);
+        }
+    };
+    ;
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object)
-    ], WizardLayout1.prototype, "data", void 0);
+    ], FormLayout4.prototype, "data", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object)
-    ], WizardLayout1.prototype, "events", void 0);
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('wizardSlider'),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["Slides"])
-    ], WizardLayout1.prototype, "slider", void 0);
-    WizardLayout1 = __decorate([
+    ], FormLayout4.prototype, "events", void 0);
+    FormLayout4 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'wizard-layout-1',template:/*ion-inline-start:"C:\Users\Bender\Desktop\ionicapp\src\components\wizard\layout-1\wizard.html"*/'<!--Theme Wizard Simple + icon-->\n\n<!--Content -->\n\n<ion-slides #wizardSlider (ionSlideDidChange)="slideHasChanged()" pager="true" *ngIf="data != null">\n\n    <ion-slide *ngFor="let item of data.items;">\n\n        <ion-icon icon-large>\n\n            <i class="icon {{item.iconSlider}}"></i>\n\n        </ion-icon>\n\n        <h1 wizard-title>{{item.title}}</h1>\n\n        <p wizard-body-text>{{item.description}}</p>\n\n    </ion-slide>\n\n</ion-slides>\n\n<!--Button section-->\n\n<div *ngIf="data != null">\n\n    <button ion-button button-clear clear float-left (click)="changeSlide(-1)" *ngIf="prev">\n\n        {{data.btnPrev}}\n\n    </button>\n\n    <button ion-button button-clear clear float-right (click)="changeSlide(1)" *ngIf="next">\n\n        {{data.btnNext}}\n\n    </button>\n\n    <button ion-button button-clear clear float-right (click)="onEvent(\'onFinish\')" *ngIf="finish">\n\n        {{data.btnFinish}}\n\n    </button>\n\n</div>\n\n'/*ion-inline-end:"C:\Users\Bender\Desktop\ionicapp\src\components\wizard\layout-1\wizard.html"*/
+            selector: 'form-layout-4',template:/*ion-inline-start:"C:\Users\Bender\Desktop\ionicapp\src\components\forms\layout-4\form.html"*/'<!--  Theme Form - Form add Photo Or Video -->\n\n  <ion-content>\n\n    <ion-grid *ngIf="data != null">\n\n      <ion-row padding>\n\n        <ion-col col-12 text-center>\n\n          <span span-small>{{data.rateTitle}}</span>\n\n        </ion-col>\n\n        <ion-col col-12 text-center>\n\n            <ion-icon\n\n              *ngFor="let item of data.iconsStars;let i = index"\n\n              color="accent"\n\n              [name]="item.icon"\n\n              [ngClass]="{\'active\':item.isActive}"\n\n              (click)="onStarClass(data.iconsStars, i, $event)">\n\n            </ion-icon>\n\n        </ion-col>\n\n        <ion-col col-12 text-center>\n\n          <span span-small>{{data.title}}</span>\n\n        </ion-col>\n\n        <ion-col col-12 textarea>\n\n          <ion-item no-lines>\n\n            <ion-textarea [placeholder]="data.descriptionPlaceholder" [(ngModel)]="item.description"></ion-textarea>\n\n          </ion-item>\n\n        </ion-col>\n\n        <ion-col col-12>\n\n          <div *ngIf="item.imageUrl" background-size [ngStyle]="{\'background-image\': \'url(\' + item.imageUrl + \')\'}"></div>\n\n        </ion-col>\n\n        <ion-col col-12>\n\n          <button ion-button button-clear-outline round outline block text-capitalize (click)="onAddVideoPhoto()">\n\n            {{data.btnAddPhotoOrVideo}}\n\n          </button>\n\n        </ion-col>\n\n        <ion-col col-12>\n\n          <button ion-button button-clear-outline round outline block text-capitalize (click)="onEvent(\'onSubmit\', $event)">\n\n            {{data.btnSubmit}}\n\n          </button>\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-grid>\n\n  </ion-content>\n\n'/*ion-inline-end:"C:\Users\Bender\Desktop\ionicapp\src\components\forms\layout-4\form.html"*/
         }),
-        __metadata("design:paramtypes", [])
-    ], WizardLayout1);
-    return WizardLayout1;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__["a" /* Camera */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["AlertController"]])
+    ], FormLayout4);
+    return FormLayout4;
 }());
 
-//# sourceMappingURL=wizard-layout-1.js.map
+//# sourceMappingURL=form-layout-4.js.map
 
 /***/ })
 
