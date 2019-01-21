@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Platform, MenuController, ModalController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { TabPage } from "../pages/tab/tab";
 
 @Component({
     templateUrl: 'app.html'

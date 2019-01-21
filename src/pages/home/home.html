@@ -13,13 +13,14 @@
 </ion-header>
 <!-- Themes Login + logo -->
 <ion-content class="masters">
+    <br>
+    <ion-col col-12 padding-top>
+        <span font-bold span-medium padding-left>Send A Review Invite</span>
+    </ion-col>
     <ion-grid>
         <ion-row wrap padding>
             <ion-col>
-                <!--<h3 style="text-align: right">{{company?.name}}</h3>-->
                 <br>
-                <!--<h3 style="text-align: center">Send A Review Invite</h3>-->
-                <div style="text-align: center" span-medium><b>Send A Review Invite</b></div>
                 <br>
                 <form  [formGroup]="form" (submit)="onSubmit(form.value)">
                     <!---Input field username-->

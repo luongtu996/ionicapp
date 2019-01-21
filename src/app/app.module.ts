@@ -28,6 +28,7 @@ import { SmsService } from "../services/sms.service";
 import { LeaderboardService } from "../services/leaderboard-service";
 import { DashboardService } from "../services/dashboard.service";
 import { CalendarModule } from "ion2-calendar";
+import { UsuarioService } from "../services/usuario.service";
 
 
 @NgModule({
@@ -49,6 +50,7 @@ import { CalendarModule } from "ion2-calendar";
         SmsService,
         LeaderboardService,
         DashboardService,
+        UsuarioService,
         { provide: ErrorHandler, useClass: IonicErrorHandler },
         { provide: 'Parameters', useClass: Parameters },
     ],

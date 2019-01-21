@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from "rxjs/Rx";
 import { LoginService } from "../../../services/login-service";
-import { NavController } from "ionic-angular";
 import { HttpService } from "../http/http.service";
 import { LoadingService } from "../../../services/loading-service";
 import { App } from 'ionic-angular';
@@ -12,7 +11,6 @@ export class AuthService {
     private isLoggedIn = false;
 
     constructor(
-        public navCtrl: NavController,
         public loginService: LoginService,
         public http:HttpService,
         public loadingService: LoadingService,
@@ -29,13 +27,15 @@ export class AuthService {
     // every information related to a user
     logout() : void {
         this.isLoggedIn = false;
+        localStorage.removeItem('access_token');
+        localStorage.removeItem('refresh_token');
+        localStorage.removeItem('expires_date');
         this.app.getRootNavs()[0].setRoot("Login");
     }
 
     // Returns whether the user is currently authenticated
     // Could check if current token is still valid
     authenticated() : Observable<boolean> | Promise<boolean> | boolean {
-
         return this.isLoggedIn;
     }
 

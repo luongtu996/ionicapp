@@ -1,18 +1,35 @@
-<!--
-  Generated template for the ProfilePage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
+<!--Fist Screen-->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>profile</ion-title>
+    <!---Title-->
+    <ion-title>2Step Reviews</ion-title>
   </ion-navbar>
-
 </ion-header>
+<!--Theme Appearance animation (Zoom In)-->
+<ion-content>
+  <br>
+  <ion-col col-12 padding-top>
+    <span font-bold span-medium padding-left>Profile</span>
+  </ion-col>
+  <ion-grid no-padding >
+    <ion-col col-12 padding-top *ngIf="!usuario">
+      <span font-bold span-small="" padding-left>No results found</span>
+    </ion-col>
 
+    <ion-col col-12 *ngIf="usuario">
+      <ion-card padding box-shadow>
+        <ion-avatar>
+          <img [src]="usuario?.avatar?.web_url" alt="">
+        </ion-avatar>
+        <ion-card-content text-center>
+          <h1>{{ usuario?.nombre }}</h1>
+          <p>{{ usuario?.email }}</p>
+        </ion-card-content>
 
-<ion-content padding>
+        <br>
+        <button ion-button full (click)="logout()" color="danger">Logout</button>
+      </ion-card>
 
+    </ion-col>
+  </ion-grid>
 </ion-content>

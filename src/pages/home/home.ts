@@ -8,7 +8,6 @@ import { LoginService } from "../../services/login-service";
 import { CompanyService } from "../../services/company.service";
 import { SmsService } from "../../services/sms.service";
 import { ToastService } from "../../services/toast-service";
-import { App } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -21,8 +20,6 @@ export class HomePage implements OnInit{
 
     data: any = {};
     isBuyButtonEnabled = false;
-
-    selectedTabIndex = this.navParams.get('tabIndex');
 
     public form: FormGroup;
     public templates:any[];
@@ -42,10 +39,7 @@ export class HomePage implements OnInit{
         public companyService:CompanyService,
         public smsService:SmsService,
         public toast: ToastService,
-        private app: App
     ) {
-
-
         this.form = fb.group({
             'body': ['', Validators.required],
             'name': ['', Validators.required],

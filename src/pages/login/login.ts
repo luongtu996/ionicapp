@@ -1,10 +1,8 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { IonicPage, MenuController, NavController, NavParams } from 'ionic-angular';
-import { IService } from '../../services/IService';
+import { Component, OnInit } from '@angular/core';
+import { IonicPage, MenuController, NavController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpService } from "../../shared/services/http/http.service";
 import { LoadingService } from "../../services/loading-service";
-import { HomePage } from "../home/home";
 import { ToastService } from "../../services/toast-service";
 
 @IonicPage()
@@ -12,17 +10,11 @@ import { ToastService } from "../../services/toast-service";
     templateUrl: 'login.html'
 })
 export class Login implements OnInit{
-
-    page: any;
-    service: IService;
-    params: any = {};
-
     public loginForm: FormGroup;
 
     constructor(
         protected http: HttpService,
         public navCtrl: NavController,
-        navParams: NavParams,
         public fb: FormBuilder,
         private loadingService: LoadingService,
         public menu: MenuController,
@@ -39,7 +31,7 @@ export class Login implements OnInit{
     }
 
     ngOnInit(){
-        // this.loginForm.controls.domain.setValue(localStorage.getItem('domain'));
+        this.loginForm.controls.domain.setValue(localStorage.getItem('domain'));
     }
 
     onSubmit(formValue: any) {

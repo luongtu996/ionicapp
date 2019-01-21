@@ -7,10 +7,10 @@ webpackJsonp([1],{
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LeaderboardModule", function() { return LeaderboardModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__leaderboard__ = __webpack_require__(655);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__leaderboard__ = __webpack_require__(654);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_shared_module__ = __webpack_require__(636);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_shared_module__ = __webpack_require__(637);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -70,17 +70,17 @@ var LeaderboardModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 636:
+/***/ 637:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SharedModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ngx_avatar__ = __webpack_require__(637);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__directives_lm_mask_directive__ = __webpack_require__(640);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__directives_lm_strong_directive__ = __webpack_require__(641);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ngx_mask_ionic__ = __webpack_require__(642);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ngx_avatar__ = __webpack_require__(638);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__directives_lm_mask_directive__ = __webpack_require__(641);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__directives_lm_strong_directive__ = __webpack_require__(642);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ngx_mask_ionic__ = __webpack_require__(643);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -122,7 +122,7 @@ var SharedModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 637:
+/***/ 638:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -132,9 +132,9 @@ var SharedModule = /** @class */ (function () {
 /* unused harmony export ɵc */
 /* unused harmony export ɵb */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_is_retina__ = __webpack_require__(638);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_is_retina__ = __webpack_require__(639);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_is_retina___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_is_retina__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ts_md5_dist_md5__ = __webpack_require__(639);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ts_md5_dist_md5__ = __webpack_require__(640);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ts_md5_dist_md5___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_ts_md5_dist_md5__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(161);
@@ -1312,7 +1312,7 @@ var AvatarModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 638:
+/***/ 639:
 /***/ (function(module, exports) {
 
 module.exports = function() {
@@ -1332,7 +1332,7 @@ module.exports = function() {
 
 /***/ }),
 
-/***/ 639:
+/***/ 640:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1741,7 +1741,7 @@ if (Md5.hashStr('hello') !== '5d41402abc4b2a76b9719d911017c592') {
 
 /***/ }),
 
-/***/ 640:
+/***/ 641:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1823,7 +1823,7 @@ var LmMaskDirective = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 641:
+/***/ 642:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1873,7 +1873,7 @@ var LmStrongDirective = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 642:
+/***/ 643:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2950,19 +2950,20 @@ function _configFactory(initConfig, configValue) {
 
 /***/ }),
 
-/***/ 655:
+/***/ 654:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Leaderboard; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_services_http_http_service__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_loading_service__ = __webpack_require__(71);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_dashboard_service__ = __webpack_require__(424);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_toast_service__ = __webpack_require__(93);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ion2_calendar__ = __webpack_require__(425);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ion2_calendar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_ion2_calendar__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_services_http_http_service__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_loading_service__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_dashboard_service__ = __webpack_require__(424);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_toast_service__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_services_auth_auth_service__ = __webpack_require__(419);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ionic_angular__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_ion2_calendar__ = __webpack_require__(425);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_ion2_calendar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_ion2_calendar__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2981,11 +2982,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var Leaderboard = /** @class */ (function () {
-    function Leaderboard(http, 
-    // public authService:AuthService,
-    navCtrl, navParams, loadingService, dashboardService, toast, modalCtrl) {
+    function Leaderboard(http, authService, loadingService, dashboardService, toast, modalCtrl) {
         this.http = http;
-        this.navCtrl = navCtrl;
+        this.authService = authService;
         this.loadingService = loadingService;
         this.dashboardService = dashboardService;
         this.toast = toast;
@@ -2993,7 +2992,7 @@ var Leaderboard = /** @class */ (function () {
         this.animateItems = [];
     }
     Leaderboard.prototype.ionViewWillEnter = function () {
-        // this.authService.canActivate();
+        this.authService.canActivate();
     };
     Leaderboard.prototype.ngOnInit = function () {
         this.getLeaderboard();
@@ -3026,7 +3025,7 @@ var Leaderboard = /** @class */ (function () {
             color: '#2962ff',
             canBackwardsSelected: true
         };
-        var myCalendar = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_6_ion2_calendar__["CalendarModal"], {
+        var myCalendar = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_7_ion2_calendar__["CalendarModal"], {
             options: options
         });
         myCalendar.present();
@@ -3056,15 +3055,14 @@ var Leaderboard = /** @class */ (function () {
         });
     };
     Leaderboard = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"C:\Users\Bender\Desktop\ionicapp\src\pages\leaderboard\leaderboard.html"*/'<!--Fist Screen-->\n\n<ion-header>\n\n    <ion-navbar>\n\n        <button ion-button menuToggle>\n\n            <ion-icon class="icon-menu" name="menu"></ion-icon>\n\n        </button>\n\n        <!---Title-->\n\n        <ion-title>2Step Reviews</ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n<!--Theme Appearance animation (Zoom In)-->\n\n<ion-content>\n\n    <h3 style="text-align: center">Leaderboard</h3>\n\n    <ion-grid no-padding >\n\n        <ion-row>\n\n            <ion-col col-12>\n\n                <ion-list no-margin>\n\n                    <ion-item no-lines [ngClass]="{ \'zoom-in\': true }"  *ngFor="let item of animateItems; let i = index;"  >\n\n                        <ion-avatar item-start>\n\n                            <ngx-avatar name="{{ item.user }}"></ngx-avatar>\n\n                        </ion-avatar>\n\n                        <h2 item-title >{{item.user}}</h2>\n\n                        <h2 item-subtitle >Invites Sent {{ item.invites }}</h2>\n\n                        <h2 item-subtitle >Review {{ item.reviews }}</h2>\n\n                        <h2 item-subtitle >Success Rate {{ item.success_rate }}</h2>\n\n                    </ion-item>\n\n                </ion-list>\n\n            </ion-col>\n\n        </ion-row>\n\n    </ion-grid>\n\n</ion-content>\n\n<!-- Fab Button -->\n\n<ion-fab #fab bottom right>\n\n    <button button-ion-fab ion-fab style="position : absolute; bottom: 70px; right : 20px;" (click)="range()">\n\n        <ion-icon name="calendar"></ion-icon>\n\n    </button>\n\n</ion-fab>\n\n'/*ion-inline-end:"C:\Users\Bender\Desktop\ionicapp\src\pages\leaderboard\leaderboard.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"C:\Users\Bender\Desktop\ionicapp\src\pages\leaderboard\leaderboard.html"*/'<!--Fist Screen-->\n\n<ion-header>\n\n    <ion-navbar>\n\n        <!---Title-->\n\n        <ion-title>2Step Reviews</ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n<!--Theme Appearance animation (Zoom In)-->\n\n<ion-content>\n\n    <br>\n\n    <ion-col col-12 padding-top>\n\n        <span font-bold span-medium padding-left>Leaderboard</span>\n\n    </ion-col>\n\n    <ion-grid no-padding >\n\n        <ion-col col-12 padding-top *ngIf="!animateItems?.length">\n\n            <span font-bold span-small="" padding-left>No results found</span>\n\n        </ion-col>\n\n\n\n        <ion-col col-12>\n\n            <ion-list>\n\n                <ion-item box-shadow margin-top no-lines *ngFor="let item of animateItems; let i = index;" [ngClass]="{ \'zoom-in\': true }">\n\n                    <!-- Avatar -->\n\n                    <ion-avatar item-start>\n\n                        <!--<img [src]="item.image">-->\n\n                        <ngx-avatar name="{{ item.user }}"></ngx-avatar>\n\n                    </ion-avatar>\n\n                    <!-- Title -->\n\n                    <h2 item-title>{{ item.user }}</h2>\n\n                    <h3 text-wrap margin-top>\n\n                        Invites Sent {{ item.invites }}\n\n                    </h3>\n\n                    <h3 text-wrap >\n\n                        Success Rate {{ item.success_rate }}\n\n                    </h3>\n\n                    <h3 text-wrap >\n\n                        Review {{ item.reviews }}\n\n                    </h3>\n\n                </ion-item>\n\n            </ion-list>\n\n        </ion-col>\n\n    </ion-grid>\n\n</ion-content>\n\n<!-- Fab Button -->\n\n<ion-fab #fab bottom right>\n\n    <button button-ion-fab ion-fab style="position : absolute; bottom: 70px; right : 20px;" (click)="range()">\n\n        <ion-icon name="calendar"></ion-icon>\n\n    </button>\n\n</ion-fab>\n\n'/*ion-inline-end:"C:\Users\Bender\Desktop\ionicapp\src\pages\leaderboard\leaderboard.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__shared_services_http_http_service__["a" /* HttpService */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"],
-            __WEBPACK_IMPORTED_MODULE_3__services_loading_service__["a" /* LoadingService */],
-            __WEBPACK_IMPORTED_MODULE_4__services_dashboard_service__["a" /* DashboardService */],
-            __WEBPACK_IMPORTED_MODULE_5__services_toast_service__["a" /* ToastService */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["ModalController"]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__shared_services_http_http_service__["a" /* HttpService */],
+            __WEBPACK_IMPORTED_MODULE_5__shared_services_auth_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_2__services_loading_service__["a" /* LoadingService */],
+            __WEBPACK_IMPORTED_MODULE_3__services_dashboard_service__["a" /* DashboardService */],
+            __WEBPACK_IMPORTED_MODULE_4__services_toast_service__["a" /* ToastService */],
+            __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["ModalController"]])
     ], Leaderboard);
     return Leaderboard;
 }());

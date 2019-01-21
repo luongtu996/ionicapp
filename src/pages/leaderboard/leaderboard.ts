@@ -1,5 +1,5 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { IonicPage, NavParams, NavController } from 'ionic-angular';
+import { Component, OnInit } from '@angular/core';
+import { IonicPage } from 'ionic-angular';
 import { HttpService } from "../../shared/services/http/http.service";
 import { LoadingService } from "../../services/loading-service";
 import { DashboardService } from "../../services/dashboard.service";
@@ -8,7 +8,7 @@ import { AuthService } from "../../shared/services/auth/auth.service";
 
 
 import { ModalController } from 'ionic-angular';
-import { CalendarModal, CalendarModalOptions, DayConfig, CalendarResult } from "ion2-calendar";
+import { CalendarModal, CalendarModalOptions, CalendarResult } from "ion2-calendar";
 
 @IonicPage()
 @Component({
@@ -21,9 +21,7 @@ export class Leaderboard implements OnInit{
 
     constructor(
         protected http: HttpService,
-        // public authService:AuthService,
-        public navCtrl: NavController,
-        navParams: NavParams,
+        public authService:AuthService,
         private loadingService: LoadingService,
         public dashboardService:DashboardService,
         public toast: ToastService,
@@ -33,7 +31,7 @@ export class Leaderboard implements OnInit{
     }
 
     ionViewWillEnter () {
-        // this.authService.canActivate();
+        this.authService.canActivate();
     }
 
     ngOnInit(){

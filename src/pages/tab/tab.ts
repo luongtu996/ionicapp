@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
-import { HomePage } from "../home/home";
 
 @IonicPage()
 @Component({
@@ -8,7 +7,6 @@ import { HomePage } from "../home/home";
   templateUrl: 'tab.html'
 })
 export class TabPage {
-
 
   homeRoot = 'HomePage';
   leaderboardRoot = 'Leaderboard';

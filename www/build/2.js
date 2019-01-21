@@ -1,15 +1,15 @@
 webpackJsonp([2],{
 
-/***/ 629:
+/***/ 628:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomePageModule", function() { return HomePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home__ = __webpack_require__(650);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_shared_module__ = __webpack_require__(636);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home__ = __webpack_require__(649);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_shared_module__ = __webpack_require__(637);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -42,17 +42,17 @@ var HomePageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 636:
+/***/ 637:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SharedModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ngx_avatar__ = __webpack_require__(637);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__directives_lm_mask_directive__ = __webpack_require__(640);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__directives_lm_strong_directive__ = __webpack_require__(641);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ngx_mask_ionic__ = __webpack_require__(642);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ngx_avatar__ = __webpack_require__(638);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__directives_lm_mask_directive__ = __webpack_require__(641);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__directives_lm_strong_directive__ = __webpack_require__(642);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ngx_mask_ionic__ = __webpack_require__(643);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -94,7 +94,7 @@ var SharedModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 637:
+/***/ 638:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -104,9 +104,9 @@ var SharedModule = /** @class */ (function () {
 /* unused harmony export ɵc */
 /* unused harmony export ɵb */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_is_retina__ = __webpack_require__(638);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_is_retina__ = __webpack_require__(639);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_is_retina___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_is_retina__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ts_md5_dist_md5__ = __webpack_require__(639);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ts_md5_dist_md5__ = __webpack_require__(640);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ts_md5_dist_md5___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_ts_md5_dist_md5__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(161);
@@ -1284,7 +1284,7 @@ var AvatarModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 638:
+/***/ 639:
 /***/ (function(module, exports) {
 
 module.exports = function() {
@@ -1304,7 +1304,7 @@ module.exports = function() {
 
 /***/ }),
 
-/***/ 639:
+/***/ 640:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1713,7 +1713,7 @@ if (Md5.hashStr('hello') !== '5d41402abc4b2a76b9719d911017c592') {
 
 /***/ }),
 
-/***/ 640:
+/***/ 641:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1795,7 +1795,7 @@ var LmMaskDirective = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 641:
+/***/ 642:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1845,7 +1845,7 @@ var LmStrongDirective = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 642:
+/***/ 643:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2922,17 +2922,17 @@ function _configFactory(initConfig, configValue) {
 
 /***/ }),
 
-/***/ 650:
+/***/ 649:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_loading_service__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_loading_service__ = __webpack_require__(72);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_template_service__ = __webpack_require__(420);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_services_auth_auth_service__ = __webpack_require__(421);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_template_service__ = __webpack_require__(421);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_services_auth_auth_service__ = __webpack_require__(419);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_login_service__ = __webpack_require__(164);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_company_service__ = __webpack_require__(422);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_sms_service__ = __webpack_require__(423);
@@ -2956,9 +2956,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 var HomePage = /** @class */ (function () {
-    function HomePage(navCtrl, navParams, fb, loadingService, templateService, authService, loginService, companyService, smsService, toast, app) {
+    function HomePage(navCtrl, navParams, fb, loadingService, templateService, authService, loginService, companyService, smsService, toast) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.fb = fb;
@@ -2969,10 +2968,8 @@ var HomePage = /** @class */ (function () {
         this.companyService = companyService;
         this.smsService = smsService;
         this.toast = toast;
-        this.app = app;
         this.data = {};
         this.isBuyButtonEnabled = false;
-        this.selectedTabIndex = this.navParams.get('tabIndex');
         this.form = fb.group({
             'body': ['', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["Validators"].required],
             'name': ['', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["Validators"].required],
@@ -3048,7 +3045,7 @@ var HomePage = /** @class */ (function () {
     ], HomePage.prototype, "selectModalCompanies", void 0);
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-home',template:/*ion-inline-start:"C:\Users\Bender\Desktop\ionicapp\src\pages\home\home.html"*/'<ion-select [(ngModel)]="company" multiple="false" interface="action-sheet" *ngIf="company" #selectCompanies>\n\n    <ion-option *ngFor="let item of companies; let i= index" [value]="item">{{item.name}}</ion-option>\n\n</ion-select>\n\n<!--Fist Screen-->\n\n<ion-header>\n\n    <ion-navbar>\n\n        <button ion-button menuToggle>\n\n            <ion-icon class="icon-menu" name="menu"></ion-icon>\n\n        </button>\n\n        <!---Title-->\n\n        <ion-title>2Step Reviews</ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n<!-- Themes Login + logo -->\n\n<ion-content class="masters">\n\n    <ion-grid>\n\n        <ion-row wrap padding>\n\n            <ion-col>\n\n                <!--<h3 style="text-align: right">{{company?.name}}</h3>-->\n\n                <br>\n\n                <!--<h3 style="text-align: center">Send A Review Invite</h3>-->\n\n                <div style="text-align: center" span-medium><b>Send A Review Invite</b></div>\n\n                <br>\n\n                <form  [formGroup]="form" (submit)="onSubmit(form.value)">\n\n                    <!---Input field username-->\n\n                    <ion-item no-lines box-shadow>\n\n                        <ion-label class="lm-label">\n\n                            <ion-icon name="person"></ion-icon>\n\n                        </ion-label>\n\n                        <ion-input type="email" no-margin type="text" placeholder="Name" formControlName="name"></ion-input>\n\n                    </ion-item>\n\n                    <br>\n\n                    <!---Input field password-->\n\n                    <ion-item no-lines box-shadow>\n\n                        <ion-label class="lm-label">\n\n                            <ion-icon name="call"></ion-icon>\n\n                        </ion-label>\n\n                        <ion-input type="tel" mask="(000) 000-0000" no-margin type="text" placeholder="Phone Number" formControlName="to"></ion-input>\n\n                    </ion-item>\n\n                    <!---Input field password-->\n\n                    <br>\n\n                    <!---Input field domain-->\n\n                    <ion-item no-lines box-shadow hidden>\n\n                        <ion-input no-margin type="text" placeholder="" formControlName="body"></ion-input>\n\n                    </ion-item>\n\n                    <!---Input field domain-->\n\n                    <br>\n\n                    <button col-12 ion-button button-clear-outline [disabled]="form.invalid">\n\n                        Send\n\n                        <ion-icon name="paper-plane"></ion-icon>\n\n                    </button>\n\n                </form>\n\n            </ion-col>\n\n        </ion-row>\n\n    </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Bender\Desktop\ionicapp\src\pages\home\home.html"*/,
+            selector: 'page-home',template:/*ion-inline-start:"C:\Users\Bender\Desktop\ionicapp\src\pages\home\home.html"*/'<ion-select [(ngModel)]="company" multiple="false" interface="action-sheet" *ngIf="company" #selectCompanies>\n\n    <ion-option *ngFor="let item of companies; let i= index" [value]="item">{{item.name}}</ion-option>\n\n</ion-select>\n\n<!--Fist Screen-->\n\n<ion-header>\n\n    <ion-navbar>\n\n        <button ion-button menuToggle>\n\n            <ion-icon class="icon-menu" name="menu"></ion-icon>\n\n        </button>\n\n        <!---Title-->\n\n        <ion-title>2Step Reviews</ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n<!-- Themes Login + logo -->\n\n<ion-content class="masters">\n\n    <br>\n\n    <ion-col col-12 padding-top>\n\n        <span font-bold span-medium padding-left>Send A Review Invite</span>\n\n    </ion-col>\n\n    <ion-grid>\n\n        <ion-row wrap padding>\n\n            <ion-col>\n\n                <br>\n\n                <br>\n\n                <form  [formGroup]="form" (submit)="onSubmit(form.value)">\n\n                    <!---Input field username-->\n\n                    <ion-item no-lines box-shadow>\n\n                        <ion-label class="lm-label">\n\n                            <ion-icon name="person"></ion-icon>\n\n                        </ion-label>\n\n                        <ion-input type="email" no-margin type="text" placeholder="Name" formControlName="name"></ion-input>\n\n                    </ion-item>\n\n                    <br>\n\n                    <!---Input field password-->\n\n                    <ion-item no-lines box-shadow>\n\n                        <ion-label class="lm-label">\n\n                            <ion-icon name="call"></ion-icon>\n\n                        </ion-label>\n\n                        <ion-input type="tel" mask="(000) 000-0000" no-margin type="text" placeholder="Phone Number" formControlName="to"></ion-input>\n\n                    </ion-item>\n\n                    <!---Input field password-->\n\n                    <br>\n\n                    <!---Input field domain-->\n\n                    <ion-item no-lines box-shadow hidden>\n\n                        <ion-input no-margin type="text" placeholder="" formControlName="body"></ion-input>\n\n                    </ion-item>\n\n                    <!---Input field domain-->\n\n                    <br>\n\n                    <button col-12 ion-button button-clear-outline [disabled]="form.invalid">\n\n                        Send\n\n                        <ion-icon name="paper-plane"></ion-icon>\n\n                    </button>\n\n                </form>\n\n            </ion-col>\n\n        </ion-row>\n\n    </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Bender\Desktop\ionicapp\src\pages\home\home.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_5__shared_services_auth_auth_service__["a" /* AuthService */]]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"],
@@ -3060,8 +3057,7 @@ var HomePage = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_6__services_login_service__["a" /* LoginService */],
             __WEBPACK_IMPORTED_MODULE_7__services_company_service__["a" /* CompanyService */],
             __WEBPACK_IMPORTED_MODULE_8__services_sms_service__["a" /* SmsService */],
-            __WEBPACK_IMPORTED_MODULE_9__services_toast_service__["a" /* ToastService */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["App"]])
+            __WEBPACK_IMPORTED_MODULE_9__services_toast_service__["a" /* ToastService */]])
     ], HomePage);
     return HomePage;
 }());
