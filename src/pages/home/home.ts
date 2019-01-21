@@ -19,7 +19,6 @@ import { ToastService } from "../../services/toast-service";
 export class HomePage implements OnInit{
 
     data: any = {};
-    isBuyButtonEnabled = false;
 
     public form: FormGroup;
     public templates:any[];
