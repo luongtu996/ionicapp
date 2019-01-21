@@ -27,6 +27,7 @@ import { CompanyService } from "../services/company.service";
 import { SmsService } from "../services/sms.service";
 import { LeaderboardService } from "../services/leaderboard-service";
 import { DashboardService } from "../services/dashboard.service";
+import { CalendarModule } from "ion2-calendar";
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { DashboardService } from "../services/dashboard.service";
         HttpModule, HttpClientModule,
         AngularFireModule.initializeApp(AppSettings.FIREBASE_CONFIG),
         AngularFireDatabaseModule, AngularFireAuthModule,
-        IonicModule.forRoot(MyApp)
+        IonicModule.forRoot(MyApp),
+        CalendarModule
     ],
     bootstrap: [IonicApp],
     entryComponents: [

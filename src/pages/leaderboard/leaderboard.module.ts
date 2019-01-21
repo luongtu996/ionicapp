@@ -3,6 +3,7 @@ import { IonicPageModule } from 'ionic-angular';
 import { Leaderboard } from './leaderboard';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { SharedModule } from "../../shared/shared.module";
+// import { CalendarModule } from "ion2-calendar";
 
 
 
@@ -14,7 +15,8 @@ import { SharedModule } from "../../shared/shared.module";
     IonicPageModule.forChild(Leaderboard),
     FormsModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    // CalendarModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

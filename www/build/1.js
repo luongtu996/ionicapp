@@ -1,16 +1,16 @@
 webpackJsonp([1],{
 
-/***/ 493:
+/***/ 630:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginModule", function() { return LoginModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LeaderboardModule", function() { return LeaderboardModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login__ = __webpack_require__(517);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_shared_module__ = __webpack_require__(498);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__leaderboard__ = __webpack_require__(652);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_shared_module__ = __webpack_require__(637);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -25,8 +25,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var LoginModule = /** @class */ (function () {
-    function LoginModule() {
+// import { CalendarModule } from "ion2-calendar";
+var LeaderboardModule = /** @class */ (function () {
+    function LeaderboardModule() {
         var _this = this;
         this.isUsernameValid = true;
         this.isPasswordValid = true;
@@ -36,7 +37,7 @@ var LoginModule = /** @class */ (function () {
             }
         };
     }
-    LoginModule.prototype.validate = function () {
+    LeaderboardModule.prototype.validate = function () {
         this.isUsernameValid = true;
         this.isPasswordValid = true;
         if (!this.username || this.username.length == 0) {
@@ -47,39 +48,39 @@ var LoginModule = /** @class */ (function () {
         }
         return this.isPasswordValid && this.isUsernameValid;
     };
-    LoginModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+    LeaderboardModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__login__["a" /* Login */],
+                __WEBPACK_IMPORTED_MODULE_2__leaderboard__["a" /* Leaderboard */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__login__["a" /* Login */]),
-                __WEBPACK_IMPORTED_MODULE_3__angular_forms__["b" /* FormsModule */],
-                __WEBPACK_IMPORTED_MODULE_3__angular_forms__["e" /* ReactiveFormsModule */],
-                __WEBPACK_IMPORTED_MODULE_4__shared_shared_module__["a" /* SharedModule */]
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_2__leaderboard__["a" /* Leaderboard */]),
+                __WEBPACK_IMPORTED_MODULE_3__angular_forms__["FormsModule"],
+                __WEBPACK_IMPORTED_MODULE_3__angular_forms__["ReactiveFormsModule"],
+                __WEBPACK_IMPORTED_MODULE_4__shared_shared_module__["a" /* SharedModule */],
             ],
-            schemas: [__WEBPACK_IMPORTED_MODULE_0__angular_core__["i" /* CUSTOM_ELEMENTS_SCHEMA */]]
+            schemas: [__WEBPACK_IMPORTED_MODULE_0__angular_core__["CUSTOM_ELEMENTS_SCHEMA"]]
         }),
         __metadata("design:paramtypes", [])
-    ], LoginModule);
-    return LoginModule;
+    ], LeaderboardModule);
+    return LeaderboardModule;
 }());
 
-//# sourceMappingURL=login.module.js.map
+//# sourceMappingURL=leaderboard.module.js.map
 
 /***/ }),
 
-/***/ 498:
+/***/ 637:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SharedModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ngx_avatar__ = __webpack_require__(499);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__directives_lm_mask_directive__ = __webpack_require__(502);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__directives_lm_strong_directive__ = __webpack_require__(503);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ngx_mask_ionic__ = __webpack_require__(504);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ngx_avatar__ = __webpack_require__(638);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__directives_lm_mask_directive__ = __webpack_require__(641);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__directives_lm_strong_directive__ = __webpack_require__(642);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ngx_mask_ionic__ = __webpack_require__(643);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -96,7 +97,7 @@ var SharedModule = /** @class */ (function () {
     function SharedModule() {
     }
     SharedModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             imports: [
                 __WEBPACK_IMPORTED_MODULE_1__angular_common__["b" /* CommonModule */],
                 __WEBPACK_IMPORTED_MODULE_2_ngx_avatar__["a" /* AvatarModule */],
@@ -121,7 +122,7 @@ var SharedModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 499:
+/***/ 638:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -130,14 +131,14 @@ var SharedModule = /** @class */ (function () {
 /* unused harmony export ɵa */
 /* unused harmony export ɵc */
 /* unused harmony export ɵb */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_is_retina__ = __webpack_require__(500);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_is_retina__ = __webpack_require__(639);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_is_retina___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_is_retina__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ts_md5_dist_md5__ = __webpack_require__(501);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ts_md5_dist_md5__ = __webpack_require__(640);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ts_md5_dist_md5___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_ts_md5_dist_md5__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(156);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(161);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common__ = __webpack_require__(47);
 
 
 
@@ -703,7 +704,7 @@ var SourceFactory = /** @class */ (function () {
         return new this.sources[sourceType](sourceValue);
     };
     SourceFactory.decorators = [
-        { type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["B" /* Injectable */] }
+        { type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["Injectable"] }
     ];
     /** @nocollapse */
     SourceFactory.ctorParameters = function () { return []; };
@@ -718,7 +719,7 @@ var SourceFactory = /** @class */ (function () {
  * Token used to inject the AvatarConfig object
  * @type {?}
  */
-var AVATAR_CONFIG = new __WEBPACK_IMPORTED_MODULE_3__angular_core__["C" /* InjectionToken */]("avatar.config");
+var AVATAR_CONFIG = new __WEBPACK_IMPORTED_MODULE_3__angular_core__["InjectionToken"]("avatar.config");
 
 /**
  * @fileoverview added by tsickle
@@ -876,11 +877,11 @@ var AvatarService = /** @class */ (function () {
         return this.avatarSources.indexOf(sourceType);
     };
     AvatarService.decorators = [
-        { type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["B" /* Injectable */] }
+        { type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["Injectable"] }
     ];
     /** @nocollapse */
     AvatarService.ctorParameters = function () { return [
-        { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["O" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["A" /* Inject */], args: [AVATAR_CONFIG,] }] },
+        { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["Inject"], args: [AVATAR_CONFIG,] }] },
         { type: __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["a" /* HttpClient */] }
     ]; };
     return AvatarService;
@@ -909,7 +910,7 @@ var AvatarComponent = /** @class */ (function () {
         this.fgColor = "#FFF";
         this.style = {};
         this.cornerRadius = 0;
-        this.clickOnAvatar = new __WEBPACK_IMPORTED_MODULE_3__angular_core__["w" /* EventEmitter */]();
+        this.clickOnAvatar = new __WEBPACK_IMPORTED_MODULE_3__angular_core__["EventEmitter"]();
         this.avatarStyle = {};
         this.hostStyle = {};
         this._currentSource = 0;
@@ -1207,7 +1208,7 @@ var AvatarComponent = /** @class */ (function () {
         return false;
     };
     AvatarComponent.decorators = [
-        { type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["n" /* Component */], args: [{
+        { type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["Component"], args: [{
                     // tslint:disable-next-line:component-selector
                     selector: "ngx-avatar",
                     template: "\n    <div (click)=\"handleClickEvent($event)\" class=\"avatar-container\" [ngStyle]=\"hostStyle\">\n    <img *ngIf=\"src\"\n      [src]=\"src\"\n      [width]=\"size\"\n      [height]=\"size\"\n      [ngStyle]=\"avatarStyle\"\n      (error)=\"fetch($event)\"\n      class=\"avatar-content\"\n     />\n\n   <div *ngIf=\"data && !src\"\n     [ngStyle]=\"avatarStyle\"\n     class=\"avatar-content\">{{data}}</div>\n   </div>",
@@ -1216,32 +1217,32 @@ var AvatarComponent = /** @class */ (function () {
     ];
     /** @nocollapse */
     AvatarComponent.ctorParameters = function () { return [
-        { type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["u" /* ElementRef */] },
+        { type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["ElementRef"] },
         { type: SourceFactory },
         { type: AvatarService }
     ]; };
     AvatarComponent.propDecorators = {
-        round: [{ type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["E" /* Input */] }],
-        size: [{ type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["E" /* Input */] }],
-        textSizeRatio: [{ type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["E" /* Input */] }],
-        bgColor: [{ type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["E" /* Input */] }],
-        fgColor: [{ type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["E" /* Input */] }],
-        borderColor: [{ type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["E" /* Input */] }],
-        style: [{ type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["E" /* Input */] }],
-        cornerRadius: [{ type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["E" /* Input */] }],
-        facebook: [{ type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["E" /* Input */], args: ["facebookId",] }],
-        twitter: [{ type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["E" /* Input */], args: ["twitterId",] }],
-        google: [{ type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["E" /* Input */], args: ["googleId",] }],
-        vkontakte: [{ type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["E" /* Input */], args: ["vkontakteId",] }],
-        skype: [{ type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["E" /* Input */], args: ["skypeId",] }],
-        gravatar: [{ type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["E" /* Input */], args: ["gravatarId",] }],
-        github: [{ type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["E" /* Input */], args: ["githubId",] }],
-        custom: [{ type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["E" /* Input */], args: ["src",] }],
-        initials: [{ type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["E" /* Input */], args: ["name",] }],
-        value: [{ type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["E" /* Input */], args: ["value",] }],
-        placeholder: [{ type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["E" /* Input */], args: ["placeholder",] }],
-        initialsSize: [{ type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["E" /* Input */], args: ["initialsSize",] }],
-        clickOnAvatar: [{ type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["P" /* Output */] }]
+        round: [{ type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["Input"] }],
+        size: [{ type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["Input"] }],
+        textSizeRatio: [{ type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["Input"] }],
+        bgColor: [{ type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["Input"] }],
+        fgColor: [{ type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["Input"] }],
+        borderColor: [{ type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["Input"] }],
+        style: [{ type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["Input"] }],
+        cornerRadius: [{ type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["Input"] }],
+        facebook: [{ type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["Input"], args: ["facebookId",] }],
+        twitter: [{ type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["Input"], args: ["twitterId",] }],
+        google: [{ type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["Input"], args: ["googleId",] }],
+        vkontakte: [{ type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["Input"], args: ["vkontakteId",] }],
+        skype: [{ type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["Input"], args: ["skypeId",] }],
+        gravatar: [{ type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["Input"], args: ["gravatarId",] }],
+        github: [{ type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["Input"], args: ["githubId",] }],
+        custom: [{ type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["Input"], args: ["src",] }],
+        initials: [{ type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["Input"], args: ["name",] }],
+        value: [{ type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["Input"], args: ["value",] }],
+        placeholder: [{ type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["Input"], args: ["placeholder",] }],
+        initialsSize: [{ type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["Input"], args: ["initialsSize",] }],
+        clickOnAvatar: [{ type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["Output"] }]
     };
     return AvatarComponent;
 }());
@@ -1270,7 +1271,7 @@ var AvatarModule = /** @class */ (function () {
         };
     };
     AvatarModule.decorators = [
-        { type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["J" /* NgModule */], args: [{
+        { type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["NgModule"], args: [{
                     imports: [
                         __WEBPACK_IMPORTED_MODULE_5__angular_common__["b" /* CommonModule */],
                         __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["b" /* HttpClientModule */]
@@ -1311,7 +1312,7 @@ var AvatarModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 500:
+/***/ 639:
 /***/ (function(module, exports) {
 
 module.exports = function() {
@@ -1331,7 +1332,7 @@ module.exports = function() {
 
 /***/ }),
 
-/***/ 501:
+/***/ 640:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1740,13 +1741,13 @@ if (Md5.hashStr('hello') !== '5d41402abc4b2a76b9719d911017c592') {
 
 /***/ }),
 
-/***/ 502:
+/***/ 641:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LmMaskDirective; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(23);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1798,37 +1799,38 @@ var LmMaskDirective = /** @class */ (function () {
         }
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* HostListener */])('ngModelChange', ['$event']),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"])('ngModelChange', ['$event']),
         __metadata("design:type", Function),
         __metadata("design:paramtypes", [Object]),
         __metadata("design:returntype", void 0)
     ], LmMaskDirective.prototype, "onModelChange", null);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* HostListener */])('keydown.backspace', ['$event']),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"])('keydown.backspace', ['$event']),
         __metadata("design:type", Function),
         __metadata("design:paramtypes", [Object]),
         __metadata("design:returntype", void 0)
     ], LmMaskDirective.prototype, "keydownBackspace", null);
     LmMaskDirective = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* Directive */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"])({
             selector: '[formControlName][lmMask]',
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* NgControl */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["NgControl"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["NgControl"]) === "function" && _a || Object])
     ], LmMaskDirective);
     return LmMaskDirective;
+    var _a;
 }());
 
 //# sourceMappingURL=lm-mask.directive.js.map
 
 /***/ }),
 
-/***/ 503:
+/***/ 642:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LmStrongDirective; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(23);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1854,16 +1856,16 @@ var LmStrongDirective = /** @class */ (function () {
         }
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* HostListener */])('ngModelChange', ['$event']),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"])('ngModelChange', ['$event']),
         __metadata("design:type", Function),
         __metadata("design:paramtypes", [Object]),
         __metadata("design:returntype", void 0)
     ], LmStrongDirective.prototype, "onModelChange", null);
     LmStrongDirective = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* Directive */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"])({
             selector: '[formControlName][lmStrong]',
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* NgControl */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["NgControl"]])
     ], LmStrongDirective);
     return LmStrongDirective;
 }());
@@ -1872,7 +1874,7 @@ var LmStrongDirective = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 504:
+/***/ 643:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1887,9 +1889,9 @@ var LmStrongDirective = /** @class */ (function () {
 /* unused harmony export MaskPipe */
 /* unused harmony export ɵa */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_tslib__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_tslib__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(23);
 
 
 
@@ -1900,11 +1902,11 @@ var LmStrongDirective = /** @class */ (function () {
  * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /** @type {?} */
-var config = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* InjectionToken */]('config');
+var config = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["InjectionToken"]('config');
 /** @type {?} */
-var NEW_CONFIG = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* InjectionToken */]('NEW_CONFIG');
+var NEW_CONFIG = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["InjectionToken"]('NEW_CONFIG');
 /** @type {?} */
-var INITIAL_CONFIG = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* InjectionToken */]('INITIAL_CONFIG');
+var INITIAL_CONFIG = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["InjectionToken"]('INITIAL_CONFIG');
 /** @type {?} */
 var initialConfig = {
     sufix: '',
@@ -2167,11 +2169,11 @@ var MaskApplierService = /** @class */ (function () {
             this.maskAvailablePatterns[maskSymbol].pattern.test(inputSymbol));
     };
     MaskApplierService.decorators = [
-        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */] }
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] }
     ];
     /** @nocollapse */
     MaskApplierService.ctorParameters = function () { return [
-        { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Inject */], args: [config,] }] }
+        { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Inject"], args: [config,] }] }
     ]; };
     return MaskApplierService;
 }());
@@ -2470,15 +2472,15 @@ var MaskService = /** @class */ (function (_super) {
         }
     };
     MaskService.decorators = [
-        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */] }
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] }
     ];
     /** @nocollapse */
     MaskService.ctorParameters = function () { return [
-        { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Inject */], args: [__WEBPACK_IMPORTED_MODULE_2__angular_common__["c" /* DOCUMENT */],] }] },
-        { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Inject */], args: [config,] }] },
-        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */] },
-        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["X" /* Renderer2 */] },
-        { type: __WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* NgControl */] }
+        { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Inject"], args: [__WEBPACK_IMPORTED_MODULE_2__angular_common__["c" /* DOCUMENT */],] }] },
+        { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Inject"], args: [config,] }] },
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] },
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"] },
+        { type: __WEBPACK_IMPORTED_MODULE_3__angular_forms__["NgControl"] }
     ]; };
     return MaskService;
 }(MaskApplierService));
@@ -2794,32 +2796,32 @@ var MaskDirective = /** @class */ (function () {
         this._maskService.setValue(m);
     };
     MaskDirective.decorators = [
-        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* Directive */], args: [{
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{
                     selector: '[mask]',
                     providers: [MaskService]
                 },] }
     ];
     /** @nocollapse */
     MaskDirective.ctorParameters = function () { return [
-        { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Inject */], args: [__WEBPACK_IMPORTED_MODULE_2__angular_common__["c" /* DOCUMENT */],] }] },
+        { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Inject"], args: [__WEBPACK_IMPORTED_MODULE_2__angular_common__["c" /* DOCUMENT */],] }] },
         { type: MaskService },
-        { type: __WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* NgControl */] }
+        { type: __WEBPACK_IMPORTED_MODULE_3__angular_forms__["NgControl"] }
     ]; };
     MaskDirective.propDecorators = {
-        maskExpression: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['mask',] }],
-        specialCharacters: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] }],
-        patterns: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] }],
-        prefix: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] }],
-        sufix: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] }],
-        dropSpecialCharacters: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] }],
-        showMaskTyped: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] }],
-        showTemplate: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] }],
-        clearIfNotMatch: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] }],
-        onInput: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* HostListener */], args: ['input', ['$event'],] }],
-        onBlur: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* HostListener */], args: ['blur',] }],
-        onFocus: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* HostListener */], args: ['click', ['$event'],] }],
-        onKeyDown: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* HostListener */], args: ['keydown', ['$event'],] }],
-        onPaste: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* HostListener */], args: ['paste',] }]
+        maskExpression: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"], args: ['mask',] }],
+        specialCharacters: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] }],
+        patterns: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] }],
+        prefix: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] }],
+        sufix: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] }],
+        dropSpecialCharacters: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] }],
+        showMaskTyped: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] }],
+        showTemplate: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] }],
+        clearIfNotMatch: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] }],
+        onInput: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"], args: ['input', ['$event'],] }],
+        onBlur: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"], args: ['blur',] }],
+        onFocus: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"], args: ['click', ['$event'],] }],
+        onKeyDown: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"], args: ['keydown', ['$event'],] }],
+        onPaste: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"], args: ['paste',] }]
     };
     return MaskDirective;
 }());
@@ -2852,7 +2854,7 @@ var MaskPipe = /** @class */ (function () {
         return this._maskService.applyMaskWithPattern("" + value, mask);
     };
     MaskPipe.decorators = [
-        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* Pipe */], args: [{
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Pipe"], args: [{
                     name: 'mask',
                     pure: true
                 },] }
@@ -2913,7 +2915,7 @@ var NgxMaskIonicModule = /** @class */ (function () {
         };
     };
     NgxMaskIonicModule.decorators = [
-        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */], args: [{
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{
                     providers: [MaskApplierService],
                     exports: [MaskDirective, MaskPipe],
                     declarations: [MaskDirective, MaskPipe]
@@ -2949,17 +2951,19 @@ function _configFactory(initConfig, configValue) {
 
 /***/ }),
 
-/***/ 517:
+/***/ 652:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Login; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Leaderboard; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_services_http_http_service__ = __webpack_require__(41);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_loading_service__ = __webpack_require__(69);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_toast_service__ = __webpack_require__(90);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_services_http_http_service__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_loading_service__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_dashboard_service__ = __webpack_require__(424);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_toast_service__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ion2_calendar__ = __webpack_require__(425);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ion2_calendar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_ion2_calendar__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2975,69 +2979,98 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var Login = /** @class */ (function () {
-    function Login(http, navCtrl, navParams, fb, loadingService, menu, toast) {
+
+
+var Leaderboard = /** @class */ (function () {
+    function Leaderboard(http, 
+    // public authService:AuthService,
+    navCtrl, navParams, loadingService, dashboardService, toast, modalCtrl) {
         this.http = http;
         this.navCtrl = navCtrl;
-        this.fb = fb;
         this.loadingService = loadingService;
-        this.menu = menu;
+        this.dashboardService = dashboardService;
         this.toast = toast;
-        this.params = {};
-        this.loginForm = fb.group({
-            'username': ['heidy.resteasy@gmail.com', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required]],
-            'password': ['REM4lif3', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required],
-            'domain': ['repc', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required],
-            'grant_type': ['password'],
-            'client_id': ['1_3bcbxd9e24g0gk4swg0kwgcwg4o8k8g4g888kwc44gcc0gwwk4'],
-            'client_secret': ['4ok2x70rlfokc8g0wws8c8kwcokw80k44sg48goc0ok4w0so0k'],
-        });
+        this.modalCtrl = modalCtrl;
+        this.animateItems = [];
     }
-    Login.prototype.ngOnInit = function () {
-        // this.loginForm.controls.domain.setValue(localStorage.getItem('domain'));
+    Leaderboard.prototype.ionViewWillEnter = function () {
+        // this.authService.canActivate();
     };
-    Login.prototype.onSubmit = function (formValue) {
+    Leaderboard.prototype.ngOnInit = function () {
+        this.getLeaderboard();
+    };
+    Leaderboard.prototype.getLeaderboard = function () {
         var _this = this;
         this.loadingService.show();
-        formValue.username = formValue.username.replace(/[()\-\ ]+/g, '');
-        localStorage.setItem('domain', formValue.domain);
-        this.http.post('oauth/v2/token', formValue).subscribe(function (response) {
-            localStorage.setItem('access_token', response.access_token);
-            localStorage.setItem('refresh_token', response.refresh_token);
-            localStorage.setItem('expires_date', _this.calculateTokenExpiresDateTime(response.expires_in).toString());
+        this.dashboardService.getStatsByLeaderboard().subscribe(function (response) {
+            _this.leaderboards = response.data;
             _this.loadingService.hide();
-            _this.navCtrl.setRoot("TabPage");
+            var self = _this;
+            var _loop_1 = function (i) {
+                setTimeout(function () {
+                    self.animateItems.push(self.leaderboards[i]);
+                }, 200 * i);
+            };
+            for (var i = 0; i < _this.leaderboards.length; i++) {
+                _loop_1(i);
+            }
         }, function (error) {
-            if (error.error.error_description)
-                _this.toast.presentToast(error.error.error_description);
-            else
-                _this.toast.presentToast('Domain Error!');
             _this.loadingService.hide();
-            if (formValue.username.includes("+1"))
-                formValue.username = formValue.username.substr(2);
-            console.log(error);
+            _this.toast.presentToast(error.error.error.message);
         });
     };
-    Login.prototype.calculateTokenExpiresDateTime = function (expires_in) {
-        var now = new Date();
-        var expiresDate = new Date(now.getTime() + expires_in * 1000);
-        return expiresDate;
+    Leaderboard.prototype.range = function () {
+        var _this = this;
+        var options = {
+            pickMode: 'range',
+            title: 'Select Date',
+            color: '#2962ff',
+            canBackwardsSelected: true
+        };
+        var myCalendar = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_6_ion2_calendar__["CalendarModal"], {
+            options: options
+        });
+        myCalendar.present();
+        myCalendar.onDidDismiss(function (date, type) {
+            if (date) {
+                if (date['from'] && date['to']) {
+                    _this.loadingService.show();
+                    _this.dashboardService.getStatsByLeaderboardByRange(date['from'].string, date['to'].string).subscribe(function (response) {
+                        _this.leaderboards = response.data;
+                        _this.loadingService.hide();
+                        var self = _this;
+                        self.animateItems = [];
+                        var _loop_2 = function (i) {
+                            setTimeout(function () {
+                                self.animateItems.push(self.leaderboards[i]);
+                            }, 200 * i);
+                        };
+                        for (var i = 0; i < _this.leaderboards.length; i++) {
+                            _loop_2(i);
+                        }
+                    }, function (error) {
+                        _this.toast.presentToast(error.error.error.message);
+                        _this.loadingService.hide();
+                    });
+                }
+            }
+        });
     };
-    Login = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"C:\Users\Bender\Desktop\ionicapp\src\pages\login\login.html"*/'<!-- Themes Login + logo -->\n\n<ion-content background-size default-background [ngStyle]="{\'background-image\': \'url(assets/images/background/auth-bg.jpg)\'}">\n\n    <ion-grid>\n\n        <ion-row wrap padding>\n\n            <ion-col >\n\n                <form  [formGroup]="loginForm" (submit)="onSubmit(loginForm.value)">\n\n                    <!---Logo-->\n\n                    <br>\n\n                    <br>\n\n                    <div align="center">\n\n                        <img padding-bottom src="assets/images/logo/logo-icon.png">\n\n                    </div>\n\n                    <br>\n\n                    <!---Input field username-->\n\n                    <ion-item no-lines box-shadow>\n\n                        <ion-label class="lm-label">\n\n                            <ion-icon name="person"></ion-icon>\n\n                        </ion-label>\n\n                        <ion-input lmMask no-margin type="text" placeholder="Email or Phone" formControlName="username"></ion-input>\n\n                    </ion-item>\n\n                    <br>\n\n                    <!---Input field password-->\n\n                    <ion-item no-lines box-shadow>\n\n                        <ion-label class="lm-label">\n\n                            <ion-icon name="lock"></ion-icon>\n\n                        </ion-label>\n\n                        <ion-input no-margin type="password" placeholder="Password" formControlName="password"></ion-input>\n\n                    </ion-item>\n\n                    <!---Input field password-->\n\n                    <br>\n\n                    <!---Input field domain-->\n\n                    <ion-item no-lines box-shadow>\n\n                        <ion-label class="lm-label">\n\n                            <ion-icon name="link"></ion-icon>\n\n                        </ion-label>\n\n                        <ion-input no-margin type="text" placeholder="Domain" formControlName="domain"></ion-input>\n\n                    </ion-item>\n\n                    <!---Input field domain-->\n\n                    <br>\n\n                    <button col-12 ion-button button-clear-outline [disabled]="loginForm.invalid">Log In</button>\n\n                </form>\n\n            </ion-col>\n\n        </ion-row>\n\n    </ion-grid>\n\n</ion-content>\n\n\n\n\n\n\n\n'/*ion-inline-end:"C:\Users\Bender\Desktop\ionicapp\src\pages\login\login.html"*/
+    Leaderboard = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"C:\Users\Bender\Desktop\ionicapp\src\pages\leaderboard\leaderboard.html"*/'<!--Fist Screen-->\n\n<ion-header>\n\n    <ion-navbar>\n\n        <button ion-button menuToggle>\n\n            <ion-icon class="icon-menu" name="menu"></ion-icon>\n\n        </button>\n\n        <!---Title-->\n\n        <ion-title>2Step Reviews</ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n<!--Theme Appearance animation (Zoom In)-->\n\n<ion-content>\n\n    <h3 style="text-align: center">Leaderboard</h3>\n\n    <ion-grid no-padding >\n\n        <ion-row>\n\n            <ion-col col-12>\n\n                <ion-list no-margin>\n\n                    <ion-item no-lines [ngClass]="{ \'zoom-in\': true }"  *ngFor="let item of animateItems; let i = index;"  >\n\n                        <ion-avatar item-start>\n\n                            <ngx-avatar name="{{ item.user }}"></ngx-avatar>\n\n                        </ion-avatar>\n\n                        <h2 item-title >{{item.user}}</h2>\n\n                        <h2 item-subtitle >Invites Sent {{ item.invites }}</h2>\n\n                        <h2 item-subtitle >Review {{ item.reviews }}</h2>\n\n                        <h2 item-subtitle >Success Rate {{ item.success_rate }}</h2>\n\n                    </ion-item>\n\n                </ion-list>\n\n            </ion-col>\n\n        </ion-row>\n\n    </ion-grid>\n\n</ion-content>\n\n<!-- Fab Button -->\n\n<ion-fab #fab bottom right>\n\n    <button button-ion-fab ion-fab style="margin-bottom: 250px" (click)="range()">\n\n        <ion-icon name="calendar"></ion-icon>\n\n    </button>\n\n</ion-fab>\n\n'/*ion-inline-end:"C:\Users\Bender\Desktop\ionicapp\src\pages\leaderboard\leaderboard.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__shared_services_http_http_service__["a" /* HttpService */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */],
-            __WEBPACK_IMPORTED_MODULE_4__services_loading_service__["a" /* LoadingService */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* MenuController */],
-            __WEBPACK_IMPORTED_MODULE_5__services_toast_service__["a" /* ToastService */]])
-    ], Login);
-    return Login;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__shared_services_http_http_service__["a" /* HttpService */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"],
+            __WEBPACK_IMPORTED_MODULE_3__services_loading_service__["a" /* LoadingService */],
+            __WEBPACK_IMPORTED_MODULE_4__services_dashboard_service__["a" /* DashboardService */],
+            __WEBPACK_IMPORTED_MODULE_5__services_toast_service__["a" /* ToastService */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["ModalController"]])
+    ], Leaderboard);
+    return Leaderboard;
 }());
 
-//# sourceMappingURL=login.js.map
+//# sourceMappingURL=leaderboard.js.map
 
 /***/ })
 

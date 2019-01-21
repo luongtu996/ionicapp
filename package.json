@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@agm/core": "1.0.0-beta.3",
+    "@angular-devkit/schematics-cli": "^0.12.2",
     "@angular/common": "6.0.9",
     "@angular/compiler": "6.0.9",
     "@angular/compiler-cli": "6.0.9",
@@ -51,10 +52,12 @@
     "firebase": "5.2.0",
     "g": "^2.0.1",
     "ion-affix": "1.1.1",
+    "ion2-calendar": "^2.2.0",
     "ionic": "^4.2.1",
     "ionic-angular": "3.9.2",
     "ionic-plugin-keyboard": "^2.2.1",
     "ionicons": "3.0.0",
+    "moment": "^2.23.0",
     "ngx-avatar": "^3.2.0",
     "ngx-clipboard": "9.0.1",
     "ngx-mask-ionic": "^1.1.1",
@@ -67,7 +70,7 @@
     "zone.js": "0.8.26"
   },
   "devDependencies": {
-    "@ionic/app-scripts": "^3.2.0",
+    "@ionic/app-scripts": "^3.2.1",
     "@ionic/lab": "^1.0.11",
     "typescript": "2.7.2"
   },

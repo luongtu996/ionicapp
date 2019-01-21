@@ -6,9 +6,39 @@
 /*  #Style Appearance animation (Zoom In)
 ================================================*/
 
-  .zoom-in {
-    -webkit-animation: zoomIn 500ms;
-    -moz-animation: zoomIn 500ms;
-    -o-animation: zoomIn 500ms;
-    animation: zoomIn 500ms;
-  }
+.zoom-in {
+  -webkit-animation: zoomIn 500ms;
+  -moz-animation: zoomIn 500ms;
+  -o-animation: zoomIn 500ms;
+  animation: zoomIn 500ms;
+}
+
+.on-selected {
+  background-color: #2962ff !important;
+  color: #fff;
+}
+
+.between button.days-btn {
+  background-color: #2962ff !important;
+  color: #fff !important;
+  width: 100% !important;
+  border-radius: 0 !important;
+}
+
+.endSelection button.days-btn {
+  background-color: #2962ff !important;
+  color: #fff;
+  width: 100% !important;
+  border-bottom-left-radius: 0 !important;
+  border-top-left-radius: 0 !important;
+}
+
+.startSelection button.days-btn {
+  background-color: #2962ff !important;
+  color: #fff;
+  width: 100% !important;
+  border-bottom-right-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+
+

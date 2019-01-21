@@ -11,14 +11,6 @@
 <!--Theme Appearance animation (Zoom In)-->
 <ion-content>
     <h3 style="text-align: center">Leaderboard</h3>
-    <ion-item>
-        <ion-label>Start Date</ion-label>
-        <ion-datetime displayFormat="YYYY/MM/DD" [(ngModel)]="start" (ngModelChange)="changeDate($event)"></ion-datetime>
-    </ion-item>
-    <ion-item>
-        <ion-label>End Date</ion-label>
-        <ion-datetime displayFormat="YYYY/MM/DD" [(ngModel)]="end" (ngModelChange)="changeDate($event)"></ion-datetime>
-    </ion-item>
     <ion-grid no-padding >
         <ion-row>
             <ion-col col-12>
@@ -39,7 +31,7 @@
 </ion-content>
 <!-- Fab Button -->
 <ion-fab #fab bottom right>
-    <button button-ion-fab ion-fab style="margin-bottom: 250px" (click)="probando()">
+    <button button-ion-fab ion-fab style="margin-bottom: 250px" (click)="range()">
         <ion-icon name="calendar"></ion-icon>
     </button>
 </ion-fab>
