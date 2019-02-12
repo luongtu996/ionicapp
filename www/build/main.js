@@ -194,11 +194,11 @@ var map = {
 		9
 	],
 	"../components/wizard/layout-2/wizard-layout-2.module": [
-		629,
+		628,
 		8
 	],
 	"../components/wizard/layout-3/wizard-layout-3.module": [
-		628,
+		629,
 		7
 	],
 	"../pages/home/home.module": [
@@ -218,11 +218,11 @@ var map = {
 		1
 	],
 	"../pages/login/login.module": [
-		635,
+		634,
 		0
 	],
 	"../pages/profile/profile.module": [
-		634,
+		635,
 		6
 	],
 	"../pages/tab/tab.module": [
@@ -304,7 +304,7 @@ var HttpService = /** @class */ (function () {
         return options;
     };
     HttpService.prototype.getUrl = function () {
-        return this.parameters['API_URL'].replace('{domain}', localStorage.getItem('domain'));
+        return this.parameters['API_URL'];
     };
     HttpService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
@@ -802,14 +802,14 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../components/forms/layout-3/form-layout-3.module#FormLayout3Module', name: 'FormLayout3', segment: 'form-layout-3', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/forms/layout-4/form-layout-4.module#FormLayout4Module', name: 'FormLayout4', segment: 'form-layout-4', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/wizard/layout-1/wizard-layout-1.module#WizardLayout1Module', name: 'WizardLayout1', segment: 'wizard-layout-1', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../components/wizard/layout-3/wizard-layout-3.module#WizardLayout3Module', name: 'WizardLayout3', segment: 'wizard-layout-3', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../components/wizard/layout-2/wizard-layout-2.module#WizardLayout2Module', name: 'WizardLayout2', segment: 'wizard-layout-2', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../components/wizard/layout-3/wizard-layout-3.module#WizardLayout3Module', name: 'WizardLayout3', segment: 'wizard-layout-3', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/home/home.module#HomePageModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/intro-page/intro-page.module#IntroPageModule', name: 'IntroPage', segment: 'intro-page', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/items/items.module#ItemsPageModule', name: 'ItemsPage', segment: 'items', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/leaderboard/leaderboard.module#LeaderboardModule', name: 'Leaderboard', segment: 'leaderboard', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'ProfilePage', segment: 'profile', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginModule', name: 'Login', segment: 'login', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'ProfilePage', segment: 'profile', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/tab/tab.module#TabPageModule', name: 'TabPage', segment: 'tab', priority: 'low', defaultHistory: [] }
                     ]
                 }),
@@ -1198,9 +1198,7 @@ var MyApp = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Parameters; });
 var Parameters = /** @class */ (function () {
     function Parameters() {
-        this.API_URL = "https://api.{domain}.2stepreviewsapp.com/app_dev.php/";
-        // API_URL = `http://localhost/reviews/web/app_dev.php/`;
-        // API_URL = `https://api.repc.2stepreviewsapp.com/app_dev.php/`;
+        this.API_URL = "https://api.dev.2stepreviewsapp.com/app_dev.php/";
     }
     return Parameters;
 }());

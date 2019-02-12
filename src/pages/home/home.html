@@ -22,6 +22,8 @@
             <ion-col>
                 <br>
                 <br>
+                <br>
+                <br>
                 <form  [formGroup]="form" (submit)="onSubmit(form.value)">
                     <!---Input field username-->
                     <ion-item no-lines box-shadow>
@@ -39,12 +41,6 @@
                         <ion-input type="tel" mask="(000) 000-0000" no-margin type="text" placeholder="Phone Number" formControlName="to"></ion-input>
                     </ion-item>
                     <!---Input field password-->
-                    <br>
-                    <!---Input field domain-->
-                    <ion-item no-lines box-shadow hidden>
-                        <ion-input no-margin type="text" placeholder="" formControlName="body"></ion-input>
-                    </ion-item>
-                    <!---Input field domain-->
                     <br>
                     <button col-12 ion-button button-clear-outline [disabled]="form.invalid">
                         Send

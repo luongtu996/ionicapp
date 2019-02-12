@@ -23,7 +23,6 @@ export class Login implements OnInit{
         this.loginForm = fb.group({
             'username': ['heidy.resteasy@gmail.com',[Validators.required]],
             'password': ['REM4lif3', Validators.required],
-            'domain': ['repc', Validators.required],
             'grant_type': ['password'],
             'client_id': ['1_3bcbxd9e24g0gk4swg0kwgcwg4o8k8g4g888kwc44gcc0gwwk4'],
             'client_secret': ['4ok2x70rlfokc8g0wws8c8kwcokw80k44sg48goc0ok4w0so0k'],
@@ -31,14 +30,12 @@ export class Login implements OnInit{
     }
 
     ngOnInit(){
-        this.loginForm.controls.domain.setValue(localStorage.getItem('domain'));
     }
 
     onSubmit(formValue: any) {
         this.loadingService.show();
 
         formValue.username = formValue.username.replace(/[()\-\ ]+/g,'');
-        localStorage.setItem('domain', formValue.domain);
         this.http.post('oauth/v2/token', formValue).subscribe(
             (response) => {
                 localStorage.setItem('access_token', response.access_token);
@@ -50,17 +47,11 @@ export class Login implements OnInit{
                 this.navCtrl.setRoot("TabPage");
             },
             (error) => {
-
-                if(error.error.error_description)
-                    this.toast.presentToast(error.error.error_description);
-                else
-                    this.toast.presentToast('Domain Error!');
-
+                this.toast.presentToast(error.error.error_description);
                 this.loadingService.hide();
 
                 if (formValue.username.includes("+1"))
                     formValue.username = formValue.username.substr(2);
-                console.log(error);
             }
         );
     }

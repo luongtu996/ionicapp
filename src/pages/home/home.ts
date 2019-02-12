@@ -40,10 +40,8 @@ export class HomePage implements OnInit{
         public toast: ToastService,
     ) {
         this.form = fb.group({
-            'body': ['', Validators.required],
             'name': ['', Validators.required],
             'to': ['', [Validators.required, Validators.minLength(14)]],
-            'company_id': [''],
         });
     }
 
@@ -52,71 +50,21 @@ export class HomePage implements OnInit{
     }
 
     ngOnInit(){
-        this.getCompanies();
-    }
-
-    getCompanies(){
-        this.loadingService.show();
-
-        this.companyService.list().subscribe((response) => {
-            this.companies = response.data.results;
-
-            if(this.companies.length != 0){
-                this.company = this.companies[0];
-                this.selectCompany(this.company);
-            }
-
-            this.loadingService.hide();
-
-            this.getTemplates();
-        }, (error) => {
-            this.toast.presentToast(error.error.error.message);
-            this.loadingService.hide();
-        });
-    }
-
-    selectCompany(company:any){
-        this.company = company;
-    }
-
-    getTemplates(){
-        this.loadingService.show();
-
-        this.templateService.list().subscribe((response) => {
-            this.loadingService.hide();
-
-            this.templates = response.data.results;
-            this.templates.forEach(item => {
-                if(item.orden == 1)
-                    this.form.controls['body'].setValue(item.body);
-            });
-        }, (error) => {
-            this.toast.presentToast(error.error.error.message);
-            this.loadingService.hide();
-        })
     }
 
     onSubmit(formValue: any) {
         this.loadingService.show();
-
         formValue.to = formValue.to.replace(/\D+/g, '');
-        formValue.company_id = this.company['id'];
         formValue.to = "+1" + formValue.to;
         this.smsService.create(formValue).subscribe((response) => {
             this.loadingService.hide();
-
             this.form.reset();
             this.toast.presentToast("Invite Sent");
-            this.templates.forEach(item => {
-                if(item.orden == 1)
-                    this.form.controls['body'].setValue(item.body);
-            });
         }, (error) => {
             this.toast.presentToast(error.error.error.message);
             if (formValue.to.includes("+1")) {
                 formValue.to = formValue.to.substr(2);
             }
-
             this.loadingService.hide();
         });
     }

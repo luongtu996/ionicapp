@@ -2970,66 +2970,24 @@ var HomePage = /** @class */ (function () {
         this.toast = toast;
         this.data = {};
         this.form = fb.group({
-            'body': ['', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["Validators"].required],
             'name': ['', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["Validators"].required],
             'to': ['', [__WEBPACK_IMPORTED_MODULE_3__angular_forms__["Validators"].required, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["Validators"].minLength(14)]],
-            'company_id': [''],
         });
     }
     HomePage.prototype.ionViewWillEnter = function () {
         this.authService.canActivate();
     };
     HomePage.prototype.ngOnInit = function () {
-        this.getCompanies();
-    };
-    HomePage.prototype.getCompanies = function () {
-        var _this = this;
-        this.loadingService.show();
-        this.companyService.list().subscribe(function (response) {
-            _this.companies = response.data.results;
-            if (_this.companies.length != 0) {
-                _this.company = _this.companies[0];
-                _this.selectCompany(_this.company);
-            }
-            _this.loadingService.hide();
-            _this.getTemplates();
-        }, function (error) {
-            _this.toast.presentToast(error.error.error.message);
-            _this.loadingService.hide();
-        });
-    };
-    HomePage.prototype.selectCompany = function (company) {
-        this.company = company;
-    };
-    HomePage.prototype.getTemplates = function () {
-        var _this = this;
-        this.loadingService.show();
-        this.templateService.list().subscribe(function (response) {
-            _this.loadingService.hide();
-            _this.templates = response.data.results;
-            _this.templates.forEach(function (item) {
-                if (item.orden == 1)
-                    _this.form.controls['body'].setValue(item.body);
-            });
-        }, function (error) {
-            _this.toast.presentToast(error.error.error.message);
-            _this.loadingService.hide();
-        });
     };
     HomePage.prototype.onSubmit = function (formValue) {
         var _this = this;
         this.loadingService.show();
         formValue.to = formValue.to.replace(/\D+/g, '');
-        formValue.company_id = this.company['id'];
         formValue.to = "+1" + formValue.to;
         this.smsService.create(formValue).subscribe(function (response) {
             _this.loadingService.hide();
             _this.form.reset();
             _this.toast.presentToast("Invite Sent");
-            _this.templates.forEach(function (item) {
-                if (item.orden == 1)
-                    _this.form.controls['body'].setValue(item.body);
-            });
         }, function (error) {
             _this.toast.presentToast(error.error.error.message);
             if (formValue.to.includes("+1")) {
@@ -3044,7 +3002,7 @@ var HomePage = /** @class */ (function () {
     ], HomePage.prototype, "selectModalCompanies", void 0);
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-home',template:/*ion-inline-start:"C:\Users\Bender\Desktop\ionicapp\src\pages\home\home.html"*/'<ion-select [(ngModel)]="company" multiple="false" interface="action-sheet" *ngIf="company" #selectCompanies>\n\n    <ion-option *ngFor="let item of companies; let i= index" [value]="item">{{item.name}}</ion-option>\n\n</ion-select>\n\n<!--Fist Screen-->\n\n<ion-header>\n\n    <ion-navbar>\n\n        <button ion-button menuToggle>\n\n            <ion-icon class="icon-menu" name="menu"></ion-icon>\n\n        </button>\n\n        <!---Title-->\n\n        <ion-title>2Step Reviews</ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n<!-- Themes Login + logo -->\n\n<ion-content class="masters">\n\n    <br>\n\n    <ion-col col-12 padding-top>\n\n        <span font-bold span-medium padding-left>Send A Review Invite</span>\n\n    </ion-col>\n\n    <ion-grid>\n\n        <ion-row wrap padding>\n\n            <ion-col>\n\n                <br>\n\n                <br>\n\n                <form  [formGroup]="form" (submit)="onSubmit(form.value)">\n\n                    <!---Input field username-->\n\n                    <ion-item no-lines box-shadow>\n\n                        <ion-label class="lm-label">\n\n                            <ion-icon name="person"></ion-icon>\n\n                        </ion-label>\n\n                        <ion-input type="email" no-margin type="text" placeholder="Name" formControlName="name"></ion-input>\n\n                    </ion-item>\n\n                    <br>\n\n                    <!---Input field password-->\n\n                    <ion-item no-lines box-shadow>\n\n                        <ion-label class="lm-label">\n\n                            <ion-icon name="call"></ion-icon>\n\n                        </ion-label>\n\n                        <ion-input type="tel" mask="(000) 000-0000" no-margin type="text" placeholder="Phone Number" formControlName="to"></ion-input>\n\n                    </ion-item>\n\n                    <!---Input field password-->\n\n                    <br>\n\n                    <!---Input field domain-->\n\n                    <ion-item no-lines box-shadow hidden>\n\n                        <ion-input no-margin type="text" placeholder="" formControlName="body"></ion-input>\n\n                    </ion-item>\n\n                    <!---Input field domain-->\n\n                    <br>\n\n                    <button col-12 ion-button button-clear-outline [disabled]="form.invalid">\n\n                        Send\n\n                        <ion-icon name="paper-plane"></ion-icon>\n\n                    </button>\n\n                </form>\n\n            </ion-col>\n\n        </ion-row>\n\n    </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Bender\Desktop\ionicapp\src\pages\home\home.html"*/,
+            selector: 'page-home',template:/*ion-inline-start:"C:\Users\Bender\Desktop\ionicapp\src\pages\home\home.html"*/'<ion-select [(ngModel)]="company" multiple="false" interface="action-sheet" *ngIf="company" #selectCompanies>\n\n    <ion-option *ngFor="let item of companies; let i= index" [value]="item">{{item.name}}</ion-option>\n\n</ion-select>\n\n<!--Fist Screen-->\n\n<ion-header>\n\n    <ion-navbar>\n\n        <button ion-button menuToggle>\n\n            <ion-icon class="icon-menu" name="menu"></ion-icon>\n\n        </button>\n\n        <!---Title-->\n\n        <ion-title>2Step Reviews</ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n<!-- Themes Login + logo -->\n\n<ion-content class="masters">\n\n    <br>\n\n    <ion-col col-12 padding-top>\n\n        <span font-bold span-medium padding-left>Send A Review Invite</span>\n\n    </ion-col>\n\n    <ion-grid>\n\n        <ion-row wrap padding>\n\n            <ion-col>\n\n                <br>\n\n                <br>\n\n                <br>\n\n                <br>\n\n                <form  [formGroup]="form" (submit)="onSubmit(form.value)">\n\n                    <!---Input field username-->\n\n                    <ion-item no-lines box-shadow>\n\n                        <ion-label class="lm-label">\n\n                            <ion-icon name="person"></ion-icon>\n\n                        </ion-label>\n\n                        <ion-input type="email" no-margin type="text" placeholder="Name" formControlName="name"></ion-input>\n\n                    </ion-item>\n\n                    <br>\n\n                    <!---Input field password-->\n\n                    <ion-item no-lines box-shadow>\n\n                        <ion-label class="lm-label">\n\n                            <ion-icon name="call"></ion-icon>\n\n                        </ion-label>\n\n                        <ion-input type="tel" mask="(000) 000-0000" no-margin type="text" placeholder="Phone Number" formControlName="to"></ion-input>\n\n                    </ion-item>\n\n                    <!---Input field password-->\n\n                    <br>\n\n                    <button col-12 ion-button button-clear-outline [disabled]="form.invalid">\n\n                        Send\n\n                        <ion-icon name="paper-plane"></ion-icon>\n\n                    </button>\n\n                </form>\n\n            </ion-col>\n\n        </ion-row>\n\n    </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Bender\Desktop\ionicapp\src\pages\home\home.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_5__shared_services_auth_auth_service__["a" /* AuthService */]]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"],
