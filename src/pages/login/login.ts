@@ -4,6 +4,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpService } from "../../shared/services/http/http.service";
 import { LoadingService } from "../../services/loading-service";
 import { ToastService } from "../../services/toast-service";
+import { LocalNotifications } from '@ionic-native/local-notifications';
+import { PusherServiceProvider } from "../../providers/pusher-service/pusher-service";
+import { UsuarioService } from "../../services/usuario.service";
 
 @IonicPage()
 @Component({
@@ -18,11 +21,14 @@ export class Login implements OnInit{
         public fb: FormBuilder,
         private loadingService: LoadingService,
         public menu: MenuController,
-        public toast: ToastService
+        public toast: ToastService,
+        private localNotifications: LocalNotifications,
+        private pusher : PusherServiceProvider,
+        public usuarioServie:UsuarioService
     ) {
         this.loginForm = fb.group({
-            'username': ['heidy.resteasy@gmail.com',[Validators.required]],
-            'password': ['REM4lif3', Validators.required],
+            'username': ['raulito.lima.93@gmail.com',[Validators.required]],
+            'password': ['wailea912', Validators.required],
             'grant_type': ['password'],
             'client_id': ['1_3bcbxd9e24g0gk4swg0kwgcwg4o8k8g4g888kwc44gcc0gwwk4'],
             'client_secret': ['4ok2x70rlfokc8g0wws8c8kwcokw80k44sg48goc0ok4w0so0k'],
@@ -42,9 +48,26 @@ export class Login implements OnInit{
                 localStorage.setItem('refresh_token', response.refresh_token);
                 localStorage.setItem('expires_date', this.calculateTokenExpiresDateTime(response.expires_in).toString());
 
-                this.loadingService.hide();
+                this.usuarioServie.getProfile().subscribe(
+                    (response) => {
+                        let usuario = response.data;
+                        this.pusher.init().subscribe(usuario.email).bind("my-event", (message) => {
+                            this.localNotifications.schedule({
+                                title: message.title,
+                                text: message.body
+                            });
+                        });
 
-                this.navCtrl.setRoot("TabPage");
+                        this.loadingService.hide();
+
+                        this.navCtrl.setRoot("TabPage");
+                    },(error) => {
+                        this.loadingService.hide();
+                        this.toast.presentToast(error.error.error.message);
+                    }
+                );
+
+
             },
             (error) => {
                 this.toast.presentToast(error.error.error_description);

@@ -10,7 +10,7 @@ export class TabPage {
 
   homeRoot = 'HomePage';
   leaderboardRoot = 'Leaderboard';
-  // reviewsRoot = 'ReviewsPage';
+  reviewsRoot = 'ReviewPage';
   profileRoot = 'ProfilePage';
 
   constructor(public navCtrl: NavController) {}

@@ -1,14 +1,14 @@
-webpackJsonp([4],{
+webpackJsonp([4,10],{
 
-/***/ 632:
+/***/ 626:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ItemsPageModule", function() { return ItemsPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WizardLayout1Module", function() { return WizardLayout1Module; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__items__ = __webpack_require__(654);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__wizard_layout_1__ = __webpack_require__(648);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,230 +18,217 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var ItemsPageModule = /** @class */ (function () {
-    function ItemsPageModule() {
+var WizardLayout1Module = /** @class */ (function () {
+    function WizardLayout1Module() {
     }
-    ItemsPageModule = __decorate([
+    WizardLayout1Module = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__items__["a" /* ItemsPage */],
+                __WEBPACK_IMPORTED_MODULE_2__wizard_layout_1__["a" /* WizardLayout1 */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_2__items__["a" /* ItemsPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_2__wizard_layout_1__["a" /* WizardLayout1 */]),
+            ],
+            exports: [
+                __WEBPACK_IMPORTED_MODULE_2__wizard_layout_1__["a" /* WizardLayout1 */]
             ],
             schemas: [__WEBPACK_IMPORTED_MODULE_0__angular_core__["CUSTOM_ELEMENTS_SCHEMA"]]
         })
-    ], ItemsPageModule);
-    return ItemsPageModule;
+    ], WizardLayout1Module);
+    return WizardLayout1Module;
 }());
 
-//# sourceMappingURL=items.module.js.map
+//# sourceMappingURL=wizard-layout-1.module.js.map
 
 /***/ }),
 
-/***/ 654:
+/***/ 634:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ItemsPage; });
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IntroPageModule", function() { return IntroPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_app_settings__ = __webpack_require__(162);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_login_service__ = __webpack_require__(164);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_form_service__ = __webpack_require__(655);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__intro_page__ = __webpack_require__(656);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_wizard_layout_1_wizard_layout_1_module__ = __webpack_require__(626);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
 
 
 
 
-
-
-var ItemsPage = /** @class */ (function () {
-    // services: array
-    function ItemsPage(navCtrl, loginService, formService, alertCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.loginService = loginService;
-        this.formService = formService;
-        this.alertCtrl = alertCtrl;
-        this.isBuyButtonEnabled = false;
-        this.pages = {};
-        this.listServices = {};
-        this.listServices = {
-            'login': this.loginService,
-            'form': this.formService,
-        };
-        this.componentName = navParams.get('componentName');
-        this.service = this.listServices[this.componentName];
-        this.isBuyButtonEnabled = __WEBPACK_IMPORTED_MODULE_2__services_app_settings__["a" /* AppSettings */].BUY_BUTTON;
-        if (this.service) {
-            this.pages = this.service.getAllThemes();
-            this.title = this.service.getTitle();
-        }
-        else {
-            navCtrl.setRoot("HomePage");
-            return;
-        }
+var IntroPageModule = /** @class */ (function () {
+    function IntroPageModule() {
     }
-    ItemsPage_1 = ItemsPage;
-    ItemsPage.prototype.selectPageForOpen = function (value) {
-        var page;
-        switch (value) {
-            case "spinner":
-                page = "ItemDetailsPageSpinner";
-                break;
-            case "textViews":
-                page = "ItemDetailsPageTextView";
-                break;
-            case "splashScreens":
-                page = "ItemDetailsPageSplashScreen";
-                break;
-            case "searchBars":
-                page = "ItemDetailsPageSearchBar";
-                break;
-            case "checkBoxes":
-                page = "ItemDetailsPageCheckBox";
-                break;
-            case "wizard":
-                page = "ItemDetailsPageWizard";
-                break;
-            case "tabs":
-                page = "ItemDetailsPageTabs";
-                break;
-            case "login":
-                page = "ItemDetailsPageLogin";
-                break;
-            case "register":
-                page = "ItemDetailsPageRegister";
-                break;
-            case "expandable":
-                page = "ItemDetailsPageExpandable";
-                break;
-            case "swipeToDismiss":
-                page = "ItemDetailsPageSwipeToDismiss";
-                break;
-            case "dragAndDrop":
-                page = "ItemDetailsPageDragAndDrop";
-                break;
-            case "appearanceAnimation":
-                page = "ItemDetailsPageAppearanceAnimation";
-                break;
-            case "googleCards":
-                page = "ItemDetailsPageGoogleCard";
-                break;
-            case "parallax":
-                page = "ItemDetailsPageParallax";
-                break;
-            case "maps":
-                page = "ItemDetailsPageMaps";
-                break;
-            case "imageGallery":
-                page = "ItemDetailsPageImageGallery";
-                break;
-            case "qrcode":
-                page = "ItemDetailsPageQRCode";
-                break;
-            case "radioButton":
-                page = "ItemDetailsPageRadioButton";
-                break;
-            case "range":
-                page = "ItemDetailsPageRange";
-                break;
-            case "toggle":
-                page = "ItemDetailsPageToggle";
-                break;
-            case "select":
-                page = "ItemDetailsPageSelect";
-                break;
-            case "actionSheet":
-                page = "ItemDetailsPageActionSheet";
-                break;
-            case "timeline":
-                page = "ItemDetailsPageTimeLine";
-                break;
-            case "form":
-                page = "ItemDetailsPageForm";
-                break;
-            case "comment":
-                page = "ItemDetailsPageComment";
-                break;
-            case "profile":
-                page = "ItemDetailsPageProfile";
-                break;
-            case "segment":
-                page = "ItemDetailsPageSegment";
-                break;
-            case "alert":
-                page = "ItemDetailsPageAlert";
-                break;
-            case "payment":
-                page = "ItemDetailsPagePayment";
-                break;
-            default:
-                page = "ItemDetailsPage";
-        }
-        return page;
-    };
-    ItemsPage.prototype.openPage = function (page) {
-        if (__WEBPACK_IMPORTED_MODULE_2__services_app_settings__["a" /* AppSettings */].SUBSCRIBE) {
-        }
-        else {
-            this.navigation(page);
-        }
-    };
-    ItemsPage.prototype.navigation = function (page) {
-        if (page.listView) {
-            this.navCtrl.push(ItemsPage_1, {
-                componentName: page.theme
-            });
-        }
-        else {
-            this.navCtrl.push(this.selectPageForOpen(this.componentName), {
-                service: this.service,
-                page: page
-            });
-        }
-    };
-    ItemsPage = ItemsPage_1 = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"C:\Users\Bender\Desktop\ionicapp\src\pages\items\items.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <!---Title-->\n\n    <ion-title>{{title}}</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content no-padding>\n\n  <ion-list no-padding no-margin *ngIf="pages.length">\n\n    <button ion-item padding-left no-lines item-title submenu *ngFor="let p of pages"  (click)="openPage(p)">\n\n        {{p.title}}\n\n    </button>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Bender\Desktop\ionicapp\src\pages\items\items.html"*/,
-            providers: [
-                __WEBPACK_IMPORTED_MODULE_3__services_login_service__["a" /* LoginService */],
-                __WEBPACK_IMPORTED_MODULE_4__services_form_service__["a" /* FormService */]
-            ]
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"],
-            __WEBPACK_IMPORTED_MODULE_3__services_login_service__["a" /* LoginService */],
-            __WEBPACK_IMPORTED_MODULE_4__services_form_service__["a" /* FormService */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["AlertController"],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"]])
-    ], ItemsPage);
-    return ItemsPage;
-    var ItemsPage_1;
+    IntroPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__intro_page__["a" /* IntroPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_2__intro_page__["a" /* IntroPage */]),
+                __WEBPACK_IMPORTED_MODULE_3__components_wizard_layout_1_wizard_layout_1_module__["WizardLayout1Module"]
+            ],
+            exports: [
+                __WEBPACK_IMPORTED_MODULE_2__intro_page__["a" /* IntroPage */]
+            ],
+            schemas: [__WEBPACK_IMPORTED_MODULE_0__angular_core__["CUSTOM_ELEMENTS_SCHEMA"]]
+        })
+    ], IntroPageModule);
+    return IntroPageModule;
 }());
 
-//# sourceMappingURL=items.js.map
+//# sourceMappingURL=intro-page.module.js.map
 
 /***/ }),
 
-/***/ 655:
+/***/ 648:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FormService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angularfire2_database__ = __webpack_require__(94);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WizardLayout1; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(38);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var WizardLayout1 = /** @class */ (function () {
+    function WizardLayout1() {
+        this.sliderOptions = { pager: true };
+        this.path = false;
+        this.prev = true;
+        this.next = true;
+        this.finish = true;
+        this.prev = false;
+        this.next = true;
+        this.finish = false;
+    }
+    WizardLayout1.prototype.changeSlide = function (index) {
+        if (index > 0) {
+            this.slider.slideNext(300);
+        }
+        else {
+            this.slider.slidePrev(300);
+        }
+    };
+    WizardLayout1.prototype.slideHasChanged = function (index) {
+        try {
+            this.prev = !this.slider.isBeginning();
+            this.next = this.slider.getActiveIndex() < (this.slider.length() - 1);
+            this.finish = this.slider.isEnd();
+        }
+        catch (e) { }
+    };
+    WizardLayout1.prototype.ngOnChanges = function (changes) {
+        this.data = changes['data'].currentValue;
+    };
+    WizardLayout1.prototype.onEvent = function (event) {
+        if (this.events[event]) {
+            this.events[event]();
+        }
+        console.log(event);
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", Object)
+    ], WizardLayout1.prototype, "data", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", Object)
+    ], WizardLayout1.prototype, "events", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('wizardSlider'),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["Slides"])
+    ], WizardLayout1.prototype, "slider", void 0);
+    WizardLayout1 = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'wizard-layout-1',template:/*ion-inline-start:"C:\Users\Bender\Desktop\ionicapp\src\components\wizard\layout-1\wizard.html"*/'<!--Theme Wizard Simple + icon-->\n\n<!--Content -->\n\n<ion-slides #wizardSlider (ionSlideDidChange)="slideHasChanged()" pager="true" *ngIf="data != null">\n\n    <ion-slide *ngFor="let item of data.items;">\n\n        <ion-icon icon-large>\n\n            <i class="icon {{item.iconSlider}}"></i>\n\n        </ion-icon>\n\n        <h1 wizard-title>{{item.title}}</h1>\n\n        <p wizard-body-text>{{item.description}}</p>\n\n    </ion-slide>\n\n</ion-slides>\n\n<!--Button section-->\n\n<div *ngIf="data != null">\n\n    <button ion-button button-clear clear float-left (click)="changeSlide(-1)" *ngIf="prev">\n\n        {{data.btnPrev}}\n\n    </button>\n\n    <button ion-button button-clear clear float-right (click)="changeSlide(1)" *ngIf="next">\n\n        {{data.btnNext}}\n\n    </button>\n\n    <button ion-button button-clear clear float-right (click)="onEvent(\'onFinish\')" *ngIf="finish">\n\n        {{data.btnFinish}}\n\n    </button>\n\n</div>\n\n'/*ion-inline-end:"C:\Users\Bender\Desktop\ionicapp\src\components\wizard\layout-1\wizard.html"*/
+        }),
+        __metadata("design:paramtypes", [])
+    ], WizardLayout1);
+    return WizardLayout1;
+}());
+
+//# sourceMappingURL=wizard-layout-1.js.map
+
+/***/ }),
+
+/***/ 656:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return IntroPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_intro_service__ = __webpack_require__(657);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var IntroPage = /** @class */ (function () {
+    function IntroPage(viewCtrl, introService) {
+        this.viewCtrl = viewCtrl;
+        this.introService = introService;
+        this.params = null;
+        var that = this;
+        this.introService.load().subscribe(function (snapshot) {
+            setTimeout(function () {
+                that.params = {
+                    'events': {
+                        'onFinish': function (event) {
+                            that.viewCtrl.dismiss();
+                        }
+                    },
+                    'data': snapshot
+                };
+            });
+        });
+    }
+    IntroPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"C:\Users\Bender\Desktop\ionicapp\src\pages\intro-page\intro-page.html"*/'<!--Wizard component-->\n\n<ion-content no-margin no-padding *ngIf="params != null">\n\n    <wizard-layout-1 [data]="params.data" [events]="params.events">\n\n    </wizard-layout-1>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Bender\Desktop\ionicapp\src\pages\intro-page\intro-page.html"*/,
+            providers: [__WEBPACK_IMPORTED_MODULE_2__services_intro_service__["a" /* IntroService */]]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["ViewController"], __WEBPACK_IMPORTED_MODULE_2__services_intro_service__["a" /* IntroService */]])
+    ], IntroPage);
+    return IntroPage;
+}());
+
+//# sourceMappingURL=intro-page.js.map
+
+/***/ }),
+
+/***/ 657:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return IntroService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angularfire2_database__ = __webpack_require__(96);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(95);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_settings__ = __webpack_require__(162);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__toast_service__ = __webpack_require__(93);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__loading_service__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_settings__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__loading_service__ = __webpack_require__(73);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -256,140 +243,44 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
-var FormService = /** @class */ (function () {
-    function FormService(af, loadingService, toastCtrl) {
-        var _this = this;
+var IntroService = /** @class */ (function () {
+    function IntroService(af, loadingService) {
         this.af = af;
         this.loadingService = loadingService;
-        this.toastCtrl = toastCtrl;
-        this.getId = function () { return 'form'; };
-        this.getTitle = function () { return 'Form'; };
-        this.getAllThemes = function () {
-            return [
-                { "title": "Form + Write Comment", "theme": "layout1" },
-                { "title": "Form + Write Review", "theme": "layout2" },
-                { "title": "Form With Address", "theme": "layout3" },
-                { "title": "Form add Photo Or  Video", "theme": "layout4" }
-            ];
-        };
-        this.getDataForTheme = function (menuItem) {
-            return _this['getDataFor' +
-                menuItem.theme.charAt(0).toUpperCase() +
-                menuItem.theme.slice(1)]();
-        };
-        this.getEventsForTheme = function (menuItem) {
-            var that = _this;
+        // Set data for - WIZARD MAIN
+        this.getData = function () {
             return {
-                onSubmit: function (item) {
-                    that.toastCtrl.presentToast(JSON.stringify(item));
-                },
-                onAddVideoPhoto: function (item) {
-                    that.toastCtrl.presentToast(item.description);
-                }
-            };
-        };
-        this.getDataForLayout1 = function () {
-            return {
-                "yourName": "Your Name",
-                "title": "Title",
-                "description": "Enter a description",
-                "button": " Write Comment"
-            };
-        };
-        this.getDataForLayout2 = function () {
-            return {
-                "title": "Continue",
-                "rateTitle": "Rate",
-                "descriptionPlaceholder": "Description",
-                "btnSubmit": "Write Comment",
-                "iconsStars": [
+                "btnPrev": "Previous",
+                "btnNext": "Next",
+                "btnFinish": "Finish",
+                "items": [
                     {
-                        "isActive": true,
-                        "icon": "star"
+                        "iconSlider": "icon-star-outline",
+                        "title": "Welcome to our new material style theme",
+                        "description": "Finished layouts and components for Ionic 3. Ready to use!"
                     },
                     {
-                        "isActive": true,
-                        "icon": "star"
+                        "iconSlider": "icon-star-half",
+                        "title": "For Developers",
+                        "description": "Save hours of developing. Tons of funcional components."
                     },
                     {
-                        "isActive": true,
-                        "icon": "star"
-                    },
-                    {
-                        "isActive": true,
-                        "icon": "star"
-                    },
-                    {
-                        "isActive": false,
-                        "icon": "star"
+                        "iconSlider": "icon-star",
+                        "title": "For Designers",
+                        "description": "Endless possibilities. Combine layouts as you wish."
                     }
-                ],
+                ]
             };
-        };
-        this.getDataForLayout3 = function () {
-            return {
-                "firstName": "Firs Name",
-                "lastName": "Last Name",
-                "addressLine1": "Address Line 1",
-                "addressLine2": "Address Line 2",
-                "city": "City",
-                "zipCode": "Zip Code",
-                "button": "Write Comment"
-            };
-        };
-        this.getDataForLayout4 = function () {
-            return {
-                "title": "Your comment",
-                "rateTitle": "Rate",
-                "descriptionPlaceholder": "Description",
-                "btnSubmit": "Write Comment",
-                "btnAddPhotoOrVideo": "Add Photo or Video",
-                "iconsStars": [
-                    {
-                        "isActive": true,
-                        "icon": "star"
-                    },
-                    {
-                        "isActive": true,
-                        "icon": "star"
-                    },
-                    {
-                        "isActive": true,
-                        "icon": "star"
-                    },
-                    {
-                        "isActive": true,
-                        "icon": "star"
-                    },
-                    {
-                        "isActive": false,
-                        "icon": "star"
-                    }
-                ],
-            };
-        };
-        this.prepareParams = function (item) {
-            var result = {
-                title: item.title,
-                data: [],
-                events: _this.getEventsForTheme(item)
-            };
-            result[_this.getShowItemId(item)] = true;
-            return result;
-        };
-        this.getShowItemId = function (item) {
-            return _this.getId() + item.theme.charAt(0).toUpperCase() + "" + item.theme.slice(1);
         };
     }
-    FormService.prototype.load = function (item) {
+    IntroService.prototype.load = function () {
         var _this = this;
         var that = this;
         that.loadingService.show();
         if (__WEBPACK_IMPORTED_MODULE_3__app_settings__["a" /* AppSettings */].IS_FIREBASE_ENABLED) {
             return new __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"](function (observer) {
                 _this.af
-                    .object('form/' + item.theme)
+                    .object('intro')
                     .valueChanges()
                     .subscribe(function (snapshot) {
                     that.loadingService.hide();
@@ -399,25 +290,28 @@ var FormService = /** @class */ (function () {
                     that.loadingService.hide();
                     observer.error([]);
                     observer.complete();
+                    debugger;
                 });
             });
         }
         else {
             return new __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"](function (observer) {
                 that.loadingService.hide();
-                observer.next(_this.getDataForTheme(item));
+                observer.next(_this.getData());
                 observer.complete();
+                debugger;
             });
         }
     };
-    FormService = __decorate([
+    ;
+    IntroService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0_angularfire2_database__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_5__loading_service__["a" /* LoadingService */], __WEBPACK_IMPORTED_MODULE_4__toast_service__["a" /* ToastService */]])
-    ], FormService);
-    return FormService;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0_angularfire2_database__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_4__loading_service__["a" /* LoadingService */]])
+    ], IntroService);
+    return IntroService;
 }());
 
-//# sourceMappingURL=form-service.js.map
+//# sourceMappingURL=intro-service.js.map
 
 /***/ })
 

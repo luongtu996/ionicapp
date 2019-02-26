@@ -29,11 +29,16 @@ import { LeaderboardService } from "../services/leaderboard-service";
 import { DashboardService } from "../services/dashboard.service";
 import { CalendarModule } from "ion2-calendar";
 import { UsuarioService } from "../services/usuario.service";
+import { LocalNotifications } from '@ionic-native/local-notifications';
+import { PusherServiceProvider } from '../providers/pusher-service/pusher-service';
+import { ReviewService } from "../services/review.service";
+
+
 
 
 @NgModule({
     declarations: [
-        MyApp
+        MyApp,
     ],
     providers: [
         StatusBar,
@@ -51,8 +56,11 @@ import { UsuarioService } from "../services/usuario.service";
         LeaderboardService,
         DashboardService,
         UsuarioService,
+        LocalNotifications,
         { provide: ErrorHandler, useClass: IonicErrorHandler },
         { provide: 'Parameters', useClass: Parameters },
+        PusherServiceProvider,
+        ReviewService
     ],
     imports: [
         BrowserModule,
@@ -60,11 +68,12 @@ import { UsuarioService } from "../services/usuario.service";
         AngularFireModule.initializeApp(AppSettings.FIREBASE_CONFIG),
         AngularFireDatabaseModule, AngularFireAuthModule,
         IonicModule.forRoot(MyApp),
-        CalendarModule
+        CalendarModule,
+
     ],
     bootstrap: [IonicApp],
     entryComponents: [
-        MyApp
+        MyApp,
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonicPage, NavController, Select, NavParams } from 'ionic-angular';
 import { LoadingService } from "../../services/loading-service";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";

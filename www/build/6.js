@@ -1,14 +1,14 @@
 webpackJsonp([6],{
 
-/***/ 635:
+/***/ 640:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProfilePageModule", function() { return ProfilePageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TabPageModule", function() { return TabPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__profile__ = __webpack_require__(658);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tab__ = __webpack_require__(664);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,37 +18,33 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var ProfilePageModule = /** @class */ (function () {
-    function ProfilePageModule() {
+var TabPageModule = /** @class */ (function () {
+    function TabPageModule() {
     }
-    ProfilePageModule = __decorate([
+    TabPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__profile__["a" /* ProfilePage */],
+                __WEBPACK_IMPORTED_MODULE_2__tab__["a" /* TabPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_2__profile__["a" /* ProfilePage */]),
-            ],
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_2__tab__["a" /* TabPage */]),
+            ]
         })
-    ], ProfilePageModule);
-    return ProfilePageModule;
+    ], TabPageModule);
+    return TabPageModule;
 }());
 
-//# sourceMappingURL=profile.module.js.map
+//# sourceMappingURL=tab.module.js.map
 
 /***/ }),
 
-/***/ 658:
+/***/ 664:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfilePage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_services_http_http_service__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_toast_service__ = __webpack_require__(93);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_loading_service__ = __webpack_require__(72);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_usuario_service__ = __webpack_require__(426);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_services_auth_auth_service__ = __webpack_require__(419);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(38);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -60,52 +56,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
-
-
-
-var ProfilePage = /** @class */ (function () {
-    function ProfilePage(http, loadingService, usuarioServie, toast, authService) {
-        this.http = http;
-        this.loadingService = loadingService;
-        this.usuarioServie = usuarioServie;
-        this.toast = toast;
-        this.authService = authService;
+var TabPage = /** @class */ (function () {
+    function TabPage(navCtrl) {
+        this.navCtrl = navCtrl;
+        this.homeRoot = 'HomePage';
+        this.leaderboardRoot = 'Leaderboard';
+        this.reviewsRoot = 'ReviewPage';
+        this.profileRoot = 'ProfilePage';
     }
-    ProfilePage.prototype.ionViewWillEnter = function () {
-        this.authService.canActivate();
-    };
-    ProfilePage.prototype.ngOnInit = function () {
-        this.getProfile();
-    };
-    ProfilePage.prototype.getProfile = function () {
-        var _this = this;
-        this.loadingService.show();
-        this.usuarioServie.getProfile().subscribe(function (response) {
-            _this.usuario = response.data;
-            _this.loadingService.hide();
-        }, function (error) {
-            _this.loadingService.hide();
-            _this.toast.presentToast(error.error.error.message);
-        });
-    };
-    ProfilePage.prototype.logout = function () {
-        this.authService.logout();
-    };
-    ProfilePage = __decorate([
+    TabPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-profile',template:/*ion-inline-start:"C:\Users\Bender\Desktop\ionicapp\src\pages\profile\profile.html"*/'<!--Fist Screen-->\n<ion-header>\n  <ion-navbar>\n    <!---Title-->\n    <ion-title>2Step Reviews</ion-title>\n  </ion-navbar>\n</ion-header>\n<!--Theme Appearance animation (Zoom In)-->\n<ion-content>\n  <br>\n  <ion-col col-12 padding-top>\n    <span font-bold span-medium padding-left>Profile</span>\n  </ion-col>\n  <ion-grid no-padding >\n    <ion-col col-12 padding-top *ngIf="!usuario">\n      <span font-bold span-small="" padding-left>No results found</span>\n    </ion-col>\n\n    <ion-col col-12 *ngIf="usuario">\n      <ion-card padding box-shadow>\n        <ion-avatar>\n          <img [src]="usuario?.avatar?.web_url" alt="">\n        </ion-avatar>\n        <ion-card-content text-center>\n          <h1>{{ usuario?.nombre }}</h1>\n          <p>{{ usuario?.email }}</p>\n        </ion-card-content>\n\n        <br>\n        <button ion-button full (click)="logout()" color="danger">Logout</button>\n      </ion-card>\n\n    </ion-col>\n  </ion-grid>\n</ion-content>'/*ion-inline-end:"C:\Users\Bender\Desktop\ionicapp\src\pages\profile\profile.html"*/,
+            selector: 'page-tab',template:/*ion-inline-start:"C:\Users\Bender\Desktop\ionicapp\src\pages\tab\tab.html"*/'<ion-tabs [selectedIndex]=mySelectedIndex #myTabs>\n    <ion-tab [root]="homeRoot" tabTitle="Invite" tabUrlPath="0" tabIcon="paper-plane"></ion-tab>\n    <ion-tab [root]="leaderboardRoot" tabTitle="Leaderboard" tabUrlPath="1" tabIcon="people"></ion-tab>\n    <ion-tab [root]="reviewsRoot" tabTitle="Review" tabUrlPath="2" tabIcon="chatboxes"></ion-tab>\n    <ion-tab [root]="profileRoot" tabTitle="Profile" tabUrlPath="3" tabIcon="contact"></ion-tab>\n</ion-tabs>\n'/*ion-inline-end:"C:\Users\Bender\Desktop\ionicapp\src\pages\tab\tab.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__shared_services_http_http_service__["a" /* HttpService */],
-            __WEBPACK_IMPORTED_MODULE_3__services_loading_service__["a" /* LoadingService */],
-            __WEBPACK_IMPORTED_MODULE_4__services_usuario_service__["a" /* UsuarioService */],
-            __WEBPACK_IMPORTED_MODULE_2__services_toast_service__["a" /* ToastService */],
-            __WEBPACK_IMPORTED_MODULE_5__shared_services_auth_auth_service__["a" /* AuthService */]])
-    ], ProfilePage);
-    return ProfilePage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"]])
+    ], TabPage);
+    return TabPage;
 }());
 
-//# sourceMappingURL=profile.js.map
+//# sourceMappingURL=tab.js.map
 
 /***/ })
 

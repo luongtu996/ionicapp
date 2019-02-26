@@ -1,14 +1,14 @@
 webpackJsonp([7],{
 
-/***/ 629:
+/***/ 638:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WizardLayout3Module", function() { return WizardLayout3Module; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProfilePageModule", function() { return ProfilePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__wizard_layout_3__ = __webpack_require__(650);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__profile__ = __webpack_require__(662);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,37 +18,37 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var WizardLayout3Module = /** @class */ (function () {
-    function WizardLayout3Module() {
+var ProfilePageModule = /** @class */ (function () {
+    function ProfilePageModule() {
     }
-    WizardLayout3Module = __decorate([
+    ProfilePageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__wizard_layout_3__["a" /* WizardLayout3 */],
+                __WEBPACK_IMPORTED_MODULE_2__profile__["a" /* ProfilePage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_2__wizard_layout_3__["a" /* WizardLayout3 */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_2__profile__["a" /* ProfilePage */]),
             ],
-            exports: [
-                __WEBPACK_IMPORTED_MODULE_2__wizard_layout_3__["a" /* WizardLayout3 */]
-            ],
-            schemas: [__WEBPACK_IMPORTED_MODULE_0__angular_core__["CUSTOM_ELEMENTS_SCHEMA"]]
         })
-    ], WizardLayout3Module);
-    return WizardLayout3Module;
+    ], ProfilePageModule);
+    return ProfilePageModule;
 }());
 
-//# sourceMappingURL=wizard-layout-3.module.js.map
+//# sourceMappingURL=profile.module.js.map
 
 /***/ }),
 
-/***/ 650:
+/***/ 662:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WizardLayout3; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfilePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_services_http_http_service__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_toast_service__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_loading_service__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_usuario_service__ = __webpack_require__(420);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_services_auth_auth_service__ = __webpack_require__(419);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -60,55 +60,52 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-var WizardLayout3 = /** @class */ (function () {
-    function WizardLayout3() {
-        this.next = true;
-        this.finish = true;
-        this.next = true;
-        this.finish = false;
+
+
+
+
+var ProfilePage = /** @class */ (function () {
+    function ProfilePage(http, loadingService, usuarioServie, toast, authService) {
+        this.http = http;
+        this.loadingService = loadingService;
+        this.usuarioServie = usuarioServie;
+        this.toast = toast;
+        this.authService = authService;
     }
-    WizardLayout3.prototype.changeSlide = function (index) {
-        if (index > 0) {
-            this.slider.slideNext(300);
-        }
-        else {
-            this.slider.slidePrev(300);
-        }
+    ProfilePage.prototype.ionViewWillEnter = function () {
+        this.authService.canActivate();
     };
-    WizardLayout3.prototype.slideHasChanged = function (index) {
-        try {
-            this.next = this.slider.getActiveIndex() < (this.slider.length() - 1);
-            this.finish = this.slider.isEnd();
-        }
-        catch (e) { }
+    ProfilePage.prototype.ngOnInit = function () {
+        this.getProfile();
     };
-    WizardLayout3.prototype.onEvent = function (event) {
-        if (this.events[event]) {
-            this.events[event]();
-        }
+    ProfilePage.prototype.getProfile = function () {
+        var _this = this;
+        this.loadingService.show();
+        this.usuarioServie.getProfile().subscribe(function (response) {
+            _this.usuario = response.data;
+            _this.loadingService.hide();
+        }, function (error) {
+            _this.loadingService.hide();
+            _this.toast.presentToast(error.error.error.message);
+        });
     };
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
-        __metadata("design:type", Object)
-    ], WizardLayout3.prototype, "data", void 0);
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
-        __metadata("design:type", Object)
-    ], WizardLayout3.prototype, "events", void 0);
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('wizardSlider'),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["Slides"])
-    ], WizardLayout3.prototype, "slider", void 0);
-    WizardLayout3 = __decorate([
+    ProfilePage.prototype.logout = function () {
+        this.authService.logout();
+    };
+    ProfilePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'wizard-layout-3',template:/*ion-inline-start:"C:\Users\Bender\Desktop\ionicapp\src\components\wizard\layout-3\wizard.html"*/'<!--Theme Wizard Big Image -->\n\n\n\n  <button *ngIf="data != null" skip button-clear clear ion-button text-right>\n\n      {{data.btnSkip}}\n\n  </button>\n\n<!--- Wizard Content-->\n\n<ion-slides #wizardSlider (ionSlideDidChange)="slideHasChanged()" pager="true" *ngIf="data != null">\n\n    <ion-slide background-size *ngFor="let item of data.items;" [ngStyle]="{\'background-image\': \'url(\' + item.backgroundImage + \')\'}">\n\n        <div wizard-description text-left>\n\n            <h1 wizard-title>{{item.title}}</h1>\n\n            <h3 wizard-body-text>{{item.description}}</h3>\n\n        </div>\n\n    </ion-slide>\n\n</ion-slides>\n\n<!--Button section-->\n\n<div *ngIf="data != null">\n\n    <button navigation text-center button-clear clear ion-button (click)="changeSlide(1)" *ngIf="next">\n\n        {{data.btnNext}}\n\n    </button>\n\n    <button navigation button-clear clear ion-button (click)="onEvent(\'onFinish\')" *ngIf="finish">\n\n        {{data.btnFinish}}\n\n    </button>\n\n</div>\n\n'/*ion-inline-end:"C:\Users\Bender\Desktop\ionicapp\src\components\wizard\layout-3\wizard.html"*/
+            selector: 'page-profile',template:/*ion-inline-start:"C:\Users\Bender\Desktop\ionicapp\src\pages\profile\profile.html"*/'<!--Fist Screen-->\n<ion-header>\n  <ion-navbar>\n    <!---Title-->\n    <ion-title>2Step Reviews</ion-title>\n  </ion-navbar>\n</ion-header>\n<!--Theme Appearance animation (Zoom In)-->\n<ion-content>\n  <br>\n  <ion-col col-12 padding-top>\n    <span font-bold span-medium padding-left>Profile</span>\n  </ion-col>\n  <ion-grid no-padding >\n    <ion-col col-12 padding-top *ngIf="!usuario">\n      <span font-bold span-small="" padding-left>No results found</span>\n    </ion-col>\n\n    <ion-col col-12 *ngIf="usuario">\n      <ion-card padding box-shadow>\n        <ion-avatar>\n          <img [src]="usuario?.avatar?.web_url" alt="">\n        </ion-avatar>\n        <ion-card-content text-center>\n          <h1>{{ usuario?.nombre }}</h1>\n          <p>{{ usuario?.email }}</p>\n        </ion-card-content>\n\n        <br>\n        <button ion-button full (click)="logout()" color="danger">Logout</button>\n      </ion-card>\n\n    </ion-col>\n  </ion-grid>\n</ion-content>'/*ion-inline-end:"C:\Users\Bender\Desktop\ionicapp\src\pages\profile\profile.html"*/,
         }),
-        __metadata("design:paramtypes", [])
-    ], WizardLayout3);
-    return WizardLayout3;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__shared_services_http_http_service__["a" /* HttpService */],
+            __WEBPACK_IMPORTED_MODULE_3__services_loading_service__["a" /* LoadingService */],
+            __WEBPACK_IMPORTED_MODULE_4__services_usuario_service__["a" /* UsuarioService */],
+            __WEBPACK_IMPORTED_MODULE_2__services_toast_service__["a" /* ToastService */],
+            __WEBPACK_IMPORTED_MODULE_5__shared_services_auth_auth_service__["a" /* AuthService */]])
+    ], ProfilePage);
+    return ProfilePage;
 }());
 
-//# sourceMappingURL=wizard-layout-3.js.map
+//# sourceMappingURL=profile.js.map
 
 /***/ })
 

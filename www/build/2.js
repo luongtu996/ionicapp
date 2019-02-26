@@ -1,58 +1,86 @@
 webpackJsonp([2],{
 
-/***/ 630:
+/***/ 636:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomePageModule", function() { return HomePageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LeaderboardModule", function() { return LeaderboardModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home__ = __webpack_require__(651);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_shared_module__ = __webpack_require__(637);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__leaderboard__ = __webpack_require__(660);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_shared_module__ = __webpack_require__(641);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 
 
 
 
-var HomePageModule = /** @class */ (function () {
-    function HomePageModule() {
+
+// import { CalendarModule } from "ion2-calendar";
+var LeaderboardModule = /** @class */ (function () {
+    function LeaderboardModule() {
+        var _this = this;
+        this.isUsernameValid = true;
+        this.isPasswordValid = true;
+        this.onEvent = function (event) {
+            if (event == "onLogin" && !_this.validate()) {
+                return;
+            }
+        };
     }
-    HomePageModule = __decorate([
+    LeaderboardModule.prototype.validate = function () {
+        this.isUsernameValid = true;
+        this.isPasswordValid = true;
+        if (!this.username || this.username.length == 0) {
+            this.isUsernameValid = false;
+        }
+        if (!this.password || this.password.length == 0) {
+            this.isPasswordValid = false;
+        }
+        return this.isPasswordValid && this.isUsernameValid;
+    };
+    LeaderboardModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__home__["a" /* HomePage */],
+                __WEBPACK_IMPORTED_MODULE_2__leaderboard__["a" /* Leaderboard */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_2__home__["a" /* HomePage */]),
-                __WEBPACK_IMPORTED_MODULE_3__shared_shared_module__["a" /* SharedModule */]
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_2__leaderboard__["a" /* Leaderboard */]),
+                __WEBPACK_IMPORTED_MODULE_3__angular_forms__["FormsModule"],
+                __WEBPACK_IMPORTED_MODULE_3__angular_forms__["ReactiveFormsModule"],
+                __WEBPACK_IMPORTED_MODULE_4__shared_shared_module__["a" /* SharedModule */],
             ],
             schemas: [__WEBPACK_IMPORTED_MODULE_0__angular_core__["CUSTOM_ELEMENTS_SCHEMA"]]
-        })
-    ], HomePageModule);
-    return HomePageModule;
+        }),
+        __metadata("design:paramtypes", [])
+    ], LeaderboardModule);
+    return LeaderboardModule;
 }());
 
-//# sourceMappingURL=home.module.js.map
+//# sourceMappingURL=leaderboard.module.js.map
 
 /***/ }),
 
-/***/ 637:
+/***/ 641:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SharedModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ngx_avatar__ = __webpack_require__(638);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__directives_lm_mask_directive__ = __webpack_require__(641);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__directives_lm_strong_directive__ = __webpack_require__(642);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ngx_mask_ionic__ = __webpack_require__(643);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ngx_avatar__ = __webpack_require__(642);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__directives_lm_mask_directive__ = __webpack_require__(645);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__directives_lm_strong_directive__ = __webpack_require__(646);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ngx_mask_ionic__ = __webpack_require__(647);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -94,7 +122,7 @@ var SharedModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 638:
+/***/ 642:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -104,12 +132,12 @@ var SharedModule = /** @class */ (function () {
 /* unused harmony export ɵc */
 /* unused harmony export ɵb */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_is_retina__ = __webpack_require__(639);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_is_retina__ = __webpack_require__(643);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_is_retina___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_is_retina__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ts_md5_dist_md5__ = __webpack_require__(640);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ts_md5_dist_md5__ = __webpack_require__(644);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ts_md5_dist_md5___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_ts_md5_dist_md5__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(161);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common__ = __webpack_require__(47);
 
 
@@ -1284,7 +1312,7 @@ var AvatarModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 639:
+/***/ 643:
 /***/ (function(module, exports) {
 
 module.exports = function() {
@@ -1304,7 +1332,7 @@ module.exports = function() {
 
 /***/ }),
 
-/***/ 640:
+/***/ 644:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1713,7 +1741,7 @@ if (Md5.hashStr('hello') !== '5d41402abc4b2a76b9719d911017c592') {
 
 /***/ }),
 
-/***/ 641:
+/***/ 645:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1795,7 +1823,7 @@ var LmMaskDirective = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 642:
+/***/ 646:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1845,7 +1873,7 @@ var LmStrongDirective = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 643:
+/***/ 647:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2922,21 +2950,20 @@ function _configFactory(initConfig, configValue) {
 
 /***/ }),
 
-/***/ 651:
+/***/ 660:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Leaderboard; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_loading_service__ = __webpack_require__(72);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_template_service__ = __webpack_require__(421);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_services_http_http_service__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_loading_service__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_dashboard_service__ = __webpack_require__(425);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_toast_service__ = __webpack_require__(93);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_services_auth_auth_service__ = __webpack_require__(419);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_login_service__ = __webpack_require__(164);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_company_service__ = __webpack_require__(422);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_sms_service__ = __webpack_require__(423);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_toast_service__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ionic_angular__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_ion2_calendar__ = __webpack_require__(426);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_ion2_calendar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_ion2_calendar__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2954,72 +2981,93 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
-
-var HomePage = /** @class */ (function () {
-    function HomePage(navCtrl, navParams, fb, loadingService, templateService, authService, loginService, companyService, smsService, toast) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.fb = fb;
-        this.loadingService = loadingService;
-        this.templateService = templateService;
+var Leaderboard = /** @class */ (function () {
+    function Leaderboard(http, authService, loadingService, dashboardService, toast, modalCtrl) {
+        this.http = http;
         this.authService = authService;
-        this.loginService = loginService;
-        this.companyService = companyService;
-        this.smsService = smsService;
+        this.loadingService = loadingService;
+        this.dashboardService = dashboardService;
         this.toast = toast;
-        this.data = {};
-        this.form = fb.group({
-            'name': ['', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["Validators"].required],
-            'to': ['', [__WEBPACK_IMPORTED_MODULE_3__angular_forms__["Validators"].required, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["Validators"].minLength(14)]],
-        });
+        this.modalCtrl = modalCtrl;
+        this.animateItems = [];
     }
-    HomePage.prototype.ionViewWillEnter = function () {
+    Leaderboard.prototype.ionViewWillEnter = function () {
         this.authService.canActivate();
     };
-    HomePage.prototype.ngOnInit = function () {
+    Leaderboard.prototype.ngOnInit = function () {
+        this.getLeaderboard();
     };
-    HomePage.prototype.onSubmit = function (formValue) {
+    Leaderboard.prototype.getLeaderboard = function () {
         var _this = this;
         this.loadingService.show();
-        formValue.to = formValue.to.replace(/\D+/g, '');
-        formValue.to = "+1" + formValue.to;
-        this.smsService.create(formValue).subscribe(function (response) {
+        this.dashboardService.getStatsByLeaderboard().subscribe(function (response) {
+            _this.leaderboards = response.data;
             _this.loadingService.hide();
-            _this.form.reset();
-            _this.toast.presentToast("Invite Sent");
-        }, function (error) {
-            _this.toast.presentToast(error.error.error.message);
-            if (formValue.to.includes("+1")) {
-                formValue.to = formValue.to.substr(2);
+            var self = _this;
+            var _loop_1 = function (i) {
+                setTimeout(function () {
+                    self.animateItems.push(self.leaderboards[i]);
+                }, 200 * i);
+            };
+            for (var i = 0; i < _this.leaderboards.length; i++) {
+                _loop_1(i);
             }
+        }, function (error) {
             _this.loadingService.hide();
+            _this.toast.presentToast(error.error.error.message);
         });
     };
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('selectCompanies'),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["Select"])
-    ], HomePage.prototype, "selectModalCompanies", void 0);
-    HomePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-home',template:/*ion-inline-start:"C:\Users\Bender\Desktop\ionicapp\src\pages\home\home.html"*/'<ion-select [(ngModel)]="company" multiple="false" interface="action-sheet" *ngIf="company" #selectCompanies>\n\n    <ion-option *ngFor="let item of companies; let i= index" [value]="item">{{item.name}}</ion-option>\n\n</ion-select>\n\n<!--Fist Screen-->\n\n<ion-header>\n\n    <ion-navbar>\n\n        <button ion-button menuToggle>\n\n            <ion-icon class="icon-menu" name="menu"></ion-icon>\n\n        </button>\n\n        <!---Title-->\n\n        <ion-title>2Step Reviews</ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n<!-- Themes Login + logo -->\n\n<ion-content class="masters">\n\n    <br>\n\n    <ion-col col-12 padding-top>\n\n        <span font-bold span-medium padding-left>Send A Review Invite</span>\n\n    </ion-col>\n\n    <ion-grid>\n\n        <ion-row wrap padding>\n\n            <ion-col>\n\n                <br>\n\n                <br>\n\n                <br>\n\n                <br>\n\n                <form  [formGroup]="form" (submit)="onSubmit(form.value)">\n\n                    <!---Input field username-->\n\n                    <ion-item no-lines box-shadow>\n\n                        <ion-label class="lm-label">\n\n                            <ion-icon name="person"></ion-icon>\n\n                        </ion-label>\n\n                        <ion-input type="email" no-margin type="text" placeholder="Name" formControlName="name"></ion-input>\n\n                    </ion-item>\n\n                    <br>\n\n                    <!---Input field password-->\n\n                    <ion-item no-lines box-shadow>\n\n                        <ion-label class="lm-label">\n\n                            <ion-icon name="call"></ion-icon>\n\n                        </ion-label>\n\n                        <ion-input type="tel" mask="(000) 000-0000" no-margin type="text" placeholder="Phone Number" formControlName="to"></ion-input>\n\n                    </ion-item>\n\n                    <!---Input field password-->\n\n                    <br>\n\n                    <button col-12 ion-button button-clear-outline [disabled]="form.invalid">\n\n                        Send\n\n                        <ion-icon name="paper-plane"></ion-icon>\n\n                    </button>\n\n                </form>\n\n            </ion-col>\n\n        </ion-row>\n\n    </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Bender\Desktop\ionicapp\src\pages\home\home.html"*/,
-            providers: [__WEBPACK_IMPORTED_MODULE_5__shared_services_auth_auth_service__["a" /* AuthService */]]
+    Leaderboard.prototype.range = function () {
+        var _this = this;
+        var options = {
+            pickMode: 'range',
+            title: 'Select Date',
+            color: '#2962ff',
+            canBackwardsSelected: true
+        };
+        var myCalendar = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_7_ion2_calendar__["CalendarModal"], {
+            options: options
+        });
+        myCalendar.present();
+        myCalendar.onDidDismiss(function (date, type) {
+            if (date) {
+                if (date['from'] && date['to']) {
+                    _this.loadingService.show();
+                    _this.dashboardService.getStatsByLeaderboardByRange(date['from'].string, date['to'].string).subscribe(function (response) {
+                        _this.leaderboards = response.data;
+                        _this.loadingService.hide();
+                        var self = _this;
+                        self.animateItems = [];
+                        var _loop_2 = function (i) {
+                            setTimeout(function () {
+                                self.animateItems.push(self.leaderboards[i]);
+                            }, 200 * i);
+                        };
+                        for (var i = 0; i < _this.leaderboards.length; i++) {
+                            _loop_2(i);
+                        }
+                    }, function (error) {
+                        _this.toast.presentToast(error.error.error.message);
+                        _this.loadingService.hide();
+                    });
+                }
+            }
+        });
+    };
+    Leaderboard = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"C:\Users\Bender\Desktop\ionicapp\src\pages\leaderboard\leaderboard.html"*/'<!--Fist Screen-->\n\n<ion-header>\n\n    <ion-navbar>\n\n        <!---Title-->\n\n        <ion-title>2Step Reviews</ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n<!--Theme Appearance animation (Zoom In)-->\n\n<ion-content>\n\n    <br>\n\n    <ion-col col-12 padding-top>\n\n        <span font-bold span-medium padding-left>Leaderboard</span>\n\n    </ion-col>\n\n    <ion-grid no-padding >\n\n        <ion-col col-12 padding-top *ngIf="!animateItems?.length">\n\n            <span font-bold span-small="" padding-left>No results found</span>\n\n        </ion-col>\n\n\n\n        <ion-col col-12>\n\n            <ion-list>\n\n                <ion-item box-shadow margin-top no-lines *ngFor="let item of animateItems; let i = index;" [ngClass]="{ \'zoom-in\': true }">\n\n                    <!-- Avatar -->\n\n                    <ion-avatar item-start>\n\n                        <!--<img [src]="item.image">-->\n\n                        <ngx-avatar name="{{ item.user }}"></ngx-avatar>\n\n                    </ion-avatar>\n\n                    <!-- Title -->\n\n                    <h2 item-title>{{ item.user }}</h2>\n\n                    <h3 text-wrap margin-top>\n\n                        Invites Sent {{ item.invites }}\n\n                    </h3>\n\n                    <h3 text-wrap >\n\n                        Success Rate {{ item.success_rate }}\n\n                    </h3>\n\n                    <h3 text-wrap >\n\n                        Review {{ item.reviews }}\n\n                    </h3>\n\n                </ion-item>\n\n            </ion-list>\n\n        </ion-col>\n\n    </ion-grid>\n\n</ion-content>\n\n<!-- Fab Button -->\n\n<ion-fab #fab bottom right>\n\n    <button button-ion-fab ion-fab style="position : absolute; bottom: 70px; right : 20px;" (click)="range()">\n\n        <ion-icon name="calendar"></ion-icon>\n\n    </button>\n\n</ion-fab>\n\n'/*ion-inline-end:"C:\Users\Bender\Desktop\ionicapp\src\pages\leaderboard\leaderboard.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"],
-            __WEBPACK_IMPORTED_MODULE_3__angular_forms__["FormBuilder"],
-            __WEBPACK_IMPORTED_MODULE_2__services_loading_service__["a" /* LoadingService */],
-            __WEBPACK_IMPORTED_MODULE_4__services_template_service__["a" /* TemplateService */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__shared_services_http_http_service__["a" /* HttpService */],
             __WEBPACK_IMPORTED_MODULE_5__shared_services_auth_auth_service__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_6__services_login_service__["a" /* LoginService */],
-            __WEBPACK_IMPORTED_MODULE_7__services_company_service__["a" /* CompanyService */],
-            __WEBPACK_IMPORTED_MODULE_8__services_sms_service__["a" /* SmsService */],
-            __WEBPACK_IMPORTED_MODULE_9__services_toast_service__["a" /* ToastService */]])
-    ], HomePage);
-    return HomePage;
+            __WEBPACK_IMPORTED_MODULE_2__services_loading_service__["a" /* LoadingService */],
+            __WEBPACK_IMPORTED_MODULE_3__services_dashboard_service__["a" /* DashboardService */],
+            __WEBPACK_IMPORTED_MODULE_4__services_toast_service__["a" /* ToastService */],
+            __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["ModalController"]])
+    ], Leaderboard);
+    return Leaderboard;
 }());
 
-//# sourceMappingURL=home.js.map
+//# sourceMappingURL=leaderboard.js.map
 
 /***/ })
 
