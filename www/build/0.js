@@ -1,6 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 639:
+/***/ 640:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ReviewModule", function() { return ReviewModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__review__ = __webpack_require__(663);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__review__ = __webpack_require__(665);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_shared_module__ = __webpack_require__(641);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -2926,7 +2926,43 @@ function _configFactory(initConfig, configValue) {
 
 /***/ }),
 
-/***/ 663:
+/***/ 649:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Util; });
+var Util = {
+    a: '#4FF6C6',
+    b: '#4FF6C6',
+    c: '#4FF6C6',
+    d: '#4FF6C6',
+    e: '#4FF6C6',
+    f: '#4FF6C6',
+    g: '#453B8D',
+    h: '#453B8D',
+    i: '#453B8D',
+    j: '#453B8D',
+    k: '#453B8D',
+    l: '#453B8D',
+    m: '#453B8D',
+    n: '#453B8D',
+    o: '#453B8D',
+    p: '#252531',
+    q: '#252531',
+    r: '#252531',
+    s: '#252531',
+    u: '#252531',
+    v: '#252531',
+    w: '#252531',
+    x: '#252531',
+    y: '#252531',
+    z: '#252531'
+};
+//# sourceMappingURL=util.js.map
+
+/***/ }),
+
+/***/ 665:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2938,6 +2974,7 @@ function _configFactory(initConfig, configValue) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_services_auth_auth_service__ = __webpack_require__(419);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic_angular__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_review_service__ = __webpack_require__(429);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__shared_util_util__ = __webpack_require__(649);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2947,6 +2984,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -3008,13 +3046,20 @@ var ReviewPage = /** @class */ (function () {
                 infiniteScroll.complete();
         });
     };
+    ReviewPage.prototype.colorBgAvatar = function (usuario) {
+        return (__WEBPACK_IMPORTED_MODULE_7__shared_util_util__["a" /* Util */][usuario[0].toLowerCase()]) ? __WEBPACK_IMPORTED_MODULE_7__shared_util_util__["a" /* Util */][usuario[0].toLowerCase()] : "#4FF6C6";
+    };
     ReviewPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"C:\Users\Bender\Desktop\ionicapp\src\pages\review\review.html"*/'<!--Fist Screen-->\n\n<ion-header>\n\n    <ion-navbar>\n\n        <!---Title-->\n\n        <ion-title>2Step Reviews</ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n<!--Theme Appearance animation (Zoom In)-->\n\n<ion-content>\n\n    <br>\n\n    <ion-col col-12 padding-top>\n\n        <span font-bold span-medium padding-left>Reviews</span>\n\n    </ion-col>\n\n    <ion-grid no-padding >\n\n        <ion-col col-12 padding-top *ngIf="!animateItems?.length">\n\n            <span font-bold span-small="" padding-left>No results found</span>\n\n        </ion-col>\n\n\n\n        <ion-col col-12>\n\n            <ion-list>\n\n                <ion-item box-shadow margin-top no-lines *ngFor="let item of animateItems; let i = index;" [ngClass]="{ \'zoom-in\': true }">\n\n                    <!-- Avatar -->\n\n                    <ion-avatar item-start>\n\n                        <!--<img [src]="item.image">-->\n\n                        <ngx-avatar name="{{ item.customer }}"></ngx-avatar>\n\n                    </ion-avatar>\n\n                    <!-- Title -->\n\n                    <h2 item-title>{{ item.customer }}</h2>\n\n                    <h3 text-wrap margin-top>\n\n                        <ion-icon name="pin"></ion-icon><b>{{ item.office_name }}</b> &nbsp;&nbsp;&nbsp;&nbsp; {{ item.office_address}}\n\n                    </h3>\n\n                    <h3 text-wrap >\n\n                        {{ item.comment }}\n\n                    </h3>\n\n                    <h3 text-wrap >\n\n                        <ion-icon name="calendar"></ion-icon><b>{{  item.created_at | date: \'fullDate\' }}</b>\n\n                    </h3>\n\n                    <!--<ion-col col-12 text-center>-->\n\n                        <!--<ion-icon white *ngFor="let star of [1,2,3,4,5];let i = index">-->\n\n                            <!--<i icon-medium *ngIf="item.isActive" class="icon icon-star"></i>-->\n\n                            <!--<i icon-medium *ngIf="!item.isActive" class="icon icon-star-outline"></i>-->\n\n                        <!--</ion-icon>-->\n\n                    <!--</ion-col>-->\n\n                </ion-item>\n\n                <ion-infinite-scroll (ionInfinite)="getReviews($event)">\n\n                    <ion-infinite-scroll-content></ion-infinite-scroll-content>\n\n                </ion-infinite-scroll>\n\n            </ion-list>\n\n        </ion-col>\n\n    </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Bender\Desktop\ionicapp\src\pages\review\review.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"C:\Users\Bender\Desktop\ionicapp\src\pages\review\review.html"*/'<!--Fist Screen-->\n\n<ion-header>\n\n    <ion-navbar>\n\n        <!---Title-->\n\n        <ion-title>2Step Reviews</ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n<!--Theme Appearance animation (Zoom In)-->\n\n<ion-content>\n\n    <br>\n\n    <ion-col col-12 padding-top>\n\n        <span font-bold span-medium padding-left>Reviews</span>\n\n    </ion-col>\n\n    <ion-grid no-padding >\n\n        <ion-col col-12 padding-top *ngIf="!animateItems?.length">\n\n            <span font-bold span-small="" padding-left>No results found</span>\n\n        </ion-col>\n\n\n\n        <ion-col col-12>\n\n            <ion-list>\n\n                <ion-item box-shadow margin-top no-lines *ngFor="let item of animateItems; let i = index;" [ngClass]="{ \'zoom-in\': true }">\n\n                    <!-- Avatar -->\n\n                    <ion-avatar item-start>\n\n                        <!--<img [src]="item.image">-->\n\n                        <ngx-avatar name="{{ item.customer }}" [bgColor]="colorBgAvatar(item.customer)"></ngx-avatar>\n\n                    </ion-avatar>\n\n                    <!-- Title -->\n\n                    <h2 item-title>{{ item.customer }}</h2>\n\n                    <h3 text-wrap margin-top>\n\n                        <ion-icon name="pin"></ion-icon><b>{{ item.office_name }}</b> &nbsp;&nbsp;&nbsp;&nbsp; {{ item.office_address}}\n\n                    </h3>\n\n                    <h3 text-wrap >\n\n                        {{ item.comment }}\n\n                    </h3>\n\n                    <h3 text-wrap >\n\n                        <ion-icon name="calendar"></ion-icon><b>{{  item.created_at | date: \'fullDate\' }}</b>\n\n                    </h3>\n\n                    <!--<ion-col col-12 text-center>-->\n\n                        <!--<ion-icon white *ngFor="let star of [1,2,3,4,5];let i = index">-->\n\n                            <!--<i icon-medium *ngIf="item.isActive" class="icon icon-star"></i>-->\n\n                            <!--<i icon-medium *ngIf="!item.isActive" class="icon icon-star-outline"></i>-->\n\n                        <!--</ion-icon>-->\n\n                    <!--</ion-col>-->\n\n                </ion-item>\n\n                <ion-infinite-scroll (ionInfinite)="getReviews($event)">\n\n                    <ion-infinite-scroll-content></ion-infinite-scroll-content>\n\n                </ion-infinite-scroll>\n\n            </ion-list>\n\n        </ion-col>\n\n    </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Bender\Desktop\ionicapp\src\pages\review\review.html"*/
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__shared_services_http_http_service__["a" /* HttpService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__shared_services_http_http_service__["a" /* HttpService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__shared_services_auth_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__shared_services_auth_auth_service__["a" /* AuthService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_loading_service__["a" /* LoadingService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_loading_service__["a" /* LoadingService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__services_toast_service__["a" /* ToastService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_toast_service__["a" /* ToastService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["ModalController"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["ModalController"]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_6__services_review_service__["a" /* ReviewService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__services_review_service__["a" /* ReviewService */]) === "function" && _f || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__shared_services_http_http_service__["a" /* HttpService */],
+            __WEBPACK_IMPORTED_MODULE_4__shared_services_auth_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_2__services_loading_service__["a" /* LoadingService */],
+            __WEBPACK_IMPORTED_MODULE_3__services_toast_service__["a" /* ToastService */],
+            __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["ModalController"],
+            __WEBPACK_IMPORTED_MODULE_6__services_review_service__["a" /* ReviewService */]])
     ], ReviewPage);
     return ReviewPage;
-    var _a, _b, _c, _d, _e, _f;
 }());
 
 //# sourceMappingURL=review.js.map

@@ -215,22 +215,22 @@ var map = {
 	],
 	"../pages/leaderboard/leaderboard.module": [
 		636,
-		2
+		1
 	],
 	"../pages/login/login.module": [
 		637,
-		1
+		2
 	],
 	"../pages/profile/profile.module": [
 		638,
 		7
 	],
 	"../pages/review/review.module": [
-		639,
+		640,
 		0
 	],
 	"../pages/tab/tab.module": [
-		640,
+		639,
 		6
 	]
 };
@@ -777,10 +777,9 @@ var ReviewService = /** @class */ (function (_super) {
     };
     ReviewService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__shared_services_http_http_service__["a" /* HttpService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__shared_services_http_http_service__["a" /* HttpService */]) === "function" && _a || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__shared_services_http_http_service__["a" /* HttpService */]])
     ], ReviewService);
     return ReviewService;
-    var _a;
 }(__WEBPACK_IMPORTED_MODULE_1__shared_services_api_api_service__["a" /* ApiService */]));
 
 //# sourceMappingURL=review.service.js.map
@@ -1057,8 +1056,8 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/leaderboard/leaderboard.module#LeaderboardModule', name: 'Leaderboard', segment: 'leaderboard', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginModule', name: 'Login', segment: 'login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'ProfilePage', segment: 'profile', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/review/review.module#ReviewModule', name: 'ReviewPage', segment: 'review', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/tab/tab.module#TabPageModule', name: 'TabPage', segment: 'tab', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/tab/tab.module#TabPageModule', name: 'TabPage', segment: 'tab', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/review/review.module#ReviewModule', name: 'ReviewPage', segment: 'review', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_25_ion2_calendar__["CalendarModule"],
@@ -1447,7 +1446,7 @@ var MyApp = /** @class */ (function () {
 var Parameters = /** @class */ (function () {
     function Parameters() {
         this.API_URL = "https://api.dev.2stepreviewsapp.com/app_dev.php/";
-        // API_URL = `localhost/reviews/web/app.php/`;
+        // API_URL = `http://localhost/reviews/web/app_dev.php/`;
     }
     return Parameters;
 }());

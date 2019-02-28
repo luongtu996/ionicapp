@@ -7,6 +7,7 @@ import { AuthService } from "../../shared/services/auth/auth.service";
 
 import { ModalController } from 'ionic-angular';
 import { ReviewService } from "../../services/review.service";
+import { Util } from "../../shared/util/util";
 
 
 @IonicPage()
@@ -78,5 +79,9 @@ export class ReviewPage implements OnInit{
                     infiniteScroll.complete();
             }
         );
+    }
+
+    colorBgAvatar(usuario:any){
+        return (Util[usuario[0].toLowerCase()]) ? Util[usuario[0].toLowerCase()] : "#4FF6C6";
     }
 }

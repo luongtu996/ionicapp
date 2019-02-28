@@ -1,14 +1,14 @@
 webpackJsonp([1],{
 
-/***/ 637:
+/***/ 636:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginModule", function() { return LoginModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LeaderboardModule", function() { return LeaderboardModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login__ = __webpack_require__(661);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__leaderboard__ = __webpack_require__(661);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_shared_module__ = __webpack_require__(641);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -25,47 +25,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var LoginModule = /** @class */ (function () {
-    function LoginModule() {
-        var _this = this;
+// import { CalendarModule } from "ion2-calendar";
+var LeaderboardModule = /** @class */ (function () {
+    function LeaderboardModule() {
         this.isUsernameValid = true;
         this.isPasswordValid = true;
-        this.onEvent = function (event) {
-            if (event == "onLogin" && !_this.validate()) {
-                return;
-            }
-        };
     }
-    LoginModule.prototype.validate = function () {
-        this.isUsernameValid = true;
-        this.isPasswordValid = true;
-        if (!this.username || this.username.length == 0) {
-            this.isUsernameValid = false;
-        }
-        if (!this.password || this.password.length == 0) {
-            this.isPasswordValid = false;
-        }
-        return this.isPasswordValid && this.isUsernameValid;
-    };
-    LoginModule = __decorate([
+    LeaderboardModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__login__["a" /* Login */],
+                __WEBPACK_IMPORTED_MODULE_2__leaderboard__["a" /* Leaderboard */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_2__login__["a" /* Login */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_2__leaderboard__["a" /* Leaderboard */]),
                 __WEBPACK_IMPORTED_MODULE_3__angular_forms__["FormsModule"],
                 __WEBPACK_IMPORTED_MODULE_3__angular_forms__["ReactiveFormsModule"],
-                __WEBPACK_IMPORTED_MODULE_4__shared_shared_module__["a" /* SharedModule */]
+                __WEBPACK_IMPORTED_MODULE_4__shared_shared_module__["a" /* SharedModule */],
             ],
             schemas: [__WEBPACK_IMPORTED_MODULE_0__angular_core__["CUSTOM_ELEMENTS_SCHEMA"]]
         }),
         __metadata("design:paramtypes", [])
-    ], LoginModule);
-    return LoginModule;
+    ], LeaderboardModule);
+    return LeaderboardModule;
 }());
 
-//# sourceMappingURL=login.module.js.map
+//# sourceMappingURL=leaderboard.module.js.map
 
 /***/ }),
 
@@ -2949,20 +2933,57 @@ function _configFactory(initConfig, configValue) {
 
 /***/ }),
 
+/***/ 649:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Util; });
+var Util = {
+    a: '#4FF6C6',
+    b: '#4FF6C6',
+    c: '#4FF6C6',
+    d: '#4FF6C6',
+    e: '#4FF6C6',
+    f: '#4FF6C6',
+    g: '#453B8D',
+    h: '#453B8D',
+    i: '#453B8D',
+    j: '#453B8D',
+    k: '#453B8D',
+    l: '#453B8D',
+    m: '#453B8D',
+    n: '#453B8D',
+    o: '#453B8D',
+    p: '#252531',
+    q: '#252531',
+    r: '#252531',
+    s: '#252531',
+    u: '#252531',
+    v: '#252531',
+    w: '#252531',
+    x: '#252531',
+    y: '#252531',
+    z: '#252531'
+};
+//# sourceMappingURL=util.js.map
+
+/***/ }),
+
 /***/ 661:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Login; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Leaderboard; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_services_http_http_service__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_loading_service__ = __webpack_require__(73);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_toast_service__ = __webpack_require__(93);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_local_notifications__ = __webpack_require__(427);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_pusher_service_pusher_service__ = __webpack_require__(428);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_usuario_service__ = __webpack_require__(420);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_services_http_http_service__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_loading_service__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_dashboard_service__ = __webpack_require__(425);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_toast_service__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_services_auth_auth_service__ = __webpack_require__(419);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ionic_angular__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_ion2_calendar__ = __webpack_require__(426);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_ion2_calendar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_ion2_calendar__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__shared_util_util__ = __webpack_require__(649);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2981,78 +3002,96 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var Login = /** @class */ (function () {
-    function Login(http, navCtrl, fb, loadingService, menu, toast, localNotifications, pusher, usuarioServie) {
+var Leaderboard = /** @class */ (function () {
+    function Leaderboard(http, authService, loadingService, dashboardService, toast, modalCtrl) {
         this.http = http;
-        this.navCtrl = navCtrl;
-        this.fb = fb;
+        this.authService = authService;
         this.loadingService = loadingService;
-        this.menu = menu;
+        this.dashboardService = dashboardService;
         this.toast = toast;
-        this.localNotifications = localNotifications;
-        this.pusher = pusher;
-        this.usuarioServie = usuarioServie;
-        this.loginForm = fb.group({
-            'username': ['raulito.lima.93@gmail.com', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required]],
-            'password': ['wailea912', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required],
-            'grant_type': ['password'],
-            'client_id': ['1_3bcbxd9e24g0gk4swg0kwgcwg4o8k8g4g888kwc44gcc0gwwk4'],
-            'client_secret': ['4ok2x70rlfokc8g0wws8c8kwcokw80k44sg48goc0ok4w0so0k'],
-        });
+        this.modalCtrl = modalCtrl;
+        this.animateItems = [];
     }
-    Login.prototype.ngOnInit = function () {
+    Leaderboard.prototype.ionViewWillEnter = function () {
+        this.authService.canActivate();
     };
-    Login.prototype.onSubmit = function (formValue) {
+    Leaderboard.prototype.ngOnInit = function () {
+        this.getLeaderboard();
+    };
+    Leaderboard.prototype.getLeaderboard = function () {
         var _this = this;
         this.loadingService.show();
-        formValue.username = formValue.username.replace(/[()\-\ ]+/g, '');
-        this.http.post('oauth/v2/token', formValue).subscribe(function (response) {
-            localStorage.setItem('access_token', response.access_token);
-            localStorage.setItem('refresh_token', response.refresh_token);
-            localStorage.setItem('expires_date', _this.calculateTokenExpiresDateTime(response.expires_in).toString());
-            _this.usuarioServie.getProfile().subscribe(function (response) {
-                var usuario = response.data;
-                _this.pusher.init().subscribe(usuario.email).bind("my-event", function (message) {
-                    _this.localNotifications.schedule({
-                        title: message.title,
-                        text: message.body
-                    });
-                });
-                _this.loadingService.hide();
-                _this.navCtrl.setRoot("TabPage");
-            }, function (error) {
-                _this.loadingService.hide();
-                _this.toast.presentToast(error.error.error.message);
-            });
-        }, function (error) {
-            _this.toast.presentToast(error.error.error_description);
+        this.dashboardService.getStatsByLeaderboard().subscribe(function (response) {
+            _this.leaderboards = response.data;
             _this.loadingService.hide();
-            if (formValue.username.includes("+1"))
-                formValue.username = formValue.username.substr(2);
+            var self = _this;
+            var _loop_1 = function (i) {
+                setTimeout(function () {
+                    self.animateItems.push(self.leaderboards[i]);
+                }, 200 * i);
+            };
+            for (var i = 0; i < _this.leaderboards.length; i++) {
+                _loop_1(i);
+            }
+        }, function (error) {
+            _this.loadingService.hide();
+            _this.toast.presentToast(error.error.error.message);
         });
     };
-    Login.prototype.calculateTokenExpiresDateTime = function (expires_in) {
-        var now = new Date();
-        var expiresDate = new Date(now.getTime() + expires_in * 1000);
-        return expiresDate;
+    Leaderboard.prototype.range = function () {
+        var _this = this;
+        var options = {
+            pickMode: 'range',
+            title: 'Select Date',
+            color: '#453B8D',
+            canBackwardsSelected: true
+        };
+        var myCalendar = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_7_ion2_calendar__["CalendarModal"], {
+            options: options
+        });
+        myCalendar.present();
+        myCalendar.onDidDismiss(function (date, type) {
+            if (date) {
+                if (date['from'] && date['to']) {
+                    _this.loadingService.show();
+                    _this.dashboardService.getStatsByLeaderboardByRange(date['from'].string, date['to'].string).subscribe(function (response) {
+                        _this.leaderboards = response.data;
+                        _this.loadingService.hide();
+                        var self = _this;
+                        self.animateItems = [];
+                        var _loop_2 = function (i) {
+                            setTimeout(function () {
+                                self.animateItems.push(self.leaderboards[i]);
+                            }, 200 * i);
+                        };
+                        for (var i = 0; i < _this.leaderboards.length; i++) {
+                            _loop_2(i);
+                        }
+                    }, function (error) {
+                        _this.toast.presentToast(error.error.error.message);
+                        _this.loadingService.hide();
+                    });
+                }
+            }
+        });
     };
-    Login = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"C:\Users\Bender\Desktop\ionicapp\src\pages\login\login.html"*/'<!-- Themes Login + logo -->\n\n<ion-content background-size default-background [ngStyle]="{\'background-image\': \'url(assets/images/background/auth-bg.jpg)\'}">\n\n    <ion-grid>\n\n        <ion-row wrap padding>\n\n            <ion-col >\n\n                <form  [formGroup]="loginForm" (submit)="onSubmit(loginForm.value)">\n\n                    <!---Logo-->\n\n                    <br>\n\n                    <br>\n\n                    <br>\n\n                    <br>\n\n                    <br>\n\n                    <br>\n\n                    <br>\n\n                    <div align="center">\n\n                        <img padding-bottom src="assets/images/logo/logo-icon.png">\n\n                    </div>\n\n                    <br>\n\n                    <!---Input field username-->\n\n                    <ion-item no-lines box-shadow>\n\n                        <ion-label class="lm-label">\n\n                            <ion-icon name="person"></ion-icon>\n\n                        </ion-label>\n\n                        <ion-input lmMask no-margin type="text" placeholder="Email or Phone" formControlName="username"></ion-input>\n\n                    </ion-item>\n\n                    <br>\n\n                    <!---Input field password-->\n\n                    <ion-item no-lines box-shadow>\n\n                        <ion-label class="lm-label">\n\n                            <ion-icon name="lock"></ion-icon>\n\n                        </ion-label>\n\n                        <ion-input no-margin type="password" placeholder="Password" formControlName="password"></ion-input>\n\n                    </ion-item>\n\n                    <!---Input field password-->\n\n                    <br>\n\n                    <button col-12 ion-button button-clear-outline [disabled]="loginForm.invalid">Log In</button>\n\n                </form>\n\n            </ion-col>\n\n        </ion-row>\n\n    </ion-grid>\n\n</ion-content>\n\n\n\n\n\n\n\n'/*ion-inline-end:"C:\Users\Bender\Desktop\ionicapp\src\pages\login\login.html"*/
+    Leaderboard.prototype.colorBgAvatar = function (usuario) {
+        return (__WEBPACK_IMPORTED_MODULE_8__shared_util_util__["a" /* Util */][usuario[0].toLowerCase()]) ? __WEBPACK_IMPORTED_MODULE_8__shared_util_util__["a" /* Util */][usuario[0].toLowerCase()] : "#4FF6C6";
+    };
+    Leaderboard = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"C:\Users\Bender\Desktop\ionicapp\src\pages\leaderboard\leaderboard.html"*/'<!--Fist Screen-->\n\n<ion-header>\n\n    <ion-navbar>\n\n        <!---Title-->\n\n        <ion-title>2Step Reviews</ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n<!--Theme Appearance animation (Zoom In)-->\n\n<ion-content>\n\n    <br>\n\n    <ion-col col-12 padding-top>\n\n        <span font-bold span-medium padding-left>Leaderboard</span>\n\n    </ion-col>\n\n    <ion-grid no-padding >\n\n        <ion-col col-12 padding-top *ngIf="!animateItems?.length">\n\n            <span font-bold span-small="" padding-left>No results found</span>\n\n        </ion-col>\n\n\n\n        <ion-col col-12>\n\n            <ion-list>\n\n                <ion-item box-shadow margin-top no-lines *ngFor="let item of animateItems; let i = index;" [ngClass]="{ \'zoom-in\': true }">\n\n                    <!-- Avatar -->\n\n                    <ion-avatar item-start>\n\n                        <!--<img [src]="item.image">-->\n\n                        <ngx-avatar name="{{ item.user }}" [bgColor]="colorBgAvatar(item.user)"></ngx-avatar>\n\n                    </ion-avatar>\n\n                    <!-- Title -->\n\n                    <h2 item-title>{{ item.user }}</h2>\n\n                    <h3 text-wrap margin-top>\n\n                        Invites Sent {{ item.invites }}\n\n                    </h3>\n\n                    <h3 text-wrap >\n\n                        Success Rate {{ item.success_rate }}\n\n                    </h3>\n\n                    <h3 text-wrap >\n\n                        Review {{ item.reviews }}\n\n                    </h3>\n\n                </ion-item>\n\n            </ion-list>\n\n        </ion-col>\n\n    </ion-grid>\n\n</ion-content>\n\n<!-- Fab Button -->\n\n<ion-fab #fab bottom right>\n\n    <button button-ion-fab ion-fab style="position : absolute; bottom: 70px; right : 20px;" (click)="range()">\n\n        <ion-icon name="calendar"></ion-icon>\n\n    </button>\n\n</ion-fab>\n\n'/*ion-inline-end:"C:\Users\Bender\Desktop\ionicapp\src\pages\leaderboard\leaderboard.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__shared_services_http_http_service__["a" /* HttpService */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"],
-            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["FormBuilder"],
-            __WEBPACK_IMPORTED_MODULE_4__services_loading_service__["a" /* LoadingService */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["MenuController"],
-            __WEBPACK_IMPORTED_MODULE_5__services_toast_service__["a" /* ToastService */],
-            __WEBPACK_IMPORTED_MODULE_6__ionic_native_local_notifications__["a" /* LocalNotifications */],
-            __WEBPACK_IMPORTED_MODULE_7__providers_pusher_service_pusher_service__["a" /* PusherServiceProvider */],
-            __WEBPACK_IMPORTED_MODULE_8__services_usuario_service__["a" /* UsuarioService */]])
-    ], Login);
-    return Login;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__shared_services_http_http_service__["a" /* HttpService */],
+            __WEBPACK_IMPORTED_MODULE_5__shared_services_auth_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_2__services_loading_service__["a" /* LoadingService */],
+            __WEBPACK_IMPORTED_MODULE_3__services_dashboard_service__["a" /* DashboardService */],
+            __WEBPACK_IMPORTED_MODULE_4__services_toast_service__["a" /* ToastService */],
+            __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["ModalController"]])
+    ], Leaderboard);
+    return Leaderboard;
 }());
 
-//# sourceMappingURL=login.js.map
+//# sourceMappingURL=leaderboard.js.map
 
 /***/ })
 

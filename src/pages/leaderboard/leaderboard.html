@@ -22,7 +22,7 @@
                     <!-- Avatar -->
                     <ion-avatar item-start>
                         <!--<img [src]="item.image">-->
-                        <ngx-avatar name="{{ item.user }}"></ngx-avatar>
+                        <ngx-avatar name="{{ item.user }}" [bgColor]="colorBgAvatar(item.user)"></ngx-avatar>
                     </ion-avatar>
                     <!-- Title -->
                     <h2 item-title>{{ item.user }}</h2>

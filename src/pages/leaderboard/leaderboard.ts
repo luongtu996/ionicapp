@@ -5,10 +5,9 @@ import { LoadingService } from "../../services/loading-service";
 import { DashboardService } from "../../services/dashboard.service";
 import { ToastService } from "../../services/toast-service";
 import { AuthService } from "../../shared/services/auth/auth.service";
-
-
 import { ModalController } from 'ionic-angular';
 import { CalendarModal, CalendarModalOptions, CalendarResult } from "ion2-calendar";
+import { Util } from "../../shared/util/util";
 
 @IonicPage()
 @Component({
@@ -65,7 +64,7 @@ export class Leaderboard implements OnInit{
         const options: CalendarModalOptions = {
             pickMode: 'range',
             title: 'Select Date',
-            color: '#2962ff',
+            color: '#453B8D',
             canBackwardsSelected: true
         };
         let myCalendar =  this.modalCtrl.create(CalendarModal, {
@@ -99,5 +98,9 @@ export class Leaderboard implements OnInit{
                 }
             }
         })
+    }
+
+    colorBgAvatar(usuario:any){
+        return (Util[usuario[0].toLowerCase()]) ? Util[usuario[0].toLowerCase()] : "#4FF6C6";
     }
 }
