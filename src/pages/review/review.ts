@@ -84,4 +84,6 @@ export class ReviewPage implements OnInit{
     colorBgAvatar(usuario:any){
         return (Util[usuario[0].toLowerCase()]) ? Util[usuario[0].toLowerCase()] : "#4FF6C6";
     }
+
+    rate:any = 5;
 }

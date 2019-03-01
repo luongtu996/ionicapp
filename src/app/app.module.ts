@@ -33,9 +33,6 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
 import { PusherServiceProvider } from '../providers/pusher-service/pusher-service';
 import { ReviewService } from "../services/review.service";
 
-
-
-
 @NgModule({
     declarations: [
         MyApp,
@@ -69,7 +66,6 @@ import { ReviewService } from "../services/review.service";
         AngularFireDatabaseModule, AngularFireAuthModule,
         IonicModule.forRoot(MyApp),
         CalendarModule,
-
     ],
     bootstrap: [IonicApp],
     entryComponents: [

@@ -35,12 +35,9 @@
                     <h3 text-wrap >
                         <ion-icon name="calendar"></ion-icon><b>{{  item.created_at | date: 'fullDate' }}</b>
                     </h3>
-                    <!--<ion-col col-12 text-center>-->
-                        <!--<ion-icon white *ngFor="let star of [1,2,3,4,5];let i = index">-->
-                            <!--<i icon-medium *ngIf="item.isActive" class="icon icon-star"></i>-->
-                            <!--<i icon-medium *ngIf="!item.isActive" class="icon icon-star-outline"></i>-->
-                        <!--</ion-icon>-->
-                    <!--</ion-col>-->
+                    <br>
+                    <img *ngIf="item?.platform.id == 2" alt="" src="../../assets/images/google.png" style="width: 25px;height: 25px"/>
+                    <img *ngIf="item?.platform.id == 1" alt="" src="../../assets/images/facebook.png" style="width: 25px;height: 25px"/>
                 </ion-item>
                 <ion-infinite-scroll (ionInfinite)="getReviews($event)">
                     <ion-infinite-scroll-content></ion-infinite-scroll-content>

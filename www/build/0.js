@@ -1,6 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 640:
+/***/ 639:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ReviewModule", function() { return ReviewModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__review__ = __webpack_require__(665);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__review__ = __webpack_require__(664);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_shared_module__ = __webpack_require__(641);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -2962,7 +2962,7 @@ var Util = {
 
 /***/ }),
 
-/***/ 665:
+/***/ 664:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3008,6 +3008,7 @@ var ReviewPage = /** @class */ (function () {
             q: '',
             sort: '',
         };
+        this.rate = 5;
     }
     ReviewPage.prototype.ionViewWillEnter = function () {
         this.authService.canActivate();
@@ -3050,7 +3051,7 @@ var ReviewPage = /** @class */ (function () {
         return (__WEBPACK_IMPORTED_MODULE_7__shared_util_util__["a" /* Util */][usuario[0].toLowerCase()]) ? __WEBPACK_IMPORTED_MODULE_7__shared_util_util__["a" /* Util */][usuario[0].toLowerCase()] : "#4FF6C6";
     };
     ReviewPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"C:\Users\Bender\Desktop\ionicapp\src\pages\review\review.html"*/'<!--Fist Screen-->\n\n<ion-header>\n\n    <ion-navbar>\n\n        <!---Title-->\n\n        <ion-title>2Step Reviews</ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n<!--Theme Appearance animation (Zoom In)-->\n\n<ion-content>\n\n    <br>\n\n    <ion-col col-12 padding-top>\n\n        <span font-bold span-medium padding-left>Reviews</span>\n\n    </ion-col>\n\n    <ion-grid no-padding >\n\n        <ion-col col-12 padding-top *ngIf="!animateItems?.length">\n\n            <span font-bold span-small="" padding-left>No results found</span>\n\n        </ion-col>\n\n\n\n        <ion-col col-12>\n\n            <ion-list>\n\n                <ion-item box-shadow margin-top no-lines *ngFor="let item of animateItems; let i = index;" [ngClass]="{ \'zoom-in\': true }">\n\n                    <!-- Avatar -->\n\n                    <ion-avatar item-start>\n\n                        <!--<img [src]="item.image">-->\n\n                        <ngx-avatar name="{{ item.customer }}" [bgColor]="colorBgAvatar(item.customer)"></ngx-avatar>\n\n                    </ion-avatar>\n\n                    <!-- Title -->\n\n                    <h2 item-title>{{ item.customer }}</h2>\n\n                    <h3 text-wrap margin-top>\n\n                        <ion-icon name="pin"></ion-icon><b>{{ item.office_name }}</b> &nbsp;&nbsp;&nbsp;&nbsp; {{ item.office_address}}\n\n                    </h3>\n\n                    <h3 text-wrap >\n\n                        {{ item.comment }}\n\n                    </h3>\n\n                    <h3 text-wrap >\n\n                        <ion-icon name="calendar"></ion-icon><b>{{  item.created_at | date: \'fullDate\' }}</b>\n\n                    </h3>\n\n                    <!--<ion-col col-12 text-center>-->\n\n                        <!--<ion-icon white *ngFor="let star of [1,2,3,4,5];let i = index">-->\n\n                            <!--<i icon-medium *ngIf="item.isActive" class="icon icon-star"></i>-->\n\n                            <!--<i icon-medium *ngIf="!item.isActive" class="icon icon-star-outline"></i>-->\n\n                        <!--</ion-icon>-->\n\n                    <!--</ion-col>-->\n\n                </ion-item>\n\n                <ion-infinite-scroll (ionInfinite)="getReviews($event)">\n\n                    <ion-infinite-scroll-content></ion-infinite-scroll-content>\n\n                </ion-infinite-scroll>\n\n            </ion-list>\n\n        </ion-col>\n\n    </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Bender\Desktop\ionicapp\src\pages\review\review.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"C:\Users\Bender\Desktop\ionicapp\src\pages\review\review.html"*/'<!--Fist Screen-->\n\n<ion-header>\n\n    <ion-navbar>\n\n        <!---Title-->\n\n        <ion-title>2Step Reviews</ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n<!--Theme Appearance animation (Zoom In)-->\n\n<ion-content>\n\n    <br>\n\n    <ion-col col-12 padding-top>\n\n        <span font-bold span-medium padding-left>Reviews</span>\n\n    </ion-col>\n\n    <ion-grid no-padding >\n\n        <ion-col col-12 padding-top *ngIf="!animateItems?.length">\n\n            <span font-bold span-small="" padding-left>No results found</span>\n\n        </ion-col>\n\n\n\n        <ion-col col-12>\n\n            <ion-list>\n\n                <ion-item box-shadow margin-top no-lines *ngFor="let item of animateItems; let i = index;" [ngClass]="{ \'zoom-in\': true }">\n\n                    <!-- Avatar -->\n\n                    <ion-avatar item-start>\n\n                        <!--<img [src]="item.image">-->\n\n                        <ngx-avatar name="{{ item.customer }}" [bgColor]="colorBgAvatar(item.customer)"></ngx-avatar>\n\n                    </ion-avatar>\n\n                    <!-- Title -->\n\n                    <h2 item-title>{{ item.customer }}</h2>\n\n                    <h3 text-wrap margin-top>\n\n                        <ion-icon name="pin"></ion-icon><b>{{ item.office_name }}</b> &nbsp;&nbsp;&nbsp;&nbsp; {{ item.office_address}}\n\n                    </h3>\n\n                    <h3 text-wrap >\n\n                        {{ item.comment }}\n\n                    </h3>\n\n                    <h3 text-wrap >\n\n                        <ion-icon name="calendar"></ion-icon><b>{{  item.created_at | date: \'fullDate\' }}</b>\n\n                    </h3>\n\n                    <br>\n\n                    <img *ngIf="item?.platform.id == 2" alt="" src="../../assets/images/google.png" style="width: 25px;height: 25px"/>\n\n                    <img *ngIf="item?.platform.id == 1" alt="" src="../../assets/images/facebook.png" style="width: 25px;height: 25px"/>\n\n                </ion-item>\n\n                <ion-infinite-scroll (ionInfinite)="getReviews($event)">\n\n                    <ion-infinite-scroll-content></ion-infinite-scroll-content>\n\n                </ion-infinite-scroll>\n\n            </ion-list>\n\n        </ion-col>\n\n    </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Bender\Desktop\ionicapp\src\pages\review\review.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__shared_services_http_http_service__["a" /* HttpService */],
             __WEBPACK_IMPORTED_MODULE_4__shared_services_auth_auth_service__["a" /* AuthService */],
