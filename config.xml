@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.2steps.review" version="1.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0"> iphone
+<widget id="com.2steps.review" version="1.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Two Step Reviews</name>
     <description>Two Step Reviews</description>
     <author email="heidy.resteasy@gmail.com" href="http://csform.com/">Heidy Villarreal</author>
