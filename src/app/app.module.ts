@@ -30,7 +30,6 @@ import { DashboardService } from "../services/dashboard.service";
 import { CalendarModule } from "ion2-calendar";
 import { UsuarioService } from "../services/usuario.service";
 import { LocalNotifications } from '@ionic-native/local-notifications';
-import { PusherServiceProvider } from '../providers/pusher-service/pusher-service';
 import { ReviewService } from "../services/review.service";
 
 @NgModule({
@@ -56,7 +55,6 @@ import { ReviewService } from "../services/review.service";
         LocalNotifications,
         { provide: ErrorHandler, useClass: IonicErrorHandler },
         { provide: 'Parameters', useClass: Parameters },
-        PusherServiceProvider,
         ReviewService
     ],
     imports: [

@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
+import { IonicPage, AlertController } from 'ionic-angular';
 import { HttpService } from "../../shared/services/http/http.service";
 import { LoadingService } from "../../services/loading-service";
 import { ToastService } from "../../services/toast-service";
@@ -28,6 +28,7 @@ export class ReviewPage implements OnInit{
         sort: '',
     };
 
+    public my_reviews = false;
 
     constructor(
         protected http: HttpService,
@@ -35,8 +36,10 @@ export class ReviewPage implements OnInit{
         private loadingService: LoadingService,
         public toast: ToastService,
         public modalCtrl: ModalController,
-        public reviewService: ReviewService
+        public reviewService: ReviewService,
+        private alertCtrl: AlertController
     ) {
+        this.filters.only_mine = 0;
 
     }
 
@@ -91,5 +94,14 @@ export class ReviewPage implements OnInit{
             return '#fde16d';
         else
             return '#b0c4de';
+    }
+
+    changeFilter(){
+        this.my_reviews = !this.my_reviews;
+        this.animateItems = [];
+        this.filters.offset = 0;
+        this.firstLoad = true;
+        this.filters.only_mine = (this.my_reviews) ? 1 : 0;
+        this.getReviews();
     }
 }

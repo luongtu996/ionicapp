@@ -6,11 +6,22 @@
     </ion-navbar>
 </ion-header>
 <!--Theme Appearance animation (Zoom In)-->
-<ion-content>
+<ion-content >
     <br>
     <ion-col col-12 padding-top>
-        <span font-bold span-medium padding-left>Reviews</span>
+            <span font-bold span-medium padding-left>Reviews</span>
+        <ion-list >
+            <ion-item no-lines box-shadow margin-top >
+                <!-- Content  Icon -->
+                <ion-icon icon-small item-start no-adding no-margina>
+                    <i class="icon-filter"></i></ion-icon>
+                <!-- Content Title -->
+                <ion-label item-title>Only Mine</ion-label>
+                <ion-toggle item-end [value]="my_reviews" (ionChange)="changeFilter()" [checked]="my_reviews"></ion-toggle>
+            </ion-item>
+        </ion-list>
     </ion-col>
+
     <ion-grid no-padding >
         <ion-col col-12 padding-top *ngIf="!animateItems?.length">
             <span font-bold span-small="" padding-left>No results found</span>
