@@ -210,11 +210,11 @@ var map = {
 		4
 	],
 	"../pages/items/items.module": [
-		635,
+		634,
 		5
 	],
 	"../pages/leaderboard/leaderboard.module": [
-		634,
+		635,
 		1
 	],
 	"../pages/login/login.module": [
@@ -382,8 +382,8 @@ var AuthService = /** @class */ (function () {
                 this.logout();
             }
             else {
-                var now = new Date(localStorage.getItem(''));
-                var expiresDate = new Date('expires_date');
+                var now = new Date();
+                var expiresDate = new Date(localStorage.getItem('expires_date'));
                 var tokenStillValid = (now < expiresDate);
                 if (!tokenStillValid) {
                     if (localStorage.getItem('refresh_token') == null || localStorage.getItem('refresh_token') == '') {
@@ -1002,8 +1002,8 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../components/wizard/layout-3/wizard-layout-3.module#WizardLayout3Module', name: 'WizardLayout3', segment: 'wizard-layout-3', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/home/home.module#HomePageModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/intro-page/intro-page.module#IntroPageModule', name: 'IntroPage', segment: 'intro-page', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/leaderboard/leaderboard.module#LeaderboardModule', name: 'Leaderboard', segment: 'leaderboard', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/items/items.module#ItemsPageModule', name: 'ItemsPage', segment: 'items', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/leaderboard/leaderboard.module#LeaderboardModule', name: 'Leaderboard', segment: 'leaderboard', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginModule', name: 'Login', segment: 'login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'ProfilePage', segment: 'profile', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/review/review.module#ReviewModule', name: 'ReviewPage', segment: 'review', priority: 'low', defaultHistory: [] },
@@ -1395,9 +1395,9 @@ var MyApp = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Parameters; });
 var Parameters = /** @class */ (function () {
     function Parameters() {
-        // API_URL = `https://api.dev.2stepreviewsapp.com/app_dev.php/`;
+        this.API_URL = "https://api.2stepreviews.com/";
         // API_URL = `http://localhost/reviews/web/app_dev.php/`;
-        this.API_URL = "http://192.168.1.105/reviews/api/web/app_dev.php/";
+        // API_URL = `http://192.168.1.105/reviews/api/web/app_dev.php/`;
     }
     return Parameters;
 }());

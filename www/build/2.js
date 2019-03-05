@@ -2987,8 +2987,8 @@ var Login = /** @class */ (function () {
         this.toast = toast;
         this.usuarioServie = usuarioServie;
         this.loginForm = fb.group({
-            'username': ['develored3@gmail.com', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required]],
-            'password': ['wailea911', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required],
+            'username': ['', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required]],
+            'password': ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required],
             'grant_type': ['password'],
             'client_id': ['1_3bcbxd9e24g0gk4swg0kwgcwg4o8k8g4g888kwc44gcc0gwwk4'],
             'client_secret': ['4ok2x70rlfokc8g0wws8c8kwcokw80k44sg48goc0ok4w0so0k'],
