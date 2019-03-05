@@ -4,8 +4,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpService } from "../../shared/services/http/http.service";
 import { LoadingService } from "../../services/loading-service";
 import { ToastService } from "../../services/toast-service";
-import { LocalNotifications } from '@ionic-native/local-notifications';
-import { PusherServiceProvider } from "../../providers/pusher-service/pusher-service";
 import { UsuarioService } from "../../services/usuario.service";
 
 @IonicPage()
@@ -22,8 +20,6 @@ export class Login implements OnInit{
         private loadingService: LoadingService,
         public menu: MenuController,
         public toast: ToastService,
-        private localNotifications: LocalNotifications,
-        private pusher : PusherServiceProvider,
         public usuarioServie:UsuarioService
     ) {
         this.loginForm = fb.group({
@@ -51,15 +47,7 @@ export class Login implements OnInit{
                 this.usuarioServie.getProfile().subscribe(
                     (response) => {
                         let usuario = response.data;
-                        this.pusher.init().subscribe(usuario.email).bind("my-event", (message) => {
-                            this.localNotifications.schedule({
-                                title: message.title,
-                                text: message.body
-                            });
-                        });
-
                         this.loadingService.hide();
-
                         this.navCtrl.setRoot("TabPage");
                     },(error) => {
                         this.loadingService.hide();

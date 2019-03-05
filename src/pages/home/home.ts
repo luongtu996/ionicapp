@@ -53,18 +53,22 @@ export class HomePage implements OnInit{
     }
 
     onSubmit(formValue: any) {
-        this.loadingService.show();
-        formValue.to = formValue.to.replace(/\D+/g, '');
-        formValue.to = "+1" + formValue.to;
+        // this.loadingService.show();
+        formValue.to = formValue.to.replace(/[()\-\ ]+/g,'');
+
+        let caract = new RegExp(/^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/);
+
+        if(!caract.test(formValue.to)){
+            formValue.to = "+1" + formValue.to;
+        }
+
         this.smsService.create(formValue).subscribe((response) => {
             this.loadingService.hide();
             this.form.reset();
             this.toast.presentToast("Invite Sent");
         }, (error) => {
             this.toast.presentToast(error.error.error.message);
-            if (formValue.to.includes("+1")) {
-                formValue.to = formValue.to.substr(2);
-            }
+            this.form.reset();
             this.loadingService.hide();
         });
     }

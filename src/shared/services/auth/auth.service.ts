@@ -46,8 +46,8 @@ export class AuthService {
             if(localStorage.getItem('expires_date') == null || localStorage.getItem('expires_date') == ''){
                 this.logout();
             }else{
-                const now = new Date(localStorage.getItem(''));
-                const expiresDate = new Date('expires_date');
+                const now = new Date();
+                const expiresDate = new Date(localStorage.getItem('expires_date'));
                 const tokenStillValid = (now < expiresDate);
 
                 if(!tokenStillValid){
