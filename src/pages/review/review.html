@@ -38,6 +38,14 @@
                     <br>
                     <img *ngIf="item?.platform.id == 2" alt="" src="../../assets/images/google.png" style="width: 25px;height: 25px"/>
                     <img *ngIf="item?.platform.id == 1" alt="" src="../../assets/images/facebook.png" style="width: 25px;height: 25px"/>
+                    <div>
+                        <ion-icon
+                                name="star"
+                                *ngFor="let num of [1,2,3,4,5]"
+                                [ngStyle]="{ 'color' : getColor(num, item.punctuation)}"
+                        >
+                        </ion-icon>
+                    </div>
                 </ion-item>
                 <ion-infinite-scroll (ionInfinite)="getReviews($event)">
                     <ion-infinite-scroll-content></ion-infinite-scroll-content>

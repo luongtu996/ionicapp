@@ -85,5 +85,11 @@ export class ReviewPage implements OnInit{
         return (Util[usuario[0].toLowerCase()]) ? Util[usuario[0].toLowerCase()] : "#4FF6C6";
     }
 
-    rate:any = 5;
+    getColor(num, puntuation){
+
+        if(num <= puntuation)
+            return '#fde16d';
+        else
+            return '#b0c4de';
+    }
 }
