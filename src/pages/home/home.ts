@@ -14,7 +14,6 @@ import { ToastService } from "../../services/toast-service";
     selector: 'page-home',
     templateUrl: 'home.html',
     providers: [AuthService]
-
 })
 export class HomePage implements OnInit{
 
@@ -37,7 +36,7 @@ export class HomePage implements OnInit{
         public loginService: LoginService,
         public companyService:CompanyService,
         public smsService:SmsService,
-        public toast: ToastService,
+        public toast: ToastService
     ) {
         this.form = fb.group({
             'name': ['', Validators.required],

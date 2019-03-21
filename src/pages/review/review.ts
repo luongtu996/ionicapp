@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { IonicPage, AlertController } from 'ionic-angular';
+import { Component, OnInit } from '@angular/core';
+import { IonicPage } from 'ionic-angular';
 import { HttpService } from "../../shared/services/http/http.service";
 import { LoadingService } from "../../services/loading-service";
 import { ToastService } from "../../services/toast-service";
@@ -36,8 +36,7 @@ export class ReviewPage implements OnInit{
         private loadingService: LoadingService,
         public toast: ToastService,
         public modalCtrl: ModalController,
-        public reviewService: ReviewService,
-        private alertCtrl: AlertController
+        public reviewService: ReviewService
     ) {
         this.filters.only_mine = 0;
 

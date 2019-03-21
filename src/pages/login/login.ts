@@ -6,9 +6,14 @@ import { LoadingService } from "../../services/loading-service";
 import { ToastService } from "../../services/toast-service";
 import { UsuarioService } from "../../services/usuario.service";
 
+import { FcmProvider } from "../../providers/fcm/fcm";
+import { Firebase } from '@ionic-native/firebase';
+import { Device } from '@ionic-native/device';
+
 @IonicPage()
 @Component({
-    templateUrl: 'login.html'
+    templateUrl: 'login.html',
+    providers: [FcmProvider, Firebase, Device]
 })
 export class Login implements OnInit{
     public loginForm: FormGroup;
@@ -20,11 +25,13 @@ export class Login implements OnInit{
         private loadingService: LoadingService,
         public menu: MenuController,
         public toast: ToastService,
-        public usuarioServie:UsuarioService
+        public usuarioServie:UsuarioService,
+        public fcm:FcmProvider,
+        private device: Device
     ) {
         this.loginForm = fb.group({
-            'username': ['',[Validators.required]],
-            'password': ['', Validators.required],
+            'username': ['heidy.resteasy@gmail.com',[Validators.required]],
+            'password': ['REM4lif3', Validators.required],
             'grant_type': ['password'],
             'client_id': ['1_3bcbxd9e24g0gk4swg0kwgcwg4o8k8g4g888kwc44gcc0gwwk4'],
             'client_secret': ['4ok2x70rlfokc8g0wws8c8kwcokw80k44sg48goc0ok4w0so0k'],
@@ -47,6 +54,9 @@ export class Login implements OnInit{
                 this.usuarioServie.getProfile().subscribe(
                     (response) => {
                         let usuario = response.data;
+
+                        this.fcm.getToken(usuario, this.device.uuid);
+
                         this.loadingService.hide();
                         this.navCtrl.setRoot("TabPage");
                     },(error) => {

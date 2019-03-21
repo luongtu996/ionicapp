@@ -26,8 +26,5 @@ export class LeaderboardModule {
     public username: string;
     public password: string;
 
-    private isUsernameValid: boolean = true;
-    private isPasswordValid: boolean = true;
-
     constructor() {}
 }

@@ -1,26 +1,27 @@
 {
   "project_info": {
-    "project_number": "519928359775",
-    "firebase_url": "https://ionic3-blue-light.firebaseio.com",
-    "project_id": "ionic3-blue-light"
+    "project_number": "62062255134",
+    "firebase_url": "https://probable-pager-194417.firebaseio.com",
+    "project_id": "probable-pager-194417",
+    "storage_bucket": "probable-pager-194417.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:519928359775:android:1ac27bdcceaab4a7",
+        "mobilesdk_app_id": "1:62062255134:android:305b2de227c2af1c",
         "android_client_info": {
-          "package_name": "com.csform.ionic.blue"
+          "package_name": "com.twostepverfication"
         }
       },
       "oauth_client": [
         {
-          "client_id": "519928359775-enb0b27ca1hq35md5ierrua55hnf5nmr.apps.googleusercontent.com",
+          "client_id": "62062255134-vo06e4098tskl77ecbf0uejq4dp20ft0.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBnDSymQppFujJQSd61ZqiObUX0Q_EB-ug"
+          "current_key": "AIzaSyAHtT_seW3TBx0kFF6FksZFsqpguNksz_o"
         }
       ],
       "services": {

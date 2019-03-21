@@ -8,12 +8,12 @@ export const AppSettings = {
       "position": "buttom"
     },
     "FIREBASE_CONFIG": {
-        "apiKey": "AIzaSyCYOVrRscQ26G5lAmOSfwrBFncNidaCSOE",
-        "authDomain": "ionic3-blue-light.firebaseapp.com",
-        "databaseURL": "https://ionic3-blue-light.firebaseio.com",
-        "projectId": "ionic3-blue-light",
-        "storageBucket": "ionic3-blue-light.appspot.com",
-        "messagingSenderId": "519928359775"
+        "apiKey": "AIzaSyCRtOnMpz4V0ObZbXWoaLVRkPdtkgjGDPQ",
+        "authDomain": "probable-pager-194417.firebaseapp.com",
+        "databaseURL": "https://probable-pager-194417.firebaseio.com",
+        "projectId": "probable-pager-194417",
+        "storageBucket": "probable-pager-194417.appspot.com",
+        "messagingSenderId": "62062255134"
     },
     "MAP_KEY": {
         "apiKey": 'AIzaSyA4-GoZzOqYTvxMe52YQZch5JaCFN6ACLg'

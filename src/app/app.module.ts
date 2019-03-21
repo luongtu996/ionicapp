@@ -31,6 +31,10 @@ import { CalendarModule } from "ion2-calendar";
 import { UsuarioService } from "../services/usuario.service";
 import { LocalNotifications } from '@ionic-native/local-notifications';
 import { ReviewService } from "../services/review.service";
+import { FcmProvider } from '../providers/fcm/fcm';
+
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { Firebase } from '@ionic-native/firebase';
 
 @NgModule({
     declarations: [
@@ -55,13 +59,18 @@ import { ReviewService } from "../services/review.service";
         LocalNotifications,
         { provide: ErrorHandler, useClass: IonicErrorHandler },
         { provide: 'Parameters', useClass: Parameters },
-        ReviewService
+        ReviewService,
+        FcmProvider,
+        Firebase
     ],
     imports: [
         BrowserModule,
-        HttpModule, HttpClientModule,
+        HttpModule,
+        HttpClientModule,
         AngularFireModule.initializeApp(AppSettings.FIREBASE_CONFIG),
-        AngularFireDatabaseModule, AngularFireAuthModule,
+        AngularFireDatabaseModule,
+        AngularFireAuthModule,
+        AngularFirestoreModule,
         IonicModule.forRoot(MyApp),
         CalendarModule,
     ],
