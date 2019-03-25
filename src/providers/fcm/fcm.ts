@@ -52,8 +52,8 @@ export class FcmProvider extends ApiService {
         this.updateFCM(token, usuario.id, uuid).subscribe((response) => {
                 return devicesRef.doc(token).set(docData);
             }, (error) => {
-            return;}
-        );
+            return;
+        });
     }
 
     listenToNotifications(){
@@ -66,13 +66,5 @@ export class FcmProvider extends ApiService {
             _value: token
         };
         return this.http.post(`${this.url}`, params);
-    }
-
-    unregister(){
-        this.firebaseNative.unregister()
-            .then()
-            .catch((error) =>
-                console.log(error)
-            );
     }
 }

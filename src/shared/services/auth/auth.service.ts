@@ -4,7 +4,7 @@ import { LoginService } from "../../../services/login-service";
 import { HttpService } from "../http/http.service";
 import { LoadingService } from "../../../services/loading-service";
 import { App } from 'ionic-angular';
-import { FcmProvider } from "../../../providers/fcm/fcm";
+// import { FcmProvider } from "../../../providers/fcm/fcm";
 
 @Injectable()
 export class AuthService {
@@ -16,7 +16,6 @@ export class AuthService {
         public http:HttpService,
         public loadingService: LoadingService,
         private app: App,
-        public fcm:FcmProvider
     ) {
         this.isLoggedIn = true;
     }
@@ -32,7 +31,6 @@ export class AuthService {
         localStorage.removeItem('access_token');
         localStorage.removeItem('refresh_token');
         localStorage.removeItem('expires_date');
-        this.fcm.unregister();
         this.app.getRootNavs()[0].setRoot("Login");
     }
 

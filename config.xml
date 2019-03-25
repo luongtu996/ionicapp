@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.2steps.review" version="1.4.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.twostepverfication" version="1.4.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>2 Step Reviews</name>
-    <description>Two Step Reviews</description>
+    <description>2 Step Reviews</description>
     <author email="heidy.resteasy@gmail.com" href="http://csform.com/">Heidy Villarreal</author>
     <content src="index.html" />
     <access origin="*" />
@@ -87,6 +87,7 @@
         <config-file parent="NSPhotoLibraryUsageDescription" platform="ios" target="*-Info.plist">
             <string>This app needs to access your photo gallery such that you can share your screenshots</string>
         </config-file>
+        <resource-file src="GoogleService-Info.plist" />
     </platform>
     <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
     <plugin name="cordova-plugin-splashscreen" spec="^5.0.2" />
