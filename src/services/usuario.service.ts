@@ -13,4 +13,12 @@ export class UsuarioService extends ApiService {
     getProfile(): Observable<any> {
         return this.http.get(`${this.url}profile`);
     }
+
+    changeStatusNotification(name, value){
+        let params = {
+            notification: name,
+            allow: value
+        };
+        return this.http.put(`${this.url}notification`, super.serialize(params));
+    }
 }

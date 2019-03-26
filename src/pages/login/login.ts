@@ -25,7 +25,7 @@ export class Login implements OnInit{
         private loadingService: LoadingService,
         public menu: MenuController,
         public toast: ToastService,
-        public usuarioServie:UsuarioService,
+        public usuarioService:UsuarioService,
         public fcm:FcmProvider,
         private device: Device
     ) {
@@ -51,7 +51,7 @@ export class Login implements OnInit{
                 localStorage.setItem('refresh_token', response.refresh_token);
                 localStorage.setItem('expires_date', this.calculateTokenExpiresDateTime(response.expires_in).toString());
 
-                this.usuarioServie.getProfile().subscribe(
+                this.usuarioService.getProfile().subscribe(
                     (response) => {
                         let usuario = response.data;
 

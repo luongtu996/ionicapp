@@ -4,7 +4,6 @@ import { LoginService } from "../../../services/login-service";
 import { HttpService } from "../http/http.service";
 import { LoadingService } from "../../../services/loading-service";
 import { App } from 'ionic-angular';
-// import { FcmProvider } from "../../../providers/fcm/fcm";
 
 @Injectable()
 export class AuthService {

@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
+import { IonicPage, NavController } from 'ionic-angular';
 import { HttpService } from "../../shared/services/http/http.service";
 import { ToastService } from "../../services/toast-service";
 import { LoadingService } from "../../services/loading-service";
 import { UsuarioService } from "../../services/usuario.service";
 import { AuthService } from "../../shared/services/auth/auth.service";
+import { ModalController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -18,9 +19,11 @@ export class ProfilePage implements OnInit {
   constructor(
     protected http: HttpService,
     private loadingService: LoadingService,
-    public usuarioServie:UsuarioService,
+    public usuarioService:UsuarioService,
     public toast: ToastService,
     public authService:AuthService,
+    public modalCtrl: ModalController,
+    public navCtrl: NavController
   ) {
   }
 
@@ -34,7 +37,7 @@ export class ProfilePage implements OnInit {
 
   getProfile(){
       this.loadingService.show();
-      this.usuarioServie.getProfile().subscribe(
+      this.usuarioService.getProfile().subscribe(
           (response) => {
               this.usuario = response.data;
 
@@ -48,5 +51,9 @@ export class ProfilePage implements OnInit {
 
   logout(){
     this.authService.logout();
+  }
+
+  presentConfigModal() {
+      this.navCtrl.push("ModalConfigPage");
   }
 }

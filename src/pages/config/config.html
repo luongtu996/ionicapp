@@ -1,0 +1,24 @@
+<!--Fist Screen-->
+<ion-header>
+  <ion-navbar>
+    <!---Title-->
+    <ion-title>2 Step Reviews</ion-title>
+  </ion-navbar>
+</ion-header>
+<!--Theme Appearance animation (Zoom In)-->
+<ion-content class="masters">
+  <ion-grid no-padding >
+    <ion-list>
+      <ion-list-header header-section no-margin>
+        <!-- Header-title -->
+        <h1 header-title text-capitalize>Notifications</h1>
+      </ion-list-header>
+      <ion-item no-lines *ngFor="let notification of notifications; let i= index">
+        <!-- Item-title -->
+        <ion-label item-title item-start>{{ notification.name }}</ion-label>
+        <!-- Toggle -->
+        <ion-toggle item-end  (ionChange)="changeValue(notification?.key,notification?.value)" [checked]="notification.value"></ion-toggle>
+      </ion-item>
+    </ion-list>
+  </ion-grid>
+</ion-content>
