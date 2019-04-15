@@ -2944,7 +2944,6 @@ function _configFactory(initConfig, configValue) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_usuario_service__ = __webpack_require__(428);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_fcm_fcm__ = __webpack_require__(435);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_firebase__ = __webpack_require__(169);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_device__ = __webpack_require__(677);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2963,9 +2962,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 var Login = /** @class */ (function () {
-    function Login(http, navCtrl, fb, loadingService, menu, toast, usuarioService, fcm, device) {
+    function Login(http, navCtrl, fb, loadingService, menu, toast, usuarioService, fcm) {
         this.http = http;
         this.navCtrl = navCtrl;
         this.fb = fb;
@@ -2974,7 +2972,6 @@ var Login = /** @class */ (function () {
         this.toast = toast;
         this.usuarioService = usuarioService;
         this.fcm = fcm;
-        this.device = device;
         this.loginForm = fb.group({
             'username': ['', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required]],
             'password': ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required],
@@ -2995,7 +2992,7 @@ var Login = /** @class */ (function () {
             localStorage.setItem('expires_date', _this.calculateTokenExpiresDateTime(response.expires_in).toString());
             _this.usuarioService.getProfile().subscribe(function (response) {
                 var usuario = response.data;
-                _this.fcm.getToken(usuario, _this.device.uuid);
+                _this.fcm.getToken(usuario, 'uuid_prueba');
                 _this.loadingService.hide();
                 _this.navCtrl.setRoot("TabPage");
             }, function (error) {
@@ -3016,7 +3013,7 @@ var Login = /** @class */ (function () {
     };
     Login = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"C:\Users\Bender\Desktop\ionicapp\src\pages\login\login.html"*/'<!-- Themes Login + logo -->\n\n<ion-content background-size default-background style="background-color: #252531">\n\n    <ion-grid>\n\n        <ion-row wrap padding>\n\n            <ion-col >\n\n                <form  [formGroup]="loginForm" (submit)="onSubmit(loginForm.value)">\n\n                    <!---Logo-->\n\n                    <br>\n\n                    <br>\n\n                    <br>\n\n                    <br>\n\n                    <br>\n\n                    <br>\n\n                    <div align="center">\n\n                        <img padding-bottom src="assets/images/logo-light-text.png" style="width:200px; height: 70px">\n\n                    </div>\n\n                    <br>\n\n                    <!---Input field username-->\n\n                    <ion-item no-lines box-shadow>\n\n                        <ion-label class="lm-label">\n\n                            <ion-icon name="person"></ion-icon>\n\n                        </ion-label>\n\n                        <ion-input lmMask no-margin type="text" placeholder="Email or Phone" formControlName="username"></ion-input>\n\n                    </ion-item>\n\n                    <br>\n\n                    <!---Input field password-->\n\n                    <ion-item no-lines box-shadow>\n\n                        <ion-label class="lm-label">\n\n                            <ion-icon name="lock"></ion-icon>\n\n                        </ion-label>\n\n                        <ion-input no-margin type="password" placeholder="Password" formControlName="password"></ion-input>\n\n                    </ion-item>\n\n                    <!---Input field password-->\n\n                    <br>\n\n                    <button col-12 ion-button button-clear-outline [disabled]="loginForm.invalid">Log In</button>\n\n                </form>\n\n            </ion-col>\n\n        </ion-row>\n\n    </ion-grid>\n\n</ion-content>\n\n\n\n\n\n\n\n'/*ion-inline-end:"C:\Users\Bender\Desktop\ionicapp\src\pages\login\login.html"*/,
-            providers: [__WEBPACK_IMPORTED_MODULE_7__providers_fcm_fcm__["a" /* FcmProvider */], __WEBPACK_IMPORTED_MODULE_8__ionic_native_firebase__["a" /* Firebase */], __WEBPACK_IMPORTED_MODULE_9__ionic_native_device__["a" /* Device */]]
+            providers: [__WEBPACK_IMPORTED_MODULE_7__providers_fcm_fcm__["a" /* FcmProvider */], __WEBPACK_IMPORTED_MODULE_8__ionic_native_firebase__["a" /* Firebase */]]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__shared_services_http_http_service__["a" /* HttpService */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"],
@@ -3025,129 +3022,12 @@ var Login = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["MenuController"],
             __WEBPACK_IMPORTED_MODULE_5__services_toast_service__["a" /* ToastService */],
             __WEBPACK_IMPORTED_MODULE_6__services_usuario_service__["a" /* UsuarioService */],
-            __WEBPACK_IMPORTED_MODULE_7__providers_fcm_fcm__["a" /* FcmProvider */],
-            __WEBPACK_IMPORTED_MODULE_9__ionic_native_device__["a" /* Device */]])
+            __WEBPACK_IMPORTED_MODULE_7__providers_fcm_fcm__["a" /* FcmProvider */]])
     ], Login);
     return Login;
 }());
 
 //# sourceMappingURL=login.js.map
-
-/***/ }),
-
-/***/ 677:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Device; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_native_core__ = __webpack_require__(49);
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-/**
- * @name Device
- * @description
- * Access information about the underlying device and platform.
- *
- * @usage
- * ```typescript
- * import { Device } from '@ionic-native/device';
- *
- * constructor(private device: Device) { }
- *
- * ...
- *
- * console.log('Device UUID is: ' + this.device.uuid);
- * ```
- */
-var Device = (function (_super) {
-    __extends(Device, _super);
-    function Device() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    Device.decorators = [
-        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
-    ];
-    __decorate([
-        __WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["b" /* CordovaProperty */],
-        __metadata("design:type", String)
-    ], Device.prototype, "cordova", void 0);
-    __decorate([
-        __WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["b" /* CordovaProperty */],
-        __metadata("design:type", String)
-    ], Device.prototype, "model", void 0);
-    __decorate([
-        __WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["b" /* CordovaProperty */],
-        __metadata("design:type", String)
-    ], Device.prototype, "platform", void 0);
-    __decorate([
-        __WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["b" /* CordovaProperty */],
-        __metadata("design:type", String)
-    ], Device.prototype, "uuid", void 0);
-    __decorate([
-        __WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["b" /* CordovaProperty */],
-        __metadata("design:type", String)
-    ], Device.prototype, "version", void 0);
-    __decorate([
-        __WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["b" /* CordovaProperty */],
-        __metadata("design:type", String)
-    ], Device.prototype, "manufacturer", void 0);
-    __decorate([
-        __WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["b" /* CordovaProperty */],
-        __metadata("design:type", Boolean)
-    ], Device.prototype, "isVirtual", void 0);
-    __decorate([
-        __WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["b" /* CordovaProperty */],
-        __metadata("design:type", String)
-    ], Device.prototype, "serial", void 0);
-    /**
-     * @name Device
-     * @description
-     * Access information about the underlying device and platform.
-     *
-     * @usage
-     * ```typescript
-     * import { Device } from '@ionic-native/device';
-     *
-     * constructor(private device: Device) { }
-     *
-     * ...
-     *
-     * console.log('Device UUID is: ' + this.device.uuid);
-     * ```
-     */
-    Device = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["d" /* Plugin */])({
-            pluginName: 'Device',
-            plugin: 'cordova-plugin-device',
-            pluginRef: 'device',
-            repo: 'https://github.com/apache/cordova-plugin-device',
-            platforms: ['Android', 'Browser', 'iOS', 'macOS', 'Windows']
-        })
-    ], Device);
-    return Device;
-}(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* IonicNativePlugin */]));
-
-//# sourceMappingURL=index.js.map
 
 /***/ })
 
