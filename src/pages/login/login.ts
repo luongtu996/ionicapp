@@ -8,12 +8,11 @@ import { UsuarioService } from "../../services/usuario.service";
 
 import { FcmProvider } from "../../providers/fcm/fcm";
 import { Firebase } from '@ionic-native/firebase';
-import { Device } from '@ionic-native/device';
 
 @IonicPage()
 @Component({
     templateUrl: 'login.html',
-    providers: [FcmProvider, Firebase, Device]
+    providers: [FcmProvider, Firebase]
 })
 export class Login implements OnInit{
     public loginForm: FormGroup;
@@ -27,7 +26,6 @@ export class Login implements OnInit{
         public toast: ToastService,
         public usuarioService:UsuarioService,
         public fcm:FcmProvider,
-        private device: Device
     ) {
         this.loginForm = fb.group({
             'username': ['',[Validators.required]],
@@ -55,7 +53,7 @@ export class Login implements OnInit{
                     (response) => {
                         let usuario = response.data;
 
-                        this.fcm.getToken(usuario, this.device.uuid);
+                        this.fcm.getToken(usuario, 'uuid_prueba');
 
                         this.loadingService.hide();
                         this.navCtrl.setRoot("TabPage");
